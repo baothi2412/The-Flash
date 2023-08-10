@@ -1,4 +1,4 @@
-<div class="row clearfix">
+<div class="row clearfix"> 
     <div class="col-lg-12">
         <div class="card">
             <div class="header">
