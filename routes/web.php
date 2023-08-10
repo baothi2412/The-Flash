@@ -1,11 +1,15 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
 use App\Models\Club;
 use App\Models\User;
+use App\Models\Player;
 use App\Http\Controllers\FeedbackController;
-
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ClubController;
+use App\Http\Controllers\PlayerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,7 +52,25 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
     Route::get('/logout', [AccountController::class, 'logout']);
 
     // Feedbacks
-    Route::get('/feedbacks', [FeedbackController::class, 'index']);
+    Route::prefix('/feedbacks')->group(function() {
+        Route::get('/', [FeedbackController::class, 'index']);
+
+    });
+    //Contact
+    Route::prefix('/contacts')->group(function() {
+        Route::get('/', [ContactController::class, 'index']);
+
+    });
+    Route::prefix('/players')->group(function() {
+        Route::get('/', [PlayerController::class, 'index']);
+
+    });
+    Route::prefix('/clubs')->group(function() {
+        Route::get('/', [ClubController::class, 'index']);
+
+    });
+
+
 });
 
 // Prefix /api khi gọi lên server lấy api
@@ -62,7 +84,7 @@ Route::prefix('/api')->group(function() {
 
     // Routes cần xác thực user
     Route::middleware(['auth:api'])->group(function () {
-        
+
     });
 
 });

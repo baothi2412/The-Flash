@@ -10,17 +10,17 @@
 
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <!-- VENDOR CSS -->
-<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="assets/vendor/animate-css/vivify.min.css">
+<link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/vendor/animate-css/vivify.min.css">
 
-<link rel="stylesheet" href="assets/vendor/jquery-datatable/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="assets/vendor/jquery-datatable/fixedeader/dataTables.fixedcolumns.bootstrap4.min.css">
-<link rel="stylesheet" href="assets/vendor/jquery-datatable/fixedeader/dataTables.fixedheader.bootstrap4.min.css">
-<link rel="stylesheet" href="assets/vendor/sweetalert/sweetalert.css"/>
+<link rel="stylesheet" href="/assets/vendor/jquery-datatable/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="/assets/vendor/jquery-datatable/fixedeader/dataTables.fixedcolumns.bootstrap4.min.css">
+<link rel="stylesheet" href="/assets/vendor/jquery-datatable/fixedeader/dataTables.fixedheader.bootstrap4.min.css">
+<link rel="stylesheet" href="/assets/vendor/sweetalert/sweetalert.css"/>
 
 <!-- MAIN CSS -->
-<link rel="stylesheet" href="assets/css/mooli.min.css">
+<link rel="stylesheet" href="/assets/css/mooli.min.css">
 
 {{-- Components CSS --}}
 <link rel="stylesheet" href="/css/components/button.css">
@@ -40,13 +40,13 @@
 
 </head>
 <body>
-    
+
 <div id="body" class="theme-cyan">
     <!-- Page Loader -->
     {{-- <div class="page-loader-wrapper">
         <div class="loader">
             <div class="m-t-30"><img src="/assets/images/icon.svg" width="40" height="40" alt="Mooli"></div>
-            <p>Please wait...</p>        
+            <p>Please wait...</p>
         </div>
     </div> --}}
 
@@ -60,7 +60,7 @@
         <!-- Main left sidebar menu -->
         @include('partials.left-sidebar')
         <!-- Right bar chat  -->
-        @include('partials.rightbar') 
+        @include('partials.rightbar')
         <!-- Stiky note div  -->
         @include('partials.sticky-note')
         <!-- Main body part  -->
@@ -78,15 +78,15 @@
                 @yield('content')
             </div>
         </div>
-        
+
     </div>
 </div>
 
 <!-- Javascript -->
-<script src="/assets/bundles/libscripts.bundle.js"></script>    
+<script src="/assets/bundles/libscripts.bundle.js"></script>
 <script src="/assets/bundles/vendorscripts.bundle.js"></script>
 
-<!-- Vedor js file and create bundle with grunt  --> 
+<!-- Vedor js file and create bundle with grunt  -->
 
 <script src="/assets/bundles/datatablescripts.bundle.js"></script>
 <script src="/assets/vendor/jquery-datatable/buttons/dataTables.buttons.min.js"></script>
@@ -94,10 +94,10 @@
 <script src="/assets/vendor/jquery-datatable/buttons/buttons.colVis.min.js"></script>
 <script src="/assets/vendor/jquery-datatable/buttons/buttons.html5.min.js"></script>
 <script src="/assets/vendor/jquery-datatable/buttons/buttons.print.min.js"></script>
-<script src="/assets/vendor/sweetalert/sweetalert.min.js"></script><!-- SweetAlert Plugin Js --> 
+<script src="/assets/vendor/sweetalert/sweetalert.min.js"></script><!-- SweetAlert Plugin Js -->
 
 
-<!-- Project core js file minify with grunt --> 
+<!-- Project core js file minify with grunt -->
 <script src="/assets/bundles/mainscripts.bundle.js"></script>
 
 <script src="/js/jquery-data-table.js"></script>

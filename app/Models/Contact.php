@@ -5,26 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Player extends Model
+class Contact extends Model
 {
     use HasFactory;
-protected $table ='players';
+
+    protected $table = 'contacts';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-
     protected $fillable = [
-        'PlayerID',
-        'ClubID',
-        'Avatar',
-        'Name',
-        'Birthdate',
-        'Nationality',
-        'Position',
-        'JerseyNumber',
-        'Story',
+        'ContactID',
+        'Email',
+        'Phone',
+        'Subject',
+        'Content',
+        'Response',
+        'created_at',
+        'updated_at',
+
     ];
 
     /**
