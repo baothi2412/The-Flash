@@ -6,8 +6,12 @@ use App\Models\Club;
 use App\Models\User;
 use App\Models\Player;
 use App\Http\Controllers\FeedbackController;
+<<<<<<< HEAD
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\ClubController;
+=======
+use App\Http\Controllers\ContactController;
+>>>>>>> 535c5e5801187a87c818428c13698176fe6900d2
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +55,7 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
     Route::get('/logout', [AccountController::class, 'logout']);
 
     // Feedbacks
+<<<<<<< HEAD
     Route::prefix('/feedbacks')->group(function (){
         Route::get('/', [FeedbackController::class, 'index']);
     } );
@@ -61,6 +66,18 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
     Route::prefix('/clubs')->group(function (){
         Route::get('/',[ClubController::class, 'index']);
     } );
+=======
+    Route::prefix('/feedbacks')->group(function() {
+        Route::get('/', [FeedbackController::class, 'index']);
+
+    });
+    //Contact
+    Route::prefix('/contacts')->group(function() {
+        Route::get('/', [ContactController::class, 'index']);
+
+    });
+
+>>>>>>> 535c5e5801187a87c818428c13698176fe6900d2
 
 });
 
