@@ -10,18 +10,18 @@
 
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <!-- VENDOR CSS -->
-<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="assets/vendor/animate-css/vivify.min.css">
+<link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/vendor/animate-css/vivify.min.css">
 
-<link rel="stylesheet" href="assets/vendor/chartist/css/chartist.min.css">
-<link rel="stylesheet" href="assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
-<link rel="stylesheet" href="assets/vendor/c3/c3.min.css"/>
-<link rel="stylesheet" href="assets/vendor/toastr/toastr.min.css">
-<link rel="stylesheet" href="assets/vendor/jvectormap/jquery-jvectormap-2.0.3.min.css"/>
+<link rel="stylesheet" href="/assets/vendor/chartist/css/chartist.min.css">
+<link rel="stylesheet" href="/assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
+<link rel="stylesheet" href="/assets/vendor/c3/c3.min.css"/>
+<link rel="stylesheet" href="/assets/vendor/toastr/toastr.min.css">
+<link rel="stylesheet" href="/assets/vendor/jvectormap/jquery-jvectormap-2.0.3.min.css"/>
 
 <!-- MAIN CSS -->
-<link rel="stylesheet" href="assets/css/mooli.min.css">
+<link rel="stylesheet" href="/assets/css/mooli.min.css">
 
 {{-- Resize SVG Icon --}}
 <link rel="stylesheet" href="/css/icons/resize.css">
@@ -33,7 +33,7 @@
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
-            <div class="m-t-30"><img src="assets/images/icon.svg" width="40" height="40" alt="Mooli"></div>
+            <div class="m-t-30"><img src="/assets/images/icon.svg" width="40" height="40" alt="Mooli"></div>
             <p>Please wait...</p>        
         </div>
     </div>
@@ -105,7 +105,16 @@
         <!-- Main body part  -->
         <div id="main-content">
             <div class="container-fluid">
-                
+                <div class="block-header">
+                    <div class="row clearfix">
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <h1>Hi, Welcome to Soccer Verse!</h1>
+                            <span>The Soccer Verse Data Management</span>
+                        </div>
+                    </div>
+                </div>
+
+                @yield('content')
             </div>
         </div>
         
@@ -113,18 +122,18 @@
 </div>
 
 <!-- Javascript -->
-<script src="assets/bundles/libscripts.bundle.js"></script>    
-<script src="assets/bundles/vendorscripts.bundle.js"></script>
+<script src="/assets/bundles/libscripts.bundle.js"></script>    
+<script src="/assets/bundles/vendorscripts.bundle.js"></script>
 
 <!-- Vedor js file and create bundle with grunt  --> 
-<script src="assets/bundles/flotscripts.bundle.js"></script><!-- flot charts Plugin Js -->
-<script src="assets/bundles/c3.bundle.js"></script>
-<script src="assets/bundles/apexcharts.bundle.js"></script>
-<script src="assets/bundles/jvectormap.bundle.js"></script>
-<script src="assets/vendor/toastr/toastr.js"></script>
+<script src="/assets/bundles/flotscripts.bundle.js"></script><!-- flot charts Plugin Js -->
+<script src="/assets/bundles/c3.bundle.js"></script>
+<script src="/assets/bundles/apexcharts.bundle.js"></script>
+<script src="/assets/bundles/jvectormap.bundle.js"></script>
+<script src="/assets/vendor/toastr/toastr.js"></script>
 
 <!-- Project core js file minify with grunt --> 
-<script src="assets/bundles/mainscripts.bundle.js"></script>
+<script src="/assets/bundles/mainscripts.bundle.js"></script>
 <script src="../js/index.js"></script>
 </body>
 </html>
