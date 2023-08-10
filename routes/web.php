@@ -22,8 +22,8 @@ use App\Http\Controllers\PlayerController;
 */
 
 Route::get('/', function () {
-    $club = \DB::connection()->getSchemaBuilder()->getColumnListing((new User)->getTable());
-    $data = User::all();
+    $club = \DB::connection()->getSchemaBuilder()->getColumnListing((new Club)->getTable());
+    $data = Club::all();
     return view('test', [
         'club' => $club,
         'title' => 'TEST',
