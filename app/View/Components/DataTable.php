@@ -11,7 +11,6 @@ class DataTable extends Component
     public $columnsName;
     public $records;
 
-
     /**
      * Create a new component instance.
      */

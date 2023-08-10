@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
 use App\Models\Club;
+use App\Models\User;
 use App\Http\Controllers\FeedbackController;
 
 /*
@@ -17,12 +18,12 @@ use App\Http\Controllers\FeedbackController;
 */
 
 Route::get('/', function () {
-    $club = \DB::connection()->getSchemaBuilder()->getColumnListing((new Club)->getTable());
-    $data = Club::all();
+    $club = \DB::connection()->getSchemaBuilder()->getColumnListing((new User)->getTable());
+    $data = User::all();
     return view('test', [
         'club' => $club,
         'title' => 'TEST',
-        'datas' => $data
+        'records' => $data
     ]);
 });
 
