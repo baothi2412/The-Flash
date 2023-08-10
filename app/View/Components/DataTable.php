@@ -9,15 +9,15 @@ use Illuminate\View\Component;
 class DataTable extends Component
 {
     public $columnsName;
-    public $data;
+    public $records;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($columnsName, $data)
+    public function __construct($columnsName, $records)
     {
         $this->columnsName = $columnsName;
-        $this->data = $data;
+        $this->records = $records;
     }
 
     /**
