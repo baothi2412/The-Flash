@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
+use App\Models\Club;
+use App\Http\Controllers\FeedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +17,12 @@ use App\Http\Controllers\AccountController;
 */
 
 Route::get('/', function () {
+    $club = \DB::connection()->getSchemaBuilder()->getColumnListing((new Club)->getTable());
+    $data = Club::all();
     return view('test', [
-        'title' => 'TEST'
+        'club' => $club,
+        'title' => 'TEST',
+        'datas' => $data
     ]);
 });
 
@@ -39,6 +45,9 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
     });
 
     Route::get('/logout', [AccountController::class, 'logout']);
+
+    // Feedbacks
+    Route::get('/feedbacks', [FeedbackController::class, 'index']);
 });
 
 // Prefix /api khi gọi lên server lấy api

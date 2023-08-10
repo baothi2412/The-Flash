@@ -7,7 +7,7 @@
     <div class="sidebar-scroll">
         <div class="user-account">
             <div class="user_div">
-                <img src="assets/images/user.png" class="user-photo" alt="User Profile Picture">
+                <img src="/assets/images/user.png" class="user-photo" alt="User Profile Picture">
             </div>
             <div class="dropdown">
                 <span>Account</span>
@@ -26,14 +26,14 @@
                 {{-- <li class="header">Main</li>
                 <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li> --}}
                 <li class="header">Categories</li>
-                <li><a href="app-chat.html"><img class="svg-icon" src="svg/basic-icons/Cup.svg" alt="SVG Icon"><span>Tournaments</span></a></li>
-                <li><a href="app-inbox.html"><img class="svg-icon" src="svg/people/Anonymous-2.svg" alt="SVG Icon"><span>Players</span> <!-- <span class="badge badge-default mr-0">12</span></a></li> -->
-                <li><a href="app-calendar.html"><img class="svg-icon" src="svg/users/Male-Group-1.svg" alt="SVG Icon"><span>Clubs</span></a></li>
-                <li><a href="app-todo.html"><img class="svg-icon" src="svg/shapes/Rectangle-2.svg" alt="SVG Icon"><span>Matches</span></a></li>
-                <li><a href="app-filemanager.html"><img class="svg-icon" src="svg/sport/Soccer-Ball.svg" alt="SVG Icon"><span>Goals</span></a></li>
-                <li><a href="app-contacts.html"><img class="svg-icon" src="svg/maps-and-locations/Street-View.svg" alt="SVG Icon"><span>Position In Match</span></a></li>                    
-                <li><a href="app-scrumboard.html"><img class="svg-icon" src="svg/email-icons/Compose-Mail1.svg" alt="SVG Icon"><span>Feedbacks</span></a></li>
-                <li><a href="page-news.html"><img class="svg-icon" src="svg/phones/Phone-1.svg" alt="SVG Icon"><span>Contacts</span></a></li>
+                <li><a href="app-chat.html"><img class="svg-icon" src="/svg/basic-icons/Cup.svg" alt="SVG Icon"><span>Tournaments</span></a></li>
+                <li><a href="app-inbox.html"><img class="svg-icon" src="/svg/people/Anonymous-2.svg" alt="SVG Icon"><span>Players</span> <!-- <span class="badge badge-default mr-0">12</span></a></li> -->
+                <li><a href="app-calendar.html"><img class="svg-icon" src="/svg/users/Male-Group-1.svg" alt="SVG Icon"><span>Clubs</span></a></li>
+                <li><a href="app-todo.html"><img class="svg-icon" src="/svg/shapes/Rectangle-2.svg" alt="SVG Icon"><span>Matches</span></a></li>
+                <li><a href="app-filemanager.html"><img class="svg-icon" src="/svg/sport/Soccer-Ball.svg" alt="SVG Icon"><span>Goals</span></a></li>
+                <li><a href="app-contacts.html"><img class="svg-icon" src="/svg/maps-and-locations/Street-View.svg" alt="SVG Icon"><span>Position In Match</span></a></li>                    
+                <li><a href="app-scrumboard.html"><img class="svg-icon" src="/svg/email-icons/Compose-Mail1.svg" alt="SVG Icon"><span>Feedbacks</span></a></li>
+                <li><a href="page-news.html"><img class="svg-icon" src="/svg/phones/Phone-1.svg" alt="SVG Icon"><span>Contacts</span></a></li>
             </ul>
         </nav>     
     </div>
