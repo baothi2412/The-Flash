@@ -10,18 +10,27 @@
 
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <!-- VENDOR CSS -->
-<link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/assets/vendor/animate-css/vivify.min.css">
+<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/vendor/animate-css/vivify.min.css">
 
-<link rel="stylesheet" href="/assets/vendor/chartist/css/chartist.min.css">
-<link rel="stylesheet" href="/assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
-<link rel="stylesheet" href="/assets/vendor/c3/c3.min.css"/>
-<link rel="stylesheet" href="/assets/vendor/toastr/toastr.min.css">
-<link rel="stylesheet" href="/assets/vendor/jvectormap/jquery-jvectormap-2.0.3.min.css"/>
+<link rel="stylesheet" href="assets/vendor/jquery-datatable/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="assets/vendor/jquery-datatable/fixedeader/dataTables.fixedcolumns.bootstrap4.min.css">
+<link rel="stylesheet" href="assets/vendor/jquery-datatable/fixedeader/dataTables.fixedheader.bootstrap4.min.css">
+<link rel="stylesheet" href="assets/vendor/sweetalert/sweetalert.css"/>
 
 <!-- MAIN CSS -->
-<link rel="stylesheet" href="/assets/css/mooli.min.css">
+<link rel="stylesheet" href="assets/css/mooli.min.css">
+
+<style>
+    td.details-control {
+    background: url('assets/images/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+    tr.shown td.details-control {
+        background: url('assets/images/details_close.png') no-repeat center center;
+    }
+</style>
 
 {{-- Resize SVG Icon --}}
 <link rel="stylesheet" href="/css/icons/resize.css">
@@ -31,63 +40,12 @@
     
 <div id="body" class="theme-cyan">
     <!-- Page Loader -->
-    <div class="page-loader-wrapper">
+    {{-- <div class="page-loader-wrapper">
         <div class="loader">
             <div class="m-t-30"><img src="/assets/images/icon.svg" width="40" height="40" alt="Mooli"></div>
             <p>Please wait...</p>        
         </div>
-    </div>
-
-    <!-- Theme Setting -->
-    <div class="themesetting">
-        <a href="javascript:void(0);" class="theme_btn"><i class="fa fa-gear fa-spin"></i></a>
-        <ul class="list-group">
-            <li class="list-group-item">
-                <ul class="choose-skin list-unstyled mb-0">
-                    <li data-theme="green"><div class="green"></div></li>
-                    <li data-theme="orange"><div class="orange"></div></li>
-                    <li data-theme="blush"><div class="blush"></div></li>
-                    <li data-theme="cyan" class="active"><div class="cyan"></div></li>
-                    <li data-theme="timber"><div class="timber"></div></li>
-                    <li data-theme="blue"><div class="blue"></div></li>
-                    <li data-theme="amethyst"><div class="amethyst"></div></li>
-                </ul>
-            </li>
-            <li class="list-group-item d-flex align-items-center justify-content-between">
-                <span>Light Sidebar</span>
-                <label class="switch sidebar_light">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </li>
-            <li class="list-group-item d-flex align-items-center justify-content-between">
-                <span>Gradient</span>
-                <label class="switch gradient_mode">
-                    <input type="checkbox" checked="">
-                    <span class="slider round"></span>
-                </label>
-            </li>
-            <li class="list-group-item d-flex align-items-center justify-content-between">
-                <span>Dark Mode</span>
-                <label class="switch dark_mode">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </li>
-            <li class="list-group-item d-flex align-items-center justify-content-between">
-                <span>RTL version</span>
-                <label class="switch rtl_mode">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </li>
-        </ul>
-        <hr>
-        <div>
-            <a href="javascript:void(0);" class="btn btn-dark btn-block" target="_blank">Buy this item</a>
-            <a href="javascript:void(0);" target="_blank" class="btn btn-primary theme-bg gradient btn-block">View Portfolio</a>
-        </div>
-    </div>
+    </div> --}}
 
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
@@ -126,14 +84,20 @@
 <script src="/assets/bundles/vendorscripts.bundle.js"></script>
 
 <!-- Vedor js file and create bundle with grunt  --> 
-<script src="/assets/bundles/flotscripts.bundle.js"></script><!-- flot charts Plugin Js -->
-<script src="/assets/bundles/c3.bundle.js"></script>
-<script src="/assets/bundles/apexcharts.bundle.js"></script>
-<script src="/assets/bundles/jvectormap.bundle.js"></script>
-<script src="/assets/vendor/toastr/toastr.js"></script>
+
+<script src="/assets/bundles/datatablescripts.bundle.js"></script>
+<script src="/assets/vendor/jquery-datatable/buttons/dataTables.buttons.min.js"></script>
+<script src="/assets/vendor/jquery-datatable/buttons/buttons.bootstrap4.min.js"></script>
+<script src="/assets/vendor/jquery-datatable/buttons/buttons.colVis.min.js"></script>
+<script src="/assets/vendor/jquery-datatable/buttons/buttons.html5.min.js"></script>
+<script src="/assets/vendor/jquery-datatable/buttons/buttons.print.min.js"></script>
+<script src="/assets/vendor/sweetalert/sweetalert.min.js"></script><!-- SweetAlert Plugin Js --> 
+
 
 <!-- Project core js file minify with grunt --> 
 <script src="/assets/bundles/mainscripts.bundle.js"></script>
-<script src="../js/index.js"></script>
+
+<script src="/js/jquery-data-table.js"></script>
+
 </body>
 </html>
