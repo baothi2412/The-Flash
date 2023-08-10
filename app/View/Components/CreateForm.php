@@ -21,7 +21,6 @@ class CreateForm extends Component
         $this->ignoreColumns = [
             'created_at',
             'updated_at',
-            'password',
             'remember_token',
             'email_verified_at',
         ];

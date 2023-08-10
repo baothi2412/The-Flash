@@ -3,6 +3,10 @@
         <div class="card">
             <div class="header">
                 <h2>{{ $title }} <small>{{ $subTitle }}</small></h2>
+                <div style="margin-top: 12px;">
+                    <x-button type="primary" text="icon:/svg/basic-icons/Add.svg" alt="SVG Icon"></x-button>
+                </div>
+
                 <ul class="header-dropdown dropdown">
                     
                     <li><a href="javascript:void(0);" class="full-screen"><i class="fa fa-expand"></i></a></li>
@@ -29,6 +33,7 @@
                                         <th>{{ $column }}</th>
                                     @endif
                                 @endforeach
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -38,6 +43,7 @@
                                         <th>{{ $column }}</th>
                                     @endif
                                 @endforeach
+                                <th>Actions</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -48,6 +54,10 @@
                                             <td>{{ $record[$column] }}</td>
                                         @endif
                                     @endforeach
+                                    <td>
+                                        <x-button type="warning" text="icon:/svg/basic-icons/Pencil.svg" alt="SVG Icon">"></x-button>
+                                        <x-button type="danger" text="icon:/svg/basic-icons/Trash.svg" alt="SVG Icon">"></x-button>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

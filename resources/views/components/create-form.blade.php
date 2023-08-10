@@ -12,7 +12,7 @@
                 @endif
             @endforeach
 
-            <x-select2-dropdown></x-select2-dropdown>
+            {{-- <x-select2-dropdown></x-select2-dropdown> --}}
             
             <div style="display: flex; justify-content: right; align-items: center; margin-top: 12px;">
                 <x-button type="primary" text="Create"></x-button>
