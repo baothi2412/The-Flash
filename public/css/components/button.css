@@ -18,6 +18,9 @@
 #button-component.danger {
     background-color: #ff2052;
 }
+#button-component.warning {
+    background-color: #cb9f00;
+}
 #button-component.success {
     background-color: #006b3c;
 }

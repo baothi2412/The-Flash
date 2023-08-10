@@ -85,6 +85,14 @@
 <!-- Javascript -->
 <script src="/assets/bundles/libscripts.bundle.js"></script>
 <script src="/assets/bundles/vendorscripts.bundle.js"></script>
+{{-- UI Modal --}}
+<script src="https://embed.tawk.to/_s/v4/app/64d21bf31fc/js/twk-main.js" charset="UTF-8" crossorigin="*"></script>
+<script src="https://embed.tawk.to/_s/v4/app/64d21bf31fc/js/twk-vendor.js" charset="UTF-8" crossorigin="*"></script>
+<script src="https://embed.tawk.to/_s/v4/app/64d21bf31fc/js/twk-chunk-vendors.js" charset="UTF-8" crossorigin="*"></script>
+<script src="https://embed.tawk.to/_s/v4/app/64d21bf31fc/js/twk-chunk-common.js" charset="UTF-8" crossorigin="*"></script>
+<script src="https://embed.tawk.to/_s/v4/app/64d21bf31fc/js/twk-runtime.js" charset="UTF-8" crossorigin="*"></script>
+<script src="https://embed.tawk.to/_s/v4/app/64d21bf31fc/js/twk-app.js" charset="UTF-8" crossorigin="*"></script>
+<script async="" src="https://embed.tawk.to/5e44175da89cda5a188591ec/1e0t1qduj" charset="UTF-8" crossorigin="*"></script>
 
 <!-- Vedor js file and create bundle with grunt  -->
 
@@ -95,12 +103,135 @@
 <script src="/assets/vendor/jquery-datatable/buttons/buttons.html5.min.js"></script>
 <script src="/assets/vendor/jquery-datatable/buttons/buttons.print.min.js"></script>
 <script src="/assets/vendor/sweetalert/sweetalert.min.js"></script><!-- SweetAlert Plugin Js -->
+{{-- UI Modal --}}
+<script src="/assets/vendor/dropify/js/dropify.js"></script>
+<script src="/assets/vendor/jquery-steps/jquery.steps.js"></script>
 
 
 <!-- Project core js file minify with grunt -->
 <script src="/assets/bundles/mainscripts.bundle.js"></script>
 
 <script src="/js/jquery-data-table.js"></script>
+
+<script>
+    $(function() {
+    $('.dropify').dropify();
+
+    var drEvent = $('#dropify-event').dropify();
+    drEvent.on('dropify.beforeClear', function(event, element) {
+        return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+    });
+
+    drEvent.on('dropify.afterClear', function(event, element) {
+        alert('File deleted');
+    });
+
+    $('.dropify-fr').dropify({
+        messages: {
+            default: 'Glissez-déposez un fichier ici ou cliquez',
+            replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+            remove: 'Supprimer',
+            error: 'Désolé, le fichier trop volumineux'
+        }
+    });
+});
+</script>
+
+<script>
+    $(function () {
+    //Horizontal form basic
+    $('#wizard_horizontal_icon').steps({
+        headerTag: 'h2',
+        bodyTag: 'section',
+        transitionEffect: 'slideLeft',
+        onInit: function (event, currentIndex) {
+            setButtonWavesEffect(event);
+        },
+        onStepChanged: function (event, currentIndex, priorIndex) {
+            setButtonWavesEffect(event);
+        }
+    });
+    
+    //Horizontal form basic
+    $('#wizard_horizontal').steps({
+        headerTag: 'h2',
+        bodyTag: 'section',
+        transitionEffect: 'slideLeft',
+        onInit: function (event, currentIndex) {
+            setButtonWavesEffect(event);
+        },
+        onStepChanged: function (event, currentIndex, priorIndex) {
+            setButtonWavesEffect(event);
+        }
+    });
+
+    //Vertical form basic
+    $('#wizard_vertical').steps({
+        headerTag: 'h2',
+        bodyTag: 'section',
+        transitionEffect: 'slideLeft',
+        stepsOrientation: 'vertical',
+        onInit: function (event, currentIndex) {
+            setButtonWavesEffect(event);
+        },
+        onStepChanged: function (event, currentIndex, priorIndex) {
+            setButtonWavesEffect(event);
+        }
+    });
+
+    //Advanced form with validation
+    var form = $('#wizard_with_validation').show();
+        form.steps({
+        headerTag: 'h3',
+        bodyTag: 'fieldset',
+        transitionEffect: 'slideLeft',        
+        onStepChanging: function (event, currentIndex, newIndex) {
+            if (currentIndex > newIndex) { return true; }
+
+            if (currentIndex < newIndex) {
+                form.find('.body:eq(' + newIndex + ') label.error').remove();
+                form.find('.body:eq(' + newIndex + ') .error').removeClass('error');
+            }
+
+            form.validate().settings.ignore = ':disabled,:hidden';
+            return form.valid();
+        },
+        onStepChanged: function (event, currentIndex, priorIndex) {
+            setButtonWavesEffect(event);
+        },
+        onFinishing: function (event, currentIndex) {
+            form.validate().settings.ignore = ':disabled';
+            return form.valid();
+        },
+        onFinished: function (event, currentIndex) {
+            swal("Good job!", "Submitted!", "success");
+        }
+    });
+
+    form.validate({
+        highlight: function (input) {
+            $(input).parents('.form-line').addClass('error');
+        },
+        unhighlight: function (input) {
+            $(input).parents('.form-line').removeClass('error');
+        },
+        errorPlacement: function (error, element) {
+            $(element).parents('.form-group').append(error);
+        },
+        rules: {
+            'confirm': {
+                equalTo: '#password'
+            }
+        }
+    });
+});
+
+function setButtonWavesEffect(event) {
+    $(event.currentTarget).find('[role="menu"] li a').removeClass('');
+    $(event.currentTarget).find('[role="menu"] li:not(.disabled) a').addClass('');
+}
+</script>
+<script async="" charset="UTF-8" src="https://embed.tawk.to/_s/v4/app/64d21bf31fc/languages/en.js"></script>
 
 </body>
 </html>
