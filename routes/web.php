@@ -11,6 +11,8 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\PositionMatchController;
+use App\Http\Controllers\TournamentController;
+use App\Http\Controllers\MatchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -74,7 +76,14 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
         Route::get('/', [PositionMatchController::class, 'index']);
 
     });
+    Route::prefix('/tournaments')->group(function() {
+        Route::get('/', [TournamentController::class, 'index']);
 
+    });
+    Route::prefix('/matches')->group(function() {
+        Route::get('/', [MatchController::class, 'index']);
+
+    });
 
 });
 
