@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
 use App\Models\Club;
 use App\Models\User;
+use App\Models\Player;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\ClubController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,9 +51,17 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
     Route::get('/logout', [AccountController::class, 'logout']);
 
     // Feedbacks
-    Route::get('/feedbacks', [FeedbackController::class, 'index']);
+    Route::prefix('/feedbacks')->group(function (){
+        Route::get('/', [FeedbackController::class, 'index']);
+    } );
     //Player
-    Route::get('/players',[PlayerController::class, 'index']);
+    Route::prefix('/players')->group(function (){
+        Route::get('/',[PlayerController::class, 'index']);
+    } );
+    Route::prefix('/clubs')->group(function (){
+        Route::get('/',[ClubController::class, 'index']);
+    } );
+
 });
 
 // Prefix /api khi gọi lên server lấy api

@@ -10,17 +10,17 @@
 
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <!-- VENDOR CSS -->
-<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="assets/vendor/animate-css/vivify.min.css">
+<link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/vendor/animate-css/vivify.min.css">
 
-<link rel="stylesheet" href="assets/vendor/jquery-datatable/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="assets/vendor/jquery-datatable/fixedeader/dataTables.fixedcolumns.bootstrap4.min.css">
-<link rel="stylesheet" href="assets/vendor/jquery-datatable/fixedeader/dataTables.fixedheader.bootstrap4.min.css">
-<link rel="stylesheet" href="assets/vendor/sweetalert/sweetalert.css"/>
+<link rel="stylesheet" href="/assets/vendor/jquery-datatable/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="/assets/vendor/jquery-datatable/fixedeader/dataTables.fixedcolumns.bootstrap4.min.css">
+<link rel="stylesheet" href="/assets/vendor/jquery-datatable/fixedeader/dataTables.fixedheader.bootstrap4.min.css">
+<link rel="stylesheet" href="/assets/vendor/sweetalert/sweetalert.css"/>
 
 <!-- MAIN CSS -->
-<link rel="stylesheet" href="assets/css/mooli.min.css">
+<link rel="stylesheet" href="/assets/css/mooli.min.css">
 
 <style>
     td.details-control {
@@ -83,15 +83,7 @@
 <script src="/assets/bundles/libscripts.bundle.js"></script>
 <script src="/assets/bundles/vendorscripts.bundle.js"></script>
 
-<<<<<<< HEAD
 <!-- Vedor js file and create bundle with grunt  -->
-<script src="/assets/bundles/flotscripts.bundle.js"></script><!-- flot charts Plugin Js -->
-<script src="/assets/bundles/c3.bundle.js"></script>
-<script src="/assets/bundles/apexcharts.bundle.js"></script>
-<script src="/assets/bundles/jvectormap.bundle.js"></script>
-<script src="/assets/vendor/toastr/toastr.js"></script>
-=======
-<!-- Vedor js file and create bundle with grunt  --> 
 
 <script src="/assets/bundles/datatablescripts.bundle.js"></script>
 <script src="/assets/vendor/jquery-datatable/buttons/dataTables.buttons.min.js"></script>
@@ -99,9 +91,8 @@
 <script src="/assets/vendor/jquery-datatable/buttons/buttons.colVis.min.js"></script>
 <script src="/assets/vendor/jquery-datatable/buttons/buttons.html5.min.js"></script>
 <script src="/assets/vendor/jquery-datatable/buttons/buttons.print.min.js"></script>
-<script src="/assets/vendor/sweetalert/sweetalert.min.js"></script><!-- SweetAlert Plugin Js --> 
+<script src="/assets/vendor/sweetalert/sweetalert.min.js"></script><!-- SweetAlert Plugin Js -->
 
->>>>>>> 38c63c149ae0d577853ece0b760f7fc60dad8a91
 
 <!-- Project core js file minify with grunt -->
 <script src="/assets/bundles/mainscripts.bundle.js"></script>
