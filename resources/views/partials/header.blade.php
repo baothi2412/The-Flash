@@ -4,16 +4,6 @@
         <div class="navbar-right">
             <div id="navbar-menu">
                 <ul class="nav navbar-nav">
-                    <li><a href="javascript:void(0);" class="right_note icon-menu" title="Right Menu">Notes</a></li>
-                    <li class="dropdown hidden-xs">
-                        <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">Create</a>
-                        <div class="dropdown-menu pb-0 mt-0">
-                            <a class="dropdown-item pt-2 pb-2" href="javascript:void(0);">User</a>
-                            <a class="dropdown-item pt-2 pb-2" href="javascript:void(0);">Product</a>
-                            <a class="dropdown-item pt-2 pb-2" href="javascript:void(0);">Category</a>
-                            <a class="dropdown-item pt-2 pb-2" href="javascript:void(0);">Report</a>
-                        </div>
-                    </li>
                     <li class="dropdown hidden-xs">
                         <a href="javascript:void(0);" class="dropdown-toggle icon-menu" data-toggle="dropdown">
                             <i class="fa fa-envelope-o"></i>
@@ -123,55 +113,9 @@
                             <a class="dropdown-item pt-2 pb-2" href="javascript:void(0);"><img src="assets/images/flag/france.svg" alt="French" > French</a>
                         </div>
                     </li>
-                    <li><a href="javascript:void(0);" class="right_toggle icon-menu" title="Right Menu"><i class="fa fa-comments-o"></i></a></li>
                     <li class="hidden-xs"><a href="javascript:void(0);" id="btnFullscreen" class="icon-menu"><i class="fa fa-arrows-alt"></i></a></li>
-                    <li><a href="page-login.html" class="icon-menu"><i class="fa fa-power-off"></i></a></li>
+                    <li><a href="/admin/logout" class="icon-menu"><i class="fa fa-power-off"></i></a></li>
                 </ul>
-            </div>
-        </div>
-        <div class="recent_searche" style="display: none;">
-            <div class="card mb-0">
-                <div class="header">
-                    <h2>Recent search result</h2>
-                    <ul class="header-dropdown dropdown">
-                        <li><a href="javascript:void(0);">Clear data</a></li>
-                        <li><a href="page-search-results.html"><i class="fa fa-external-link"></i></a></li>
-                    </ul>
-                </div>
-                <div class="body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item p-l-0 p-r-0">
-                            <h6><a href="#">Crush it - Bootstrap Admin Application Template &amp; Ui Kit</a></h6>
-                            <p class="text-muted">It is a long established fact that a reader will be distracted.</p>
-                            <div class="text-muted font-13">
-                                <ul class="list-inline">
-                                    <li class="list-inline-item"><span class="badge badge-secondary margin-0">React</span></li>
-                                    <li class="list-inline-item">Dec 27 2020</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="list-group-item p-l-0 p-r-0">
-                            <h6><a href="#">Epic Pro - HR &amp; Project Management Admin Template and UI Kit</a></h6>
-                            <p class="text-muted">he point of using Lorem Ipsum is that it has a more-or-less English.</p>
-                            <div class="text-muted font-13">
-                                <ul class="list-inline">
-                                    <li class="list-inline-item"><span class="badge badge-success margin-0">HTML</span></li>
-                                    <li class="list-inline-item">Oct 13 2020</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="list-group-item p-l-0 p-r-0">
-                            <h6><a href="#">Qubes - Responsive Admin Dashboard Template</a></h6>
-                            <p class="text-muted">Commodo excepteur non ut aliqua ex qui velit sed esse consequat in </p>
-                            <div class="text-muted font-13">
-                                <ul class="list-inline">
-                                    <li class="list-inline-item"><span class="badge badge-danger margin-0">Bootstrap</span></li>
-                                    <li class="list-inline-item">Sep 27 2020</li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>

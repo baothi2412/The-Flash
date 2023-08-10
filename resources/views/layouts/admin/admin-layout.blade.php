@@ -23,6 +23,9 @@
 <!-- MAIN CSS -->
 <link rel="stylesheet" href="assets/css/mooli.min.css">
 
+{{-- Resize SVG Icon --}}
+<link rel="stylesheet" href="/css/icons/resize.css">
+
 </head>
 <body>
     
