@@ -38,7 +38,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($data as $dataItem)
+                        @foreach ($records as $dataItem)
                             <tr>
                                 @foreach ($columnsName as $column)
                                     <td>{{ $dataItem[$column] }}</td>
