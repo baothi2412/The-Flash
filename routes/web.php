@@ -5,6 +5,7 @@ use App\Http\Controllers\AccountController;
 use App\Models\Club;
 use App\Models\User;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\PlayerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,8 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
 
     // Feedbacks
     Route::get('/feedbacks', [FeedbackController::class, 'index']);
+    //Player
+    Route::get('/players',[PlayerController::class, 'index']);
 });
 
 // Prefix /api khi gọi lên server lấy api
@@ -62,7 +65,7 @@ Route::prefix('/api')->group(function() {
 
     // Routes cần xác thực user
     Route::middleware(['auth:api'])->group(function () {
-        
+
     });
 
 });
