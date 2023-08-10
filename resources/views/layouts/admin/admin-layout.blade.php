@@ -22,6 +22,9 @@
 <!-- MAIN CSS -->
 <link rel="stylesheet" href="assets/css/mooli.min.css">
 
+{{-- Components CSS --}}
+<link rel="stylesheet" href="/css/components/button.css">
+
 <style>
     td.details-control {
     background: url('assets/images/details_open.png') no-repeat center center;

@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'ba4c1cc35b29f97c2274cd52ae54972a60fef160',
+        'reference' => '21f15029f47129ec4be2a0e612488ecc5b731265',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -373,7 +373,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'ba4c1cc35b29f97c2274cd52ae54972a60fef160',
+            'reference' => '21f15029f47129ec4be2a0e612488ecc5b731265',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -928,6 +928,15 @@
             'install_path' => __DIR__ . '/../sebastian/version',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'select2/select2' => array(
+            'pretty_version' => '4.0.13',
+            'version' => '4.0.13.0',
+            'reference' => '45f2b83ceed5231afa7b3d5b12b58ad335edd82e',
+            'type' => 'component',
+            'install_path' => __DIR__ . '/../select2/select2',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'spatie/backtrace' => array(
             'pretty_version' => '1.5.3',
