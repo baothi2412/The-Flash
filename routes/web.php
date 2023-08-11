@@ -10,6 +10,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PositionMatchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -67,6 +68,10 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
     });
     Route::prefix('/clubs')->group(function() {
         Route::get('/', [ClubController::class, 'index']);
+
+    });
+    Route::prefix('/position')->group(function() {
+        Route::get('/', [PositionMatchController::class, 'index']);
 
     });
 
