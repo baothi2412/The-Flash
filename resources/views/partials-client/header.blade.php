@@ -81,7 +81,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-2 col-sm-5">
-            <div class="logo"><a href="index-2.html"><img src="images/2.gif" alt=""  width="100%"></a></div>
+            <div class="logo"><a href="index-2.html"><img src="images/6.gif" alt=""  width="100%"></a></div>
           </div>
           <div class="col-md-10 col-sm-7">
             <nav class="main-nav">

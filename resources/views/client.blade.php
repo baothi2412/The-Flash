@@ -763,7 +763,7 @@
                     <div class="hv-info"> <a href="#" class="play"><i class="fas fa-play"></i></a>
                       <h6><a href="#">FC Champs Finished In First Place</a></h6>
                     </div>
-                    <a class="gt-link" href="../../www.youtube.com/watch8888.html?v=SLi2gT5H6m8&amp;t=11s" data-rel="prettyPhoto[gallery1]"><i class="fas fa-play"></i></a><img src="images/squadgallery-2.jpg" alt=""></div>
+                    <a class="gt-link" href="www.youtube.com/watch8888.html?v=SLi2gT5H6m8&amp;t=11s" data-rel="prettyPhoto[gallery1]"><i class="fas fa-play"></i></a><img src="images/squadgallery-2.jpg" alt=""></div>
                 </li>
                 <li class="item f1">
                   <div class="gthumb">

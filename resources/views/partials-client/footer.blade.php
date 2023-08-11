@@ -5,7 +5,7 @@
       <div class="row">
         <!--Footer Widget Start-->
         <div class="col-lg-3 col-md-6">
-          <div class="footer-widget about-widget"> <img src="images/logofooter.png" alt="">
+          <div class="footer-widget about-widget"> <img src="images/f1.png" alt="">
             <p> "The most important thing is the team's victory. Whoever scores the goal is fine, as long as we win." </p>
             <address>
             <ul>
