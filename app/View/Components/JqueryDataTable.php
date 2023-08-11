@@ -12,6 +12,7 @@ class JqueryDataTable extends Component
     public $subTitle;
     public $columnsName;
     public $records;
+    public $ignoreColumns;
 
     /**
      * Create a new component instance.
@@ -22,6 +23,13 @@ class JqueryDataTable extends Component
         $this->subTitle = $subTitle;
         $this->columnsName = $columnsName;
         $this->records = $records;
+        $this->ignoreColumns = [
+            'password',
+            'created_at',
+            'updated_at',
+            'email_verified_at',
+            'remember_token',
+        ];
     }
 
     /**

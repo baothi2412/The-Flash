@@ -2,6 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
 <title>{{$title}} | Soccer Verse Admin</title>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -38,10 +39,20 @@
 {{-- Resize SVG Icon --}}
 <link rel="stylesheet" href="/css/icons/resize.css">
 
+
 </head>
 <body>
 
 <div id="body" class="theme-cyan">
+    {{-- Toast DIV ID --}}
+    <div id="toast"></div>
+    
+    {{-- JS Toast Message --}}
+    <script src="/libraries/messages.js"></script>
+
+    {{-- API Service --}}
+    <script src="/js/services/apiService.js"></script>
+
     <!-- Page Loader -->
     {{-- <div class="page-loader-wrapper">
         <div class="loader">
@@ -82,6 +93,7 @@
     </div>
 </div>
 
+
 <!-- Javascript -->
 <script src="/assets/bundles/libscripts.bundle.js"></script>
 <script src="/assets/bundles/vendorscripts.bundle.js"></script>
@@ -115,26 +127,26 @@
 
 <script>
     $(function() {
-    $('.dropify').dropify();
+        $('.dropify').dropify();
 
-    var drEvent = $('#dropify-event').dropify();
-    drEvent.on('dropify.beforeClear', function(event, element) {
-        return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
-    });
+        var drEvent = $('#dropify-event').dropify();
+        drEvent.on('dropify.beforeClear', function(event, element) {
+            return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+        });
 
-    drEvent.on('dropify.afterClear', function(event, element) {
-        alert('File deleted');
-    });
+        drEvent.on('dropify.afterClear', function(event, element) {
+            alert('File deleted');
+        });
 
-    $('.dropify-fr').dropify({
-        messages: {
-            default: 'Glissez-déposez un fichier ici ou cliquez',
-            replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
-            remove: 'Supprimer',
-            error: 'Désolé, le fichier trop volumineux'
-        }
+        $('.dropify-fr').dropify({
+            messages: {
+                default: 'Glissez-déposez un fichier ici ou cliquez',
+                replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                remove: 'Supprimer',
+                error: 'Désolé, le fichier trop volumineux'
+            }
+        });
     });
-});
 </script>
 
 <script>

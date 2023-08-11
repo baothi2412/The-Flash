@@ -19,6 +19,7 @@ class CreateForm extends Component
         $this->columnsName = $columnsName;
         $this->searchSelectList = $searchSelectList;
         $this->ignoreColumns = [
+            'id',
             'created_at',
             'updated_at',
             'remember_token',

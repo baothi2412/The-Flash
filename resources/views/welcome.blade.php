@@ -142,12 +142,11 @@
 
         <script>
             const data = {
-                email: 'bth2412@gmail.com',
-                password: '24122004',
-                passwordConfirm: '24122004',
+                email: 'son@gmail.com',
+                password: 'hongson2003',
             }
             var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-            fetch('/api/account/sign-up', {
+            fetch('/api/account/sign-in', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -157,7 +156,7 @@
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                localStorage.setItem('access_token', JSON.stringify(data.token));
             })
             .catch(error => {
                 console.log(error)
