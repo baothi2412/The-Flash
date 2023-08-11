@@ -1,6 +1,5 @@
 <?php
 
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
 use App\Models\Club;
@@ -10,6 +9,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PositionMatchController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\MatchController;
@@ -91,14 +91,14 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
 Route::prefix('/api')->group(function() {
 
     // Sign in, sign out
-    // Route::prefix('/account')->group(function() {
-    //     // Route::post('/sign-in', [AccountController::class, 'signInCheck']);
+    Route::prefix('/account')->group(function() {
+        Route::post('/sign-in', [AccountController::class, 'signInCheck']);
     //     // Route::post('/sign-up', [AccountController::class, 'signUp']);
-    // });
+    });
 
     // Routes cần xác thực user
-    Route::middleware(['auth:api'])->group(function () {
-
+    Route::middleware(['jwt.auth'])->prefix('/user')->group(function () {
+        Route::post('/store', [UserController::class, 'store']);
     });
 
 });

@@ -11,7 +11,7 @@
             </div>
             <div class="dropdown">
                 <span>Account</span>
-                <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>Admin</strong></a>
+                <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>{{ Auth::user()->name }}</strong></a>
                 <ul class="dropdown-menu dropdown-menu-right account vivify flipInY">
                     {{-- <li><a href="page-profile.html"><i class="fa fa-user"></i>My Profile</a></li>
                     <li><a href="app-inbox.html"><i class="fa fa-envelope"></i>Messages</a></li>
@@ -31,7 +31,7 @@
                 <li><a href="/admin/clubs"><img class="svg-icon" src="/svg/users/Male-Group-1.svg" alt="SVG Icon"><span>Clubs</span></a></li>
                 <li><a href="/admin/matches"><img class="svg-icon" src="/svg/shapes/Rectangle-2.svg" alt="SVG Icon"><span>Matches</span></a></li>
                 <li><a href="app-filemanager.html"><img class="svg-icon" src="/svg/sport/Soccer-Ball.svg" alt="SVG Icon"><span>Goals</span></a></li>
-                <li><a href="/admin/position"><img class="svg-icon" src="/svg/maps-and-locations/Street-View.svg" alt="SVG Icon"><span>Position In Match</span></a></li>
+                <li><a href="app-contacts.html"><img class="svg-icon" src="/svg/maps-and-locations/Street-View.svg" alt="SVG Icon"><span>Position In Match</span></a></li>
                 <li><a href="http://127.0.0.1:8000/admin/feedbacks"><img class="svg-icon" src="/svg/email-icons/Compose-Mail1.svg" alt="SVG Icon"><span>Feedbacks</span></a></li>
                 <li><a href="http://127.0.0.1:8000/admin/contacts"><img class="svg-icon" src="/svg/phones/Phone-1.svg" alt="SVG Icon"><span>Contacts</span></a></li>
             </ul>
