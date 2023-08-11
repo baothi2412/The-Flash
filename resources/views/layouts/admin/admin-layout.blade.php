@@ -20,11 +20,20 @@
 <link rel="stylesheet" href="/assets/vendor/jquery-datatable/fixedeader/dataTables.fixedheader.bootstrap4.min.css">
 <link rel="stylesheet" href="/assets/vendor/sweetalert/sweetalert.css"/>
 
+{{-- JQuery Cdn --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <!-- MAIN CSS -->
 <link rel="stylesheet" href="/assets/css/mooli.min.css">
 
 {{-- Components CSS --}}
 <link rel="stylesheet" href="/css/components/button.css">
+
+{{-- Lib Toast Message --}}
+<link rel="stylesheet" href="/libraries/messages/messages.css">
+
+{{-- Fontawesome CDN --}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <style>
     td.details-control {
@@ -48,7 +57,7 @@
     <div id="toast"></div>
     
     {{-- JS Toast Message --}}
-    <script src="/libraries/messages.js"></script>
+    <script src="/libraries/messages/messages.js"></script>
 
     {{-- API Service --}}
     <script src="/js/services/apiService.js"></script>

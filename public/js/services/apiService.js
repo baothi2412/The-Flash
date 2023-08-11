@@ -13,10 +13,23 @@ const apiService = {
             .then(response => response.json())
             .then(data => {
                 if (data.isSuccess) {
+                    const dataReceive = data.data;
+                    const listKeys = Object.keys(dataReceive);
+
+                    const ignore = [
+                        'id',
+                        'password',
+                        'created_at',
+                        'updated_at',
+                        'email_verified_at',
+                        'remember_token',
+                    ];
+
+                    const tdElms = listKeys.filter(key => !ignore.includes(key)).map(key => `<td>${dataReceive[key]}</td>`).join('');
+
                     const html = `<tr role="row" class="even">
-                                    <td class="sorting_1">${data.data.id}</td>
-                                    <td>${data.data.name}</td>
-                                    <td>${data.data.email}</td>
+                                    <td class="sorting_1">${dataReceive.id}</td>
+                                    ${tdElms}
                                     <td>
                                             <a id="button-component" class="warning " data-toggle="modal" data-target=".launch-pricing-modal">
                                                 <span class="text">
@@ -33,14 +46,16 @@ const apiService = {
 
                     const elmID = 'jquery-dt-tbody';
 
+                    console.log(html)
+
                     this.renderChild(html, elmID);
+                    
                     toast({
                         title: 'Insert Success',
                         message: 'Successfully insert data',
                         type: 'success'
                     })
                 }
-
                 
             })
             .catch(error => {
