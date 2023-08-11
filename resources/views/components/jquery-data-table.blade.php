@@ -29,7 +29,7 @@
                         <thead>
                             <tr>
                                 @foreach ($columnsName as $column)
-                                    @if ($column != 'password' && $column != 'created_at' && $column != 'updated_at')
+                                    @if (!in_array($column, $ignoreColumns))
                                         <th>{{ $column }}</th>
                                     @endif
                                 @endforeach
@@ -39,18 +39,18 @@
                         <tfoot>
                             <tr>
                                 @foreach ($columnsName as $column)
-                                    @if ($column != 'password' && $column != 'created_at' && $column != 'updated_at')
+                                    @if (!in_array($column, $ignoreColumns))
                                         <th>{{ $column }}</th>
                                     @endif
                                 @endforeach
                                 <th>Actions</th>
                             </tr>
                         </tfoot>
-                        <tbody>
+                        <tbody id="jquery-dt-tbody">
                             @foreach ($records as $record)
                                 <tr>
                                     @foreach ($columnsName as $column)
-                                        @if ($column != 'password' && $column != 'created_at' && $column != 'updated_at')
+                                        @if (!in_array($column, $ignoreColumns))
                                             <td>{{ $record[$column] }}</td>
                                         @endif
                                     @endforeach

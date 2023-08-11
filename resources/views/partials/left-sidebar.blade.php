@@ -11,7 +11,7 @@
             </div>
             <div class="dropdown">
                 <span>Account</span>
-                <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>Admin</strong></a>
+                <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>{{ Auth::user()->name }}</strong></a>
                 <ul class="dropdown-menu dropdown-menu-right account vivify flipInY">
                     {{-- <li><a href="page-profile.html"><i class="fa fa-user"></i>My Profile</a></li>
                     <li><a href="app-inbox.html"><i class="fa fa-envelope"></i>Messages</a></li>

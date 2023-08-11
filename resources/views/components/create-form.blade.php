@@ -10,7 +10,11 @@
                         @foreach ($columnsName as $clnName)
                             @if (!in_array($clnName, $ignoreColumns))
                                 <div class="input-group input-group-sm mb-3">
-                                    <input name="{{$clnName}}" placeholder="Enter {{$clnName}}" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                    @if ($clnName != 'password')
+                                        <input name="{{$clnName}}" placeholder="Enter {{$clnName}}" type="text" class="form-control create-form-input" aria-label="Small" aria-describedby="inputGroup-sizing-sm" autocomplete="off">
+                                    @else
+                                        <input name="{{$clnName}}" placeholder="Enter {{$clnName}}" type="password" class="form-control create-form-input" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                    @endif
                                 </div>
                             @endif
                         @endforeach
@@ -18,7 +22,7 @@
                         {{-- <x-select2-dropdown></x-select2-dropdown> --}}
                         
                         <div style="display: flex; justify-content: right; align-items: center; margin-top: 12px;">
-                            <x-button type="primary" text="Create"></x-button>
+                            <x-button classes="create-form-submit-button" type="primary" text="Create"></x-button>
                         </div>
                     </div>
                 </div>
@@ -29,7 +33,16 @@
 
 <script>
     const dataSubmit = {};
-    
+    const createFormInputs = document.querySelectorAll('input.create-form-input');
+    const createFormSubmitBtn = document.querySelector('a.create-form-submit-button');
+
+    createFormSubmitBtn.onclick = function(e) {
+        createFormInputs.forEach(input => {
+            const inputName = input.name;
+            dataSubmit[inputName] = input.value;
+        });
+        apiService.post('/api/user/store', dataSubmit);
+    }
 </script>
 
 <script>
