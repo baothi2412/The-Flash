@@ -108,7 +108,7 @@ Route::prefix('/api')->group(function() {
     // Sign in, sign out
     Route::prefix('/account')->group(function() {
         Route::post('/sign-in', [AccountController::class, 'signInCheck']);
-    //     // Route::post('/sign-up', [AccountController::class, 'signUp']);
+        // Route::post('/sign-up', [AccountController::class, 'signUp']);
     });
 
     // Routes cần xác thực user
