@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tournament extends Model
 {
     use HasFactory;
-    protected $table  = 'tournaments';
+    protected $table = 'tournaments';
     /**
      * The attributes that are mass assignable.
      *
@@ -17,7 +17,7 @@ class Tournament extends Model
 
 
     protected $fillable = [
-        'TournamentID	',
+        'TournamentID',
         'Logo',
         'TournamentName	',
         'Description',
@@ -43,4 +43,18 @@ class Tournament extends Model
      * @var array<string, string>
      */
     protected $casts = [];
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+

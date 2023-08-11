@@ -19,5 +19,4 @@ class TournamentController extends Controller
         ]);
     }
 
-
 }
