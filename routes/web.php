@@ -41,7 +41,7 @@ use App\Http\Controllers\GoalController;
 Route::get('/app/test', function () {
     $club = \DB::connection()->getSchemaBuilder()->getColumnListing((new User)->getTable());
     $data = User::all();
-    return view('welcome', [
+    return view('test', [
         'club' => $club,
         'title' => 'TEST',
         'records' => $data
@@ -143,6 +143,7 @@ Route::prefix('/api')->group(function () {
             Route::put('/update', [UserController::class, 'update']);
             Route::get('/{id}', [UserController::class, 'detail']);
             Route::delete('/delete/{id}', [UserController::class, 'delete']);
+            Route::get('/all', [UserController::class, 'all']);
         });
 
         Route::prefix('/player')->group(function () {

@@ -142,7 +142,7 @@
 
         <script>
             const data = {
-                email: 'son@gmail.com',
+                email: 'admin@gmail.com',
                 password: 'hongson2003',
             }
             var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
