@@ -22,16 +22,24 @@
 <link rel="stylesheet" href="/js-client/rev-slider/css/layers.css"  type='text/css' media='all' />
 <link rel="stylesheet" href="/js-client/rev-slider/css/navigation.css"  type='text/css' media='all' />
 
+{{-- Lib Toast Message --}}
+<link rel="stylesheet" href="/libraries/messages/messages.css">
+
 <!--Rev Slider End-->
 <title>Soccer</title>
 </head>
 <body>
+    {{-- Toast DIV ID --}}
+    <div id="toast"></div>
+    
+    {{-- JS Toast Message --}}
+    <script src="/libraries/messages/messages.js"></script>
 <!--Wrapper Start-->
 <div class="wrapper">
 
     @include('partials-client.header')
-   @yield('content')
-   @include('partials-client.footer')
+      @yield('content')
+    @include('partials-client.footer')
 </div>
 
   <!-- Optional JavaScript -->
@@ -59,6 +67,25 @@
   <script type="text/javascript" src="/js-client/rev-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
   <script type="text/javascript" src="/js-client/rev-slider/js/extensions/revolution.extension.video.min.js"></script>
   </body>
+
+  @if (Session::has('feedback'))
+      <script>
+        toast({
+          title: 'Feedback success',
+          message: 'Successfully feedback',
+          type: 'success'
+        })
+      </script>
+  @endif
+    @if (Session::has('contact'))
+      <script>
+        toast({
+          title: 'Contact success',
+          message: 'Successfully contact',
+          type: 'success'
+        })
+      </script>
+  @endif
 
   <!-- Mirrored from www.kayserispor.gen.tr/ks/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Aug 2023 05:37:45 GMT -->
   </html>
