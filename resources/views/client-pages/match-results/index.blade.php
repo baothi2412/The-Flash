@@ -37,8 +37,8 @@
                                 $teamAResult = "win";
                                 $teamBResult = "loss";
                             } else if ($match['Score'] == $match['Type']) {
-                                $teamAResult = "tie";
-                                $teamBResult = "tie";
+                                $teamAResult = "draw";
+                                $teamBResult = "draw";
                             } else {
                                 $teamAResult = "loss";
                                 $teamBResult = "win";
@@ -62,8 +62,8 @@
                                 $teamAResult = "win";
                                 $teamBResult = "loss";
                             } else if ($match['Score'] == $match['Type']) {
-                                $teamAResult = "tie";
-                                $teamBResult = "tie";
+                                $teamAResult = "draw";
+                                $teamBResult = "draw";
                             } else {
                                 $teamAResult = "loss";
                                 $teamBResult = "win";
@@ -87,8 +87,8 @@
                                $teamAResult = "win";
                                $teamBResult = "loss";
                            } else if ($match['Score'] == $match['Type']) {
-                               $teamAResult = "tie";
-                               $teamBResult = "tie";
+                               $teamAResult = "draw";
+                               $teamBResult = "draw";
                            } else {
                                $teamAResult = "loss";
                                $teamBResult = "win";
@@ -112,8 +112,8 @@
                                 $teamAResult = "win";
                                 $teamBResult = "loss";
                             } else if ($match['Score'] == $match['Type']) {
-                                $teamAResult = "tie";
-                                $teamBResult = "tie";
+                                $teamAResult = "draw";
+                                $teamBResult = "draw";
                             } else {
                                 $teamAResult = "loss";
                                 $teamBResult = "win";
@@ -144,8 +144,8 @@
                                 $teamAResult = "win";
                                 $teamBResult = "loss";
                             } else if ($match['Score'] == $match['Type']) {
-                                $teamAResult = "tie";
-                                $teamBResult = "tie";
+                                $teamAResult = "draw";
+                                $teamBResult = "draw";
                             } else {
                                 $teamAResult = "loss";
                                 $teamBResult = "win";
@@ -169,8 +169,8 @@
                                 $teamAResult = "win";
                                 $teamBResult = "loss";
                             } else if ($match['Score'] == $match['Type']) {
-                                $teamAResult = "tie";
-                                $teamBResult = "tie";
+                                $teamAResult = "draw";
+                                $teamBResult = "draw";
                             } else {
                                 $teamAResult = "loss";
                                 $teamBResult = "win";
@@ -201,8 +201,8 @@
                                 $teamAResult = "win";
                                 $teamBResult = "loss";
                             } else if ($match['Score'] == $match['Type']) {
-                                $teamAResult = "tie";
-                                $teamBResult = "tie";
+                                $teamAResult = "draw";
+                                $teamBResult = "draw";
                             } else {
                                 $teamAResult = "loss";
                                 $teamBResult = "win";
@@ -226,8 +226,8 @@
                                 $teamAResult = "win";
                                 $teamBResult = "loss";
                             } else if ($match['Score'] == $match['Type']) {
-                                $teamAResult = "tie";
-                                $teamBResult = "tie";
+                                $teamAResult = "draw";
+                                $teamBResult = "draw";
                             } else {
                                 $teamAResult = "loss";
                                 $teamBResult = "win";
