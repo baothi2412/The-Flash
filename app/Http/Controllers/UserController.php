@@ -31,7 +31,55 @@ class UserController extends Controller
         return response()->json(
             [
                 'isSuccess' => true,
-                'message' => 'Successfully sign up account',
+                'message' => 'Successfully create account',
+                'data' => $user
+            ]
+        );
+    }
+
+    public function update(Request $request) {
+        $validatedData = $request->validate([
+            'password' => 'required|min:8',
+        ]);
+
+        $id = $request->input('id');
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $password = $request->input('password');
+
+        $user = user::find($id);
+
+        $user->name = $name;
+        $user->email = $email;
+        $user->password = Hash::make($password);
+
+        $user->save();
+
+        return response()->json(
+            [
+                'isSuccess' => true,
+                'message' => 'Successfully update user account',
+                'data' => $user
+            ]
+        );
+    }
+
+    public function detail($id) {
+        $user = User::find($id);
+
+        return response()->json([
+            'user' => $user
+        ]);
+    }
+
+    public function delete($id) {
+        $user = User::find($id);
+        $user->delete();
+
+        return response()->json(
+            [
+                'isSuccess' => true,
+                'message' => 'Successfully delete user account',
                 'data' => $user
             ]
         );

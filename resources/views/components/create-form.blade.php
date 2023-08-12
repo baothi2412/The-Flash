@@ -42,6 +42,7 @@
             dataSubmit[inputName] = input.value;
         });
         apiService.post('/api/user/store', dataSubmit);
+        document.querySelector('.launch-pricing-modal').click();
     }
 </script>
 

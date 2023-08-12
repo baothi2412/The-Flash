@@ -99,6 +99,9 @@ Route::prefix('/api')->group(function() {
     // Routes cần xác thực user
     Route::middleware(['jwt.auth'])->prefix('/user')->group(function () {
         Route::post('/store', [UserController::class, 'store']);
+        Route::put('/update', [UserController::class, 'update']);
+        Route::get('/{id}', [UserController::class, 'detail']);
+        Route::delete('/delete/{id}', [UserController::class, 'delete']);
     });
 
 });
