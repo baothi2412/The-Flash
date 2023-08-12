@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('position_in_match', function (Blueprint $table) {
-            $table->id('LineupID');
+            $table->id();
             $table->unsignedBigInteger('MatchID');
             $table->unsignedBigInteger('PlayerID');
             $table->string('PositionInMatch');
             $table->timestamps();
         
-            $table->foreign('MatchID')->references('MatchID')->on('matches');
-            $table->foreign('PlayerID')->references('PlayerID')->on('players');
+            $table->foreign('MatchID')->references('id')->on('matches');
+            $table->foreign('PlayerID')->references('id')->on('players');
         });        
     }
 

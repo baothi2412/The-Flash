@@ -15,7 +15,7 @@ class MyMatch extends Model
 
 
     protected $fillable = [
-        'MatchID	',
+        'id	',
         'TournamentID',
         'TournamentName	',
         'DateTimeStart',

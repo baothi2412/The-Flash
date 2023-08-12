@@ -16,7 +16,7 @@ class Position extends Model
          */
 
         protected $fillable = [
-            'LineupID',
+            'id',
             'MatchID',
             'PlayerID',
             'PositionInMatch'

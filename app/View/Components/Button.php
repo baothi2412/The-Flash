@@ -11,15 +11,21 @@ class Button extends Component
     public $type;
     public $text;
     public $classes;
+    public $dataToggle;
+    public $dataTarget;
+    public $onclick;
     
     /**
      * Create a new component instance.
      */
-    public function __construct($type, $text, $classes = "")
+    public function __construct($type, $text, $classes = "", $dataToggle = "", $dataTarget = "" , $onclick = "")
     {
         $this->type = $type;
         $this->text = $text;
         $this->classes = $classes;
+        $this->dataToggle = $dataToggle;
+        $this->dataTarget = $dataTarget;
+        $this->onclick = $onclick;
     }
 
     /**

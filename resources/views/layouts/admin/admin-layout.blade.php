@@ -9,7 +9,8 @@
 <meta name="description" content="Mooli Bootstrap 4x admin is super flexible, powerful, clean &amp; modern responsive admin dashboard with unlimited possibilities.">
 <meta name="author" content="GetBootstrap, design by: puffintheme.com">
 
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="/images/fav.png" type="image/png">
+
 <!-- VENDOR CSS -->
 <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
@@ -37,11 +38,14 @@
 
 <style>
     td.details-control {
-    background: url('assets/images/details_open.png') no-repeat center center;
-    cursor: pointer;
-}
+        background: url('assets/images/details_open.png') no-repeat center center;
+        cursor: pointer;
+    }
     tr.shown td.details-control {
         background: url('assets/images/details_close.png') no-repeat center center;
+    }
+    ::-webkit-scrollbar {
+    width: 0;
     }
 </style>
 

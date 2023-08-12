@@ -4,7 +4,7 @@
             <div class="header">
                 <h2>{{ $title }} <small>{{ $subTitle }}</small></h2>
                 <div style="margin-top: 12px;">
-                    <x-button type="primary" text="icon:/svg/basic-icons/Add.svg" alt="SVG Icon"></x-button>
+                    <x-button type="primary" text="icon:/svg/basic-icons/Add.svg" data-toggle="modal" data-target=".launch-pricing-modal"></x-button>
                 </div>
 
                 <ul class="header-dropdown dropdown">
@@ -48,15 +48,15 @@
                         </tfoot>
                         <tbody id="jquery-dt-tbody">
                             @foreach ($records as $record)
-                                <tr>
+                                <tr data-id="{{$record->id}}">
                                     @foreach ($columnsName as $column)
                                         @if (!in_array($column, $ignoreColumns))
                                             <td>{{ $record[$column] }}</td>
                                         @endif
                                     @endforeach
                                     <td>
-                                        <x-button type="warning" text="icon:/svg/basic-icons/Pencil.svg" alt="SVG Icon">"></x-button>
-                                        <x-button type="danger" text="icon:/svg/basic-icons/Trash.svg" alt="SVG Icon">"></x-button>
+                                        <x-button onclick="changeID({{$record->id}})" data-toggle="modal" data-target=".edit-form-modal" type="warning" text="icon:/svg/basic-icons/Pencil.svg" alt="SVG Icon"></x-button>
+                                        <x-button onclick="deleteWithID({{$record->id}})" data-toggle="modal" data-target="#deleteModal" type="danger" text="icon:/svg/basic-icons/Trash.svg" alt="SVG Icon"></x-button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -67,3 +67,4 @@
         </div>
     </div>
 </div>
+

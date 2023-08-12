@@ -17,7 +17,7 @@ class Feedback extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'FeedbackID',
+        'id',
         'Email',
         'Subject',
         'Content',

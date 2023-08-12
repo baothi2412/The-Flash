@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tournaments', function (Blueprint $table) {
-            $table->id('TournamentID');
-            $table->string('logo');
+            $table->id();
+            $table->string('Logo');
             $table->string('TournamentName');
             $table->text('Description');
             $table->integer('MatchCount');
