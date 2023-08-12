@@ -13,6 +13,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PositionMatchController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\MatchController;
+use App\Http\Controllers\GoalController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +25,7 @@ use App\Http\Controllers\MatchController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/app/test', function () {
     $club = \DB::connection()->getSchemaBuilder()->getColumnListing((new User)->getTable());
     $data = User::all();
     return view('test', [
@@ -33,6 +34,7 @@ Route::get('/', function () {
         'records' => $data
     ]);
 });
+
 $sharedData = ['title' => 'Soccer'];
 
 Route::get('/', fn() => view('client', $sharedData));
@@ -97,7 +99,10 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
     });
     Route::prefix('/matches')->group(function() {
         Route::get('/', [MatchController::class, 'index']);
+    });
 
+    Route::prefix('/goals')->group(function() {
+        Route::get('/', [GoalController::class, 'index']);
     });
 
 });

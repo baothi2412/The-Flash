@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Player extends Model
 {
     use HasFactory;
-protected $table ='players';
+    protected $table ='players';
     /**
      * The attributes that are mass assignable.
      *
@@ -16,7 +16,7 @@ protected $table ='players';
      */
 
     protected $fillable = [
-        'PlayerID',
+        'id',
         'ClubID',
         'Avatar',
         'Name',

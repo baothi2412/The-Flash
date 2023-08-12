@@ -5,34 +5,31 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tournament extends Model
+class Goal extends Model
 {
     use HasFactory;
-    protected $table = 'tournaments';
+    protected $table ='goals';
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
 
-
     protected $fillable = [
         'id',
-        'Logo',
-        'TournamentName	',
-        'Description',
-        'MatchCount',
-        'YearHeld',
-        'OrganizingCountry',
-        'created_at',
-        'updated_at',
-
-
+        'ClubID',
+        'Avatar',
+        'Name',
+        'Birthdate',
+        'Nationality',
+        'Position',
+        'JerseyNumber',
+        'Story',
     ];
 
     /**
      * The attributes that should be hidden for serialization.
-     *p
+     *
      * @var array<int, string>
      */
     protected $hidden = [];
@@ -43,18 +40,4 @@ class Tournament extends Model
      * @var array<string, string>
      */
     protected $casts = [];
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-

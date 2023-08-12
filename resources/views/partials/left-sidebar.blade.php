@@ -36,7 +36,7 @@
                 <li><a href="/admin/players"><img class="svg-icon" src="/svg/people/Anonymous-2.svg" alt="SVG Icon"><span>Players</span> <!-- <span class="badge badge-default mr-0">12</span></a></li> -->
                 <li><a href="/admin/clubs"><img class="svg-icon" src="/svg/users/Male-Group-1.svg" alt="SVG Icon"><span>Clubs</span></a></li>
                 <li><a href="app-todo.html"><img class="svg-icon" src="/svg/shapes/Rectangle-2.svg" alt="SVG Icon"><span>Matches</span></a></li>
-                <li><a href="app-filemanager.html"><img class="svg-icon" src="/svg/sport/Soccer-Ball.svg" alt="SVG Icon"><span>Goals</span></a></li>
+                <li><a href="/admin/goals"><img class="svg-icon" src="/svg/sport/Soccer-Ball.svg" alt="SVG Icon"><span>Goals</span></a></li>
                 <li><a href="app-contacts.html"><img class="svg-icon" src="/svg/maps-and-locations/Street-View.svg" alt="SVG Icon"><span>Position In Match</span></a></li>
                 <li><a href="http://127.0.0.1:8000/admin/feedbacks"><img class="svg-icon" src="/svg/email-icons/Compose-Mail1.svg" alt="SVG Icon"><span>Feedbacks</span></a></li>
                 <li><a href="http://127.0.0.1:8000/admin/contacts"><img class="svg-icon" src="/svg/phones/Phone-1.svg" alt="SVG Icon"><span>Contacts</span></a></li>

@@ -15,7 +15,7 @@ class Club extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'ClubID',
+        'id',
         'Logo',
         'ClubName',
         'Country',
