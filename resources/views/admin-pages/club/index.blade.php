@@ -38,7 +38,7 @@
                 const inputName = input.name;
                 editDataSubmit[inputName] = input.value;
             });
-            apiService.put('/api/club/update', editDataSubmit);
+            apiService.put('/api/club/update/' + document.querySelector('input.edit-form-input[name=id]'), editDataSubmit);
             document.querySelector('.edit-form-modal').click();
         }
     </script>
