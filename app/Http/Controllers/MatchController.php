@@ -116,4 +116,18 @@ class MatchController extends Controller
         ]);
     }
 
+    public function matches() {
+        // Lấy tất cả dữ liệu -> trả về mảng các dữ liệu
+        $matchList = MyMatch::all();
+
+        // return response()->json($matchList);
+
+        return view(
+            'client-pages.match-results.index',
+            [
+                'matchList' => $matchList
+            ]
+        );
+    }
+
 }

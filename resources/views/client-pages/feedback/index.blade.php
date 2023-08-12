@@ -24,7 +24,7 @@
                 <div class="contact-form">
                    <form action="/feedback/submit" method="POST">
                      @csrf
-                     <h2>Feedback</h2>
+                     <div class="h21"><h2 >Feedback</h2></div>
                      <ul class="form-row">
                         <li class="half-col">
                            <input name="email" type="text" class="form-control" placeholder="Email">

@@ -1,16 +1,16 @@
 const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 const apiService = {
     post(url, data) {
-        // const form = document.getElementById('create-form')
+        const form = document.getElementById('create-form')
 
         fetch(url, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
                 'X-CSRF-TOKEN': csrfToken, // Thay csrfToken bằng giá trị thực tế
                 'Authorization': `Bearer ${JSON.parse(localStorage.getItem('access_token'))}`
             },
-            body: JSON.stringify(data)
+            body: new FormData(form)
         })
             .then(response => response.json())
             .then(data => {
@@ -33,14 +33,16 @@ const apiService = {
         parentElm.innerHTML = oldHtml + html;
     },
     put(url, data) {
+        const form = document.getElementById('edit-form')
+
         fetch(url, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json',
+                'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
                 'X-CSRF-TOKEN': csrfToken, // Thay csrfToken bằng giá trị thực tế
                 'Authorization': `Bearer ${JSON.parse(localStorage.getItem('access_token'))}`
             },
-            body: JSON.stringify(data)
+            body: new FormData(form)
         })
             .then(response => response.json())
             .then(data => {
@@ -57,7 +59,21 @@ const apiService = {
                         'remember_token',
                     ];
 
-                    const tdElms = listKeys.filter(key => !ignore.includes(key)).map(key => `<td>${dataReceive[key]}</td>`).join('');
+                    let imageCols = data.imageColumns ?? [];
+
+                    const tdElms = listKeys.filter(key => !ignore.includes(key)).map(key => {
+                        if (imageCols.map(col => col.toLowerCase()).includes(key.toLowerCase())) {
+                            return `<td>
+                                        <img 
+                                            src="/images/file-uploads/${dataReceive[key]}" 
+                                            alt="Image"
+                                            width="60px"
+                                        >
+                                    </td>`;
+                        } else {
+                            return `<td>${dataReceive[key]}</td>`;
+                        }
+                    }).join('');
 
                     const html = `<td class="sorting_1">${dataReceive.id}</td>
                                     ${tdElms}

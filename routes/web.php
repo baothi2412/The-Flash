@@ -27,14 +27,14 @@ use App\Http\Controllers\GoalController;
 */
 
 // Route::get('send-mail', function () {
-   
+
 //     $details = [
 //         'title' => 'Mail from ItSolutionStuff.com',
 //         'body' => 'This is for testing email using smtp'
 //     ];
-   
+
 //     \Mail::to('nhsona21171@cusc.ctu.edu.vn')->send(new \App\Mail\SoccerVerseMail($details));
-   
+
 //     dd("Email is Sent.");
 // });
 
@@ -53,7 +53,7 @@ $sharedData = ['title' => 'Soccer'];
 Route::get('/', fn() => view('client', $sharedData));
 Route::get('player', fn() => view('client-pages.player.index', $sharedData));
 Route::get('player-details', fn() => view('client-pages.player-details.index', $sharedData));
-Route::get('match-results', fn() => view('client-pages.match-results.index', $sharedData));
+Route::get('match-results', [MatchController::class, 'matches']);
 Route::get('match-results-details', fn() => view('client-pages.match-results-details.index', $sharedData));
 Route::get('fixtures', fn() => view('client-pages.fixtures.index', $sharedData));
 
@@ -69,7 +69,6 @@ Route::prefix('/feedback')->group(function() {
 Route::prefix('/contact')->group(function() {
     Route::post('/submit', [ContactController::class, 'submit']);
 });
-
 
 
 
@@ -154,6 +153,12 @@ Route::prefix('/api')->group(function () {
             Route::post('/store', [ClubController::class, 'store']);
             Route::post('/update', [ClubController::class, 'update']);
         });
-    });
 
+        Route::prefix('/tournament')->group(function() {
+            Route::post('/store', [TournamentController::class, 'store']);
+            Route::put('/update', [TournamentController::class, 'update']);
+            Route::get('/{id}', [TournamentController::class, 'detail']);
+            Route::delete('/delete/{id}', [TournamentController::class, 'delete']);
+        });
+    });
 });

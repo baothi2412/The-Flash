@@ -7,7 +7,7 @@
                         <h2>{{ $title }}</h2>
                     </div>
                     <div class="body">
-                        <form id="create-form" action="/api/club/store" method="POST" enctype="multipart/form-data">
+                        <form id="create-form" method="POST" enctype="multipart/form-data">
                             @foreach ($columnsName as $clnName)
                                 @if (!in_array($clnName, $ignoreColumns))
                                     <div class="input-group input-group-sm mb-3">
