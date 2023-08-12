@@ -13,7 +13,47 @@ class PlayerController extends Controller
             'title' => 'Players',
             'records'=>$data,
             'players'=>$player,
-
+            'fileColumnsName' => [
+                'Avatar'
+            ]
         ]);
+    }
+
+    public function store(Request $request) {
+
+        $clubID = $request->input('ClubID');
+        $avatar = $request->file('Avatar');
+        $name = $request->input('Name');
+        $birthdate = $request->input('Birthdate');
+        $nationality = $request->input('Nationality');
+        $position = $request->input('Position');
+        $jerseyNumber = $request->input('JerseyNumber');
+        $story = $request->input('Story');
+
+        $player = new Player();
+        
+        // Image upload
+        $imgName = 'img'.time().'-'.Str::slug($name).'.'.$avatar->extension();
+
+        $avatar->move(public_path('images\file-uploads\players'), $imgName);
+
+        $player->clubID = $clubID;
+        $player->avatar = $imgName;
+        $player->name = $name;
+        $player->birthdate = $birthdate;
+        $player->nationality = $nationality;
+        $player->position = $position;
+        $player->jerseyNumber = $jerseyNumber;
+        $player->story = $story;
+
+        $player->save();
+
+        return response()->json(
+            [
+                'isSuccess' => true,
+                'message' => 'Successfully creation',
+                'data' => $player
+            ]
+        );
     }
 }

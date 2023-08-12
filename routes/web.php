@@ -117,12 +117,21 @@ Route::prefix('/api')->group(function() {
     });
 
     // Routes cần xác thực user
-    Route::middleware(['jwt.auth'])->prefix('/user')->group(function () {
-        Route::post('/store', [UserController::class, 'store']);
-        Route::put('/update', [UserController::class, 'update']);
-        Route::get('/{id}', [UserController::class, 'detail']);
-        Route::delete('/delete/{id}', [UserController::class, 'delete']);
-        Route::get('/all', [UserController::class, 'all']);
+    Route::middleware(['jwt.auth'])->group(function () {
+        Route::prefix('/user')->group(function() {
+            Route::post('/store', [UserController::class, 'store']);
+            Route::put('/update', [UserController::class, 'update']);
+            Route::get('/{id}', [UserController::class, 'detail']);
+            Route::delete('/delete/{id}', [UserController::class, 'delete']);
+        });
+
+        Route::prefix('/player')->group(function() {
+            Route::post('/store', [PlayerController::class, 'store']);
+        });
+
+        Route::prefix('/club')->group(function() {
+            Route::post('/store', [ClubController::class, 'store']);
+        });
     });
 
 });

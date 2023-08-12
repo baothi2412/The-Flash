@@ -1,6 +1,8 @@
 const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 const apiService = {
     post(url, data) {
+        // const form = document.getElementById('create-form')
+
         fetch(url, {
             method: 'POST',
             headers: {

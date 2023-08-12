@@ -12,8 +12,9 @@ class CreateForm extends Component
     public $columnsName;
     public $searchSelectList;
     public $ignoreColumns;
+    public $fileColumnsName;
 
-    public function __construct($title = "Create Form", $columnsName, $searchSelectList = [])
+    public function __construct($title = "Create Form", $columnsName, $searchSelectList = [], $fileColumnsName = [])
     {
         $this->title = $title;
         $this->columnsName = $columnsName;
@@ -25,6 +26,7 @@ class CreateForm extends Component
             'remember_token',
             'email_verified_at',
         ];
+        $this->fileColumnsName = $fileColumnsName;
     }
 
     /**
