@@ -47,7 +47,7 @@
                             <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
                             <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
                             <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
-                            <li class="mscore"> <span>{{$match['TeamBID']}}</span> {{$teamBResult}} </li>
+                            <li class="mscore"> <span>{{$match['Type']}}</span> {{$teamBResult}} </li>
                             <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
                         </ul>
                    @endforeach
@@ -72,7 +72,7 @@
                             <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
                             <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
                             <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
-                            <li class="mscore"> <span>{{$match['TeamBID']}}</span> {{$teamBResult}} </li>
+                            <li class="mscore"> <span>{{$match['Type']}}</span> {{$teamBResult}} </li>
                             <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
                         </ul>
                    @endforeach
@@ -97,7 +97,7 @@
                            <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
                            <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
                            <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
-                           <li class="mscore"> <span>{{$match['TeamBID']}}</span> {{$teamBResult}} </li>
+                           <li class="mscore"> <span>{{$match['Type']}}</span> {{$teamBResult}} </li>
                            <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
                        </ul>
                   @endforeach
@@ -122,7 +122,7 @@
                             <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
                             <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
                             <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
-                            <li class="mscore"> <span>{{$match['TeamBID']}}</span> {{$teamBResult}} </li>
+                            <li class="mscore"> <span>{{$match['Type']}}</span> {{$teamBResult}} </li>
                             <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
                         </ul>
                    @endforeach
@@ -154,7 +154,7 @@
                             <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
                             <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
                             <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
-                            <li class="mscore"> <span>{{$match['TeamBID']}}</span> {{$teamBResult}} </li>
+                            <li class="mscore"> <span>{{$match['Type']}}</span> {{$teamBResult}} </li>
                             <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
                         </ul>
                    @endforeach
@@ -179,7 +179,7 @@
                             <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
                             <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
                             <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
-                            <li class="mscore"> <span>{{$match['TeamBID']}}</span> {{$teamBResult}} </li>
+                            <li class="mscore"> <span>{{$match['Type']}}</span> {{$teamBResult}} </li>
                             <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
                         </ul>
                    @endforeach
@@ -211,7 +211,7 @@
                             <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
                             <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
                             <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
-                            <li class="mscore"> <span>{{$match['TeamBID']}}</span> {{$teamBResult}} </li>
+                            <li class="mscore"> <span>{{$match['Type']}}</span> {{$teamBResult}} </li>
                             <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
                         </ul>
                    @endforeach
@@ -236,7 +236,6 @@
                             <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
                             <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
                             <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
-                            <li class="mscore"> <span>{{$match['TeamBID']}}</span> {{$teamBResult}} </li>
                             <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
                         </ul>
                    @endforeach

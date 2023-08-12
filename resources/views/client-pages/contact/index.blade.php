@@ -31,7 +31,7 @@
              <!--End-->
              <!--Start-->
              <div class="col-md-4">
-                <div class="contact-box">
+                <div class="contact-box" style="padding-bottom: 75px">
                    <img src="images/phone-icon.png" alt="">
                    <h5>Contact:</h5>
                    <p><strong>Phone:</strong>  0292 3731 072</p>
