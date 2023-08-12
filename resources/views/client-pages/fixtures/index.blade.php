@@ -11,6 +11,7 @@
             </ul>
         </div>
     </div>
+<<<<<<< HEAD
     <style>
         .row img {
             width: 73px;
@@ -30,6 +31,198 @@
                         <div class="col-lg-8">
                             <!--Last Match Result Start-->
                             <div class="last-match-result-full mb-60">
+=======
+ </div>
+ <!--Main Slider Start-->
+ <!--Main Content Start-->
+ <div class="main-content innerpagebg wf100">
+    <!--team Page Start-->
+    <div class="team wf100 p80">
+       <!--Start-->
+       <div class="player-squad">
+          <div class="container">
+             <div class="row">
+                <!--Fixture Start-->
+                <div class="col-lg-8">
+                   <!--Last Match Result Start-->
+                   <div class="last-match-result-full mb-60">
+                      <h6>Last Match Result</h6>
+                      <div class="p30">
+                         <div class="row">
+                            <div class="col-sm-4">
+                               <div class="match-left">
+                                  <div class="mtl-left"> <img src="images/nmf-logo1.png" alt=""> <strong>North Carolina</strong> </div>
+                                  <div class="mscore"> <strong>2</strong> loss </div>
+                                  <ul>
+                                     <li>Charlie Darren <span>(1 goal)</span></li>
+                                     <li>kevin Jamie <span>(1 goal)</span></li>
+                                  </ul>
+                               </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="lmr-info">
+                                  <strong>Super Euro League</strong>
+                                  <p>Indy Eleven Qualified for Semi Final</p>
+                                  <img src="images/sp.png" alt="">
+                                  <p>17 October, 2020</p>
+                                  <p>New Expo Stadium, NYK</p>
+                                  <a href="#" class="mh">Match Highlights</a>
+                               </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="match-right">
+                                  <div class="mscore"> <strong>2</strong> loss </div>
+                                  <div class="mtl-right"> <img src="images/nmf-logo2.png" alt=""> <strong>Indy Eleven</strong> </div>
+                                  <ul>
+                                     <li> Jon Taylor <span>(1 goal)</span></li>
+                                     <li> Steven Dean <span>(1 goal)</span></li>
+                                     <li> Smith Ross <span>(1 goal)</span></li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <!--Last Match Result End-->
+                   <!--Next Matches Schedule Start-->
+                   <div class="next-matches-schedule wf100">
+                      <h2 class="stitle">Next Matches Schedule</h2>
+                      <!--Box Start-->
+                      <div class="nms-box">
+                         <div class="row">
+                            <div class="col-sm-4">
+                               <div class="team-logo-left"> <strong>Chirston Battery</strong> <img src="images/mlogo1.png" alt=""> </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="nms-info">
+                                  <strong class="vs">VS</strong>
+                                  <p> <strong>Super Euro League</strong></p>
+                                  <p>20 December, 2018   |   04:00 PM GMT+</p>
+                                  {{-- <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li> --}}
+                                  <p><span>New Expo Stadium, NYK</span></p>
+                                  <a href="#">Buy Your Ticket</a>
+                               </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="team-logo-right"><img src="images/mlogo2.png" alt=""> <strong>Charlotte</strong> </div>
+                            </div>
+                         </div>
+                      </div>
+                      <!--Box End-->
+                      <!--Box Start-->
+                      <div class="nms-box">
+                         <div class="row">
+                            <div class="col-sm-4">
+                               <div class="team-logo-left"> <strong>FC Cincinnati</strong> <img src="images/mlogo1.png" alt=""> </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="nms-info">
+                                  <strong class="vs">VS</strong>
+                                  <p> <strong>Super Euro League</strong></p>
+                                  <p>20 December, 2018   |   04:00 PM GMT+</p>
+                                  <p><span>New Expo Stadium, NYK</span></p>
+                                  <a href="#">Buy Your Ticket</a>
+                               </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="team-logo-right"><img src="images/mlogo2.png" alt=""> <strong>Indy Eleven</strong> </div>
+                            </div>
+                         </div>
+                      </div>
+                      <!--Box End-->
+                      <!--Box Start-->
+                      <div class="nms-box">
+                         <div class="row">
+                            <div class="col-sm-4">
+                               <div class="team-logo-left"> <strong>FC Champs</strong> <img src="images/mlogo1.png" alt=""> </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="nms-info">
+                                  <strong class="vs">VS</strong>
+                                  <p> <strong>Super Euro League</strong></p>
+                                  <p>20 December, 2018   |   04:00 PM GMT+</p>
+                                  <p><span>New Expo Stadium, NYK</span></p>
+                                  <a href="#">Buy Your Ticket</a>
+                               </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="team-logo-right"><img src="images/mlogo2.png" alt=""> <strong>Nashville SC</strong> </div>
+                            </div>
+                         </div>
+                      </div>
+                      <!--Box End-->
+                      <!--Box Start-->
+                      <div class="nms-box">
+                         <div class="row">
+                            <div class="col-sm-4">
+                               <div class="team-logo-left"> <strong>Ottawa Fury</strong> <img src="images/mlogo1.png" alt=""> </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="nms-info">
+                                  <strong class="vs">VS</strong>
+                                  <p> <strong>Super Euro League</strong></p>
+                                  <p>20 December, 2018   |   04:00 PM GMT+</p>
+                                  <p><span>New Expo Stadium, NYK</span></p>
+                                  <a href="#">Buy Your Ticket</a>
+                               </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="team-logo-right"><img src="images/mlogo2.png" alt=""> <strong>Indy Eleven</strong> </div>
+                            </div>
+                         </div>
+                      </div>
+                      <!--Box End-->
+                      <!--Box Start-->
+                      <div class="nms-box">
+                         <div class="row">
+                            <div class="col-sm-4">
+                               <div class="team-logo-left"> <strong>FC Champs</strong> <img src="images/mlogo1.png" alt=""> </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="nms-info">
+                                  <strong class="vs">VS</strong>
+                                  <p> <strong>Super Euro League</strong></p>
+                                  <p>20 December, 2018   |   04:00 PM GMT+</p>
+                                  <p><span>New Expo Stadium, NYK</span></p>
+                                  <a href="#">Buy Your Ticket</a>
+                               </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="team-logo-right"><img src="images/mlogo2.png" alt=""> <strong>Ottawa Fury</strong> </div>
+                            </div>
+                         </div>
+                      </div>
+                      <!--Box End-->
+                      <!--Box Start-->
+                      <div class="nms-box">
+                         <div class="row">
+                            <div class="col-sm-4">
+                               <div class="team-logo-left"> <strong>FC Champs</strong> <img src="images/mlogo1.png" alt=""> </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="nms-info">
+                                  <strong class="vs">VS</strong>
+                                  <p> <strong>Super Euro League</strong></p>
+                                  <p>20 December, 2018   |   04:00 PM GMT+</p>
+                                  <p><span>New Expo Stadium, NYK</span></p>
+                                  <a href="#">Buy Your Ticket</a>
+                               </div>
+                            </div>
+                            <div class="col-sm-4">
+                               <div class="team-logo-right"><img src="images/mlogo2.png" alt=""> <strong>North Carolina</strong> </div>
+                            </div>
+                         </div>
+                      </div>
+                      <!--Box End-->
+                   </div>
+                   <!--Next Matches Schedule End-->
+                </div>
+                <!--Fixture End-->
+                <!--Sidebar Start-->
+                <div class="col-lg-4">
+                   <div class="sidebar">
+                      <!--widget start-->
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
 
                                 <!--Last Match Result Start-->
                                 <div class="last-match-result-full mb-60">

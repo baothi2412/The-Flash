@@ -64,7 +64,7 @@ class TournamentController extends Controller
         );
     }
 
-    // POST: api/tournament/update
+    // PUT: api/tournament/update
     public function update(Request $request) : JsonResponse {
         $id = $request->input('id');
         $logo = $request->file('Logo');
@@ -74,11 +74,9 @@ class TournamentController extends Controller
         $yearHeld = $request->input('YearHeld');
         $organizingCountry = $request->input('OrganizingCountry');
 
-        $tournament = Tournament::find($tournamentName);
+        $tournament = Tournament::find($id);
 
-        return response()->json($id);
-
-        Storage::delete(public_path('images\file-uploads') + $tournament['logo']);
+        Storage::delete(public_path('images\file-uploads') + $tournament->logo);
 
         $imgName = 'img'.time().'-'.Str::slug($tournamentName).'.'.$logo->extension();
 
@@ -111,5 +109,18 @@ class TournamentController extends Controller
         return response()->json([
             'tournament' => $tournament
         ]);
+    }
+
+    public function delete($id) {
+        $tournament = Tournament::find($id);
+        $tournament->delete();
+
+        return response()->json(
+            [
+                'isSuccess' => true,
+                'message' => 'Successfully delete user account',
+                'data' => $tournament
+            ]
+        );
     }
 }

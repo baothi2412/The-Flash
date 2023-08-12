@@ -9,7 +9,7 @@
             <p> "The most important thing is the team's victory. Whoever scores the goal is fine, as long as we win." </p>
             <address>
             <ul>
-              <li><i class="fas fa-map-marker-alt"></i> 1 Đ. Lý Tự Trọng, An Phú, Ninh Kiều, Cần Thơ</li>
+              <li><i class="fas fa-map-marker-alt"></i> 1 D. Ly Tu Trong, An Phu, Ninh Kieu, Can Tho</li>
               <li><i class="fas fa-phone"></i> 0292 3731 072</li>
               <li><i class="fas fa-envelope"></i> info@soccer.com</li>
             </ul>
@@ -26,10 +26,10 @@
               <li><a href="/player"><i class="fas fa-angle-double-right"></i> Players</a></li>
               <li><a href="/features"><i class="fas fa-angle-double-right"></i> Features</a></li>
               <li><a href="/point-table"><i class="fas fa-angle-double-right"></i> Point table</a></li>
-              <li><a href="/news"><i class="fas fa-angle-double-right"></i> News</a></li>
               <li><a href="/fixtures"><i class="fas fa-angle-double-right"></i> Fixtures</a></li>
               <li><a href="/contact"><i class="fas fa-angle-double-right"></i> Contact</a></li>
               <li><a href="/feedback"><i class="fas fa-angle-double-right"></i> Feedback</a></li>
+              <li><a href="/aboutus"><i class="fas fa-angle-double-right"></i> About Us</a></li>
 
             </ul>
           </div>
@@ -74,7 +74,7 @@
     <div class="container brtop">
       <div class="row">
         <div class="col-lg-6 col-md-6">
-          <p class="copyr"> All Rights Reserved of Sports © 2020, Design & Developed By: <a href="#">The Flash</a> </p>
+          <p class="copyr"> All Rights Reserved of Sports © 2023, Design & Developed By: <a href="#">The Flash</a> </p>
         </div>
         <div class="col-lg-6 col-md-6">
           <ul class="quick-links">
@@ -82,8 +82,9 @@
             <li><a href="/player">Players</a></li>
             <li><a href="/features">Features</a></li>
             <li><a href="/point-table">Point table</a></li>
-             <li><a href="/news">News</a></li>
-             <li><a href="/fixtures"> Fixtures</a></li>
+             <li><a href="/contact"> Contact</a></li>
+             <li><a href="/feedback"> Feedback</a></li>
+             <li><a href="/aboutus"> About Us</a></li>
 
 
         </div>

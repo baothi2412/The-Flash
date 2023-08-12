@@ -79,7 +79,7 @@
                         </li>
 
                         <li class="half-col">
-                           <input name="subject" type="text" class="form-control" placeholder="Subject">
+                           <input name="subject" type="text" class="form-control1" placeholder="Subject" >
                         </li>
                         <li class="full-col">
                            <textarea name="content" class="form-control" placeholder="Content"></textarea>

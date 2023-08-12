@@ -45,7 +45,7 @@
         background: url('assets/images/details_close.png') no-repeat center center;
     }
     ::-webkit-scrollbar {
-    width: 0;
+        width: 0;
     }
 </style>
 

@@ -27,12 +27,16 @@
                      <a href="/match-results-details" ><h4>24 May, 2020 | <span>Super Euro League</span></h4></a>
                    </div>
                    <!--title end-->
+<<<<<<< HEAD
 <style>
     .last-match img{
         width: 72px;
         height: 50px;
     }
     </style>
+=======
+
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                    @foreach ($matchList as $match)
                     <ul class="last-match">
                         <?php
@@ -42,18 +46,31 @@
                                 $teamAResult = "win";
                                 $teamBResult = "loss";
                             } else if ($match['Score'] == $match['Type']) {
+<<<<<<< HEAD
                                 $teamAResult = "tie";
                                 $teamBResult = "tie";
+=======
+                                $teamAResult = "draw";
+                                $teamBResult = "draw";
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                             } else {
                                 $teamAResult = "loss";
                                 $teamBResult = "win";
                             }
                         ?>
+<<<<<<< HEAD
                             <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt="" > <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
                             <li class="mscore"> <span>{{$match['Score']}}</span> {{$teamAResult}} </li>
                             <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
                             <li class="mscore"> <span>{{$match['Type']}}</span> {{$teamBResult}} </li>
                             <li class="team-name"> <img src="/images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
+=======
+                            <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
+                            <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
+                            <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
+                            <li class="mscore"> <span>{{$match['TeamBID']}}</span> {{$teamBResult}} </li>
+                            <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                         </ul>
                    @endforeach
 
@@ -63,26 +80,47 @@
                         <?php
                         $teamAResult;
                         $teamBResult;
+<<<<<<< HEAD
                             if ($match['Score'] > $match['Type']) {$teamAResult = "win";
                                 $teamBResult = "loss";
                             } else if ($match['Score'] == $match['Type']) {
                                 $teamAResult = "tie";
                                 $teamBResult = "tie";
+=======
+                            if ($match['Score'] > $match['Type']) {
+                                $teamAResult = "win";
+                                $teamBResult = "loss";
+                            } else if ($match['Score'] == $match['Type']) {
+                                $teamAResult = "draw";
+                                $teamBResult = "draw";
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                             } else {
                                 $teamAResult = "loss";
                                 $teamBResult = "win";
                             }
                         ?>
+<<<<<<< HEAD
                             <li class="team-name"> <img src="/images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
                             <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
                             <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
                             <li class="mscore"> <span>{{$match['Type']}}</span> {{$teamBResult}} </li>
                             <li class="team-name"> <img src="/images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
+=======
+                            <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
+                            <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
+                            <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
+                            <li class="mscore"> <span>{{$match['TeamBID']}}</span> {{$teamBResult}} </li>
+                            <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                         </ul>
                    @endforeach
                    <!--box end-->
                    <!--box start-->
+<<<<<<< HEAD
                    @foreach ($matchList as $match)
+=======
+                   <@foreach ($matchList as $match)
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                    <ul class="last-match">
                        <?php
                        $teamAResult;
@@ -91,18 +129,31 @@
                                $teamAResult = "win";
                                $teamBResult = "loss";
                            } else if ($match['Score'] == $match['Type']) {
+<<<<<<< HEAD
                                $teamAResult = "tie";
                                $teamBResult = "tie";
+=======
+                               $teamAResult = "draw";
+                               $teamBResult = "draw";
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                            } else {
                                $teamAResult = "loss";
                                $teamBResult = "win";
                            }
                        ?>
+<<<<<<< HEAD
                            <li class="team-name"> <img src="/images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
                            <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
                            <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
                            <li class="mscore"> <span>{{$match['Type']}}</span> {{$teamBResult}} </li><li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
                            {{-- <li class="team-name"> <img src="/images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li> --}}
+=======
+                           <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
+                           <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
+                           <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
+                           <li class="mscore"> <span>{{$match['TeamBID']}}</span> {{$teamBResult}} </li>
+                           <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                        </ul>
                   @endforeach
                    <!--box end-->
@@ -116,18 +167,31 @@
                                 $teamAResult = "win";
                                 $teamBResult = "loss";
                             } else if ($match['Score'] == $match['Type']) {
+<<<<<<< HEAD
                                 $teamAResult = "tie";
                                 $teamBResult = "tie";
+=======
+                                $teamAResult = "draw";
+                                $teamBResult = "draw";
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                             } else {
                                 $teamAResult = "loss";
                                 $teamBResult = "win";
                             }
                         ?>
+<<<<<<< HEAD
                             <li class="team-name"> <img src="/images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
                             <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
                             <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
                             <li class="mscore"> <span>{{$match['Type']}}</span> {{$teamBResult}} </li>
                             <li class="team-name"> <img src="/images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
+=======
+                            <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
+                            <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
+                            <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
+                            <li class="mscore"> <span>{{$match['TeamBID']}}</span> {{$teamBResult}} </li>
+                            <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                         </ul>
                    @endforeach
                    <!--box end-->
@@ -148,6 +212,7 @@
                                 $teamAResult = "win";
                                 $teamBResult = "loss";
                             } else if ($match['Score'] == $match['Type']) {
+<<<<<<< HEAD
                                 $teamAResult = "tie";
                                 $teamBResult = "tie";
                             } else {$teamAResult = "loss";
@@ -159,6 +224,20 @@
                             <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
                             <li class="mscore"> <span>{{$match['Type']}}</span> {{$teamBResult}} </li>
                             <li class="team-name"> <img src="/images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
+=======
+                                $teamAResult = "draw";
+                                $teamBResult = "draw";
+                            } else {
+                                $teamAResult = "loss";
+                                $teamBResult = "win";
+                            }
+                        ?>
+                            <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
+                            <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
+                            <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
+                            <li class="mscore"> <span>{{$match['TeamBID']}}</span> {{$teamBResult}} </li>
+                            <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                         </ul>
                    @endforeach
                    <!--box end-->
@@ -172,18 +251,31 @@
                                 $teamAResult = "win";
                                 $teamBResult = "loss";
                             } else if ($match['Score'] == $match['Type']) {
+<<<<<<< HEAD
                                 $teamAResult = "tie";
                                 $teamBResult = "tie";
+=======
+                                $teamAResult = "draw";
+                                $teamBResult = "draw";
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                             } else {
                                 $teamAResult = "loss";
                                 $teamBResult = "win";
                             }
                         ?>
+<<<<<<< HEAD
                             <li class="team-name"> <img src="/images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
                             <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
                             <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
                             <li class="mscore"> <span>{{$match['Type']}}</span> {{$teamBResult}} </li>
                             <li class="team-name"> <img src="/images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
+=======
+                            <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
+                            <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
+                            <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
+                            <li class="mscore"> <span>{{$match['TeamBID']}}</span> {{$teamBResult}} </li>
+                            <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                         </ul>
                    @endforeach
                    <!--box end-->
@@ -203,18 +295,31 @@
                                 $teamAResult = "win";
                                 $teamBResult = "loss";
                             } else if ($match['Score'] == $match['Type']) {
+<<<<<<< HEAD
                                 $teamAResult = "tie";
                                 $teamBResult = "tie";
+=======
+                                $teamAResult = "draw";
+                                $teamBResult = "draw";
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                             } else {
                                 $teamAResult = "loss";
                                 $teamBResult = "win";
                             }
                         ?>
+<<<<<<< HEAD
                             <li class="team-name"> <img src="/images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
                             <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
                             <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
                             <li class="mscore"> <span>{{$match['Type']}}</span> {{$teamBResult}} </li>
                             <li class="team-name"> <img src="/images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
+=======
+                            <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
+                            <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
+                            <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
+                            <li class="mscore"> <span>{{$match['TeamBID']}}</span> {{$teamBResult}} </li>
+                            <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                         </ul>
                    @endforeach
                    <!--box end-->
@@ -228,17 +333,30 @@
                                 $teamAResult = "win";
                                 $teamBResult = "loss";
                             } else if ($match['Score'] == $match['Type']) {
+<<<<<<< HEAD
                                 $teamAResult = "tie";
                                 $teamBResult = "tie";
+=======
+                                $teamAResult = "draw";
+                                $teamBResult = "draw";
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                             } else {
                                 $teamAResult = "loss";
                                 $teamBResult = "win";
                             }
                         ?>
+<<<<<<< HEAD
                             <li class="team-name"> <img src="/images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
                             <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li><li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
                             <li class="mscore"> <span>{{$match['Type']}}</span> {{$teamBResult}} </li>
                             <li class="team-name"> <img src="/images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
+=======
+                            <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong> </li>
+                            <li class="mscore"> <span>{{ $match['Score'] }}</span> {{$teamAResult}} </li>
+                            <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li>
+                            <li class="mscore"> <span>{{$match['TeamBID']}}</span> {{$teamBResult}} </li>
+                            <li class="team-name"> <img src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}" alt=""> <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong> </li>
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                         </ul>
                    @endforeach
                    <!--box end-->
@@ -247,7 +365,11 @@
              <div class="col-lg-4">
                 <div class="sidebar">
                    <!--widget start-->
+<<<<<<< HEAD
                    <div class="widget sidebar-ad"> <img src="/images/sideadbanner1.png" alt=""> </div>
+=======
+                   <div class="widget sidebar-ad"> <img src="images/sideadbanner1.jpg" alt=""> </div>
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
                    <!--widget end-->
                    <!--widget start-->
                    <div class="widget">
