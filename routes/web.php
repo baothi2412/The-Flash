@@ -9,11 +9,13 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\ClientPlayerController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PositionMatchController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\MatchController;
 use App\Http\Controllers\GoalController;
+use App\Http\Controllers\FixturesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,11 +53,17 @@ Route::get('/app/test', function () {
 $sharedData = ['title' => 'Soccer'];
 
 Route::get('/', fn() => view('client', $sharedData));
+<<<<<<< HEAD
+Route::get('player', [ClientPlayerController::class,'player']);
+Route::get('player-details/{id}', [ClientPlayerController::class,'player_details']);
+=======
 Route::get('player', fn() => view('client-pages.player.index', $sharedData));
 Route::get('player-details', fn() => view('client-pages.player-details.index', $sharedData));
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
 Route::get('match-results', [MatchController::class, 'matches']);
 Route::get('match-results-details', fn() => view('client-pages.match-results-details.index', $sharedData));
-Route::get('fixtures', fn() => view('client-pages.fixtures.index', $sharedData));
+
+Route::get('fixtures', [FixturesController::class,'fixture']);
 
 Route::get('point-table', fn() => view('client-pages.point-table.index', $sharedData));
 Route::get('contact', fn() => view('client-pages.contact.index', $sharedData));
@@ -134,7 +142,7 @@ Route::prefix('/api')->group(function () {
         Route::post('/sign-in', [AccountController::class, 'signInCheck']);
         // Route::post('/sign-up', [AccountController::class, 'signUp']);
     });
-   
+
     // Routes cần xác thực user
     Route::middleware(['jwt.auth'])->group(function () {
         Route::prefix('/user')->group(function () {

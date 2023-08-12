@@ -25,6 +25,9 @@ class Player extends Model
         'Position',
         'JerseyNumber',
         'Story',
+        'created_at',
+        'updated_at',
+
     ];
 
     /**
@@ -40,4 +43,5 @@ class Player extends Model
      * @var array<string, string>
      */
     protected $casts = [];
+
 }
