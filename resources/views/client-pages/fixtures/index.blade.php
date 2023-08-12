@@ -2,7 +2,6 @@
 
 
 @section('content')
-    <!--Main Slider Start-->
     <div class="inner-banner-header wf100">
         <h1 data-generated="Fixtures">Fixtures</h1>
         <div class="gt-breadcrumbs">
@@ -12,6 +11,12 @@
             </ul>
         </div>
     </div>
+    <style>
+        .row img {
+            width: 73px;
+            height: 50px;
+        }
+    </style>
     <!--Main Slider Start-->
     <!--Main Content Start-->
     <div class="main-content innerpagebg wf100">
@@ -25,52 +30,108 @@
                         <div class="col-lg-8">
                             <!--Last Match Result Start-->
                             <div class="last-match-result-full mb-60">
-                                <h6>Last Match Result</h6>
-                                <div class="p30">
+
+                                <!--Last Match Result Start-->
+                                <div class="last-match-result-full mb-60">
+                                    <h6>Last Match Result</h6>
+
+                                    <ul class="last-match">
+
+
+                                        <div class="p30">
+
+                                            <div class="row">
+
+                                                @foreach ($matches as $match)
+                                                    <div class="col-sm-4">
+                                                        <?php
+
+                                                        $teamAResult;
+                                                        $teamBResult;
+                                                        if ($match['Score'] > $match['Type']) {
+                                                            $teamAResult = 'win';
+                                                            $teamBResult = 'loss';
+                                                        } elseif ($match['Score'] == $match['Type']) {
+                                                            $teamAResult = 'tie';
+                                                            $teamBResult = 'tie';
+                                                        } else {
+                                                            $teamAResult = 'loss';
+                                                            $teamBResult = 'win';
+                                                        }
+
+                                                        ?>
+                                                        <div class="match-left">
+                                                            <div class="mtl-left"> <img
+                                                                    src="/images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}"
+                                                                    alt="">
+                                                                <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong>
+                                                            </div>
+                                                            <div class="mscore"> <strong>{{ $match['Score'] }}</strong>
+                                                                {{ $teamAResult }} </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="lmr-info">
+                                                            <strong>Super Euro League</strong>
+                                                            <p>Indy Eleven Qualified for Semi Final</p>
+                                                            <img src="images/sp.png" alt="">
+                                                            <p>{{ $match['DateTimeEnd'] }}  </p>
+                                                            <p>{{ $match['Stadium'] }}</p>
+                                                            <a href="#" class="mh">Match squad</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="match-right">
+                                                            <div class="mscore"> <strong> {{ $match['Type'] }}</strong>
+                                                                {{ $teamBResult }} </div>
+                                                            <div class="mtl-right"> <img
+                                                                    src="/images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}"
+                                                                    alt="">
+                                                                <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <!--Last Match Result End-->
+                            <!--Next Matches Schedule Start-->
+                            <div class="next-matches-schedule wf100">
+                                <h2 class="stitle">Next Matches Schedule</h2>
+                                <!--Box Start-->
+                                <div class="nms-box">
                                     <div class="row">
                                         <div class="col-sm-4">
-                                            <div class="match-left">
-                                                <div class="mtl-left"> <img src="/images/nmf-logo1.png" alt="">
-                                                    <strong>North Carolina</strong> </div>
-                                                <div class="mscore"> <strong>2</strong> loss </div>
-                                                <ul>
-                                                    <li>Charlie Darren <span>(1 goal)</span></li>
-                                                    <li>kevin Jamie <span>(1 goal)</span></li>
-                                                </ul>
+                                            <div class="team-logo-left"> <img
+                                                    src="/images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}"
+                                                    alt=""><strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong>
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
-                                            <div class="lmr-info">
-                                                <strong>Super Euro League</strong>
-                                                <p>Indy Eleven Qualified for Semi Final</p>
-                                                <img src="/images/sp.png" alt="">
-                                                <p>17 October, 2020</p>
-                                                <p>New Expo Stadium, NYK</p>
-                                                <a href="#" class="mh">Match Squad</a>
+                                            <div class="nms-info">
+                                                <strong class="vs">VS</strong>
+                                                <p> <strong>Super Euro League</strong></p>
+                                                <p>{{ $match['DateTimeStart'] }} | 04:00 PM GMT+</p>
+                                                <p><span>{{ $match['Stadium'] }}</span></p>
+
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
-                                            <div class="match-right">
-                                                <div class="mscore"> <strong>2</strong> loss </div>
-                                                <div class="mtl-right"> <img src="/images/nmf-logo2.png" alt="">
-                                                    <strong>Indy Eleven</strong> </div>
-                                                <ul>
-                                                    <li> Jon Taylor <span>(1 goal)</span></li>
-                                                    <li> Steven Dean <span>(1 goal)</span></li>
-                                                    <li> Smith Ross <span>(1 goal)</span></li>
-                                                </ul>
+                                            <div class="team-logo-right"><img
+                                                    src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}"
+                                                    alt="">
+                                                <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!--Last Match Result End-->
-                            <!--Next Matches Schedule Start-->
+                                <!--Box End-->
 
-
-
-                            <div class="next-matches-schedule wf100">
-                                <h2 class="stitle">Next Matches Schedule</h2>
                                 <!--Box Start-->
                                 @foreach ($matches as $match)
                                     <div class="nms-box">
@@ -78,144 +139,148 @@
                                             <div class="col-sm-4">
                                                 <div class="team-logo-left"> <img
                                                         src="/images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}"
-                                                        alt="">
-                                                    <strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong>
+                                                        alt=""><strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
                                                 <div class="nms-info">
                                                     <strong class="vs">VS</strong>
                                                     <p> <strong>Super Euro League</strong></p>
-                                                    <p>{{ \App\Models\MyMatch::find($match['TeamAID'])['DateTimeStart'] }} |
-                                                        04:00 PM GMT+</p>
-                                                    <p><span>{{ \App\Models\Club::find($match['TeamAID'])['Stadium'] }}</span>
-                                                    </p>
-                                                    <a href="#">Match Details</a>
+                                                    <p>{{ $match['DateTimeStart'] }} | 04:00 PM GMT+</p>
+                                                    <p><span>{{ $match['Stadium'] }}</span></p>
+
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
-                                                <div class="team-logo-right"><img src="/images/mlogo2.png" alt="">
-                                                    <strong>Charlotte</strong> </div>
+                                                <div class="team-logo-right"><img
+                                                        src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}"
+                                                        alt="">
+                                                    <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong>
+                                                </div>
                                             </div>
                                         </div>
-
                                     </div>
-                                    <!--Box End-->
                                 @endforeach
-                                <!--Box Start-->
-                                <div class="nms-box">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="team-logo-left"> <strong>FC Cincinnati</strong> <img
-                                                    src="/images/mlogo1.png" alt=""> </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="nms-info">
-                                                <strong class="vs">VS</strong>
-                                                <p> <strong>Super Euro League</strong></p>
-                                                <p>20 December, 2018 | 04:00 PM GMT+</p>
-                                                <p><span>New Expo Stadium, NYK</span></p>
-                                                <a href="#">Buy Your Ticket</a>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="team-logo-right"><img src="/images/mlogo2.png" alt="">
-                                                <strong>Indy Eleven</strong> </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <!--Box End-->
                                 <!--Box Start-->
-                                <div class="nms-box">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="team-logo-left"> <strong>FC Champs</strong> <img
-                                                    src="/images/mlogo1.png" alt=""> </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="nms-info">
-                                                <strong class="vs">VS</strong>
-                                                <p> <strong>Super Euro League</strong></p>
-                                                <p>20 December, 2018 | 04:00 PM GMT+</p>
-                                                <p><span>New Expo Stadium, NYK</span></p>
-                                                <a href="#">Buy Your Ticket</a>
+                                @foreach ($matches as $match)
+                                    <div class="nms-box">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="team-logo-left"> <img
+                                                        src="/images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}"
+                                                        alt=""><strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="nms-info">
+                                                    <strong class="vs">VS</strong>
+                                                    <p> <strong>Super Euro League</strong></p>
+                                                    <p>{{ $match['DateTimeStart'] }} | 04:00 PM GMT+</p>
+                                                    <p><span>{{ $match['Stadium'] }}</span></p>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="team-logo-right"><img
+                                                        src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}"
+                                                        alt="">
+                                                    <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-4">
-                                            <div class="team-logo-right"><img src="/images/mlogo2.png" alt="">
-                                                <strong>Nashville SC</strong> </div>
-                                        </div>
                                     </div>
-                                </div>
+                                @endforeach
                                 <!--Box End-->
                                 <!--Box Start-->
-                                <div class="nms-box">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="team-logo-left"> <strong>Ottawa Fury</strong> <img
-                                                    src="/images/mlogo1.png" alt=""> </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="nms-info">
-                                                <strong class="vs">VS</strong>
-                                                <p> <strong>Super Euro League</strong></p>
-                                                <p>20 December, 2018 | 04:00 PM GMT+</p>
-                                                <p><span>New Expo Stadium, NYK</span></p>
-                                                <a href="#">Buy Your Ticket</a>
+                                @foreach ($matches as $match)
+                                    <div class="nms-box">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="team-logo-left"> <img
+                                                        src="/images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}"
+                                                        alt=""><strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="nms-info">
+                                                    <strong class="vs">VS</strong>
+                                                    <p> <strong>Super Euro League</strong></p>
+                                                    <p>{{ $match['DateTimeStart'] }} | 04:00 PM GMT+</p>
+                                                    <p><span>{{ $match['Stadium'] }}</span></p>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="team-logo-right"><img
+                                                        src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}"
+                                                        alt="">
+                                                    <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-4">
-                                            <div class="team-logo-right"><img src="/images/mlogo2.png" alt="">
-                                                <strong>Indy Eleven</strong> </div>
-                                        </div>
                                     </div>
-                                </div>
+                                @endforeach
                                 <!--Box End-->
                                 <!--Box Start-->
-                                <div class="nms-box">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="team-logo-left"> <strong>FC Champs</strong> <img
-                                                    src="/images/mlogo1.png" alt=""> </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="nms-info">
-                                                <strong class="vs">VS</strong>
-                                                <p> <strong>Super Euro League</strong></p>
-                                                <p>20 December, 2018 | 04:00 PM GMT+</p>
-                                                <p><span>New Expo Stadium, NYK</span></p>
-                                                <a href="#">Buy Your Ticket</a>
+                                @foreach ($matches as $match)
+                                    <div class="nms-box">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="team-logo-left"> <img
+                                                        src="/images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}"
+                                                        alt=""><strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="nms-info">
+                                                    <strong class="vs">VS</strong>
+                                                    <p> <strong>Super Euro League</strong></p>
+                                                    <p>{{ $match['DateTimeStart'] }} | 04:00 PM GMT+</p>
+                                                    <p><span>{{ $match['Stadium'] }}</span></p>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="team-logo-right"><img
+                                                        src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}"
+                                                        alt="">
+                                                    <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-4">
-                                            <div class="team-logo-right"><img src="/images/mlogo2.png" alt="">
-                                                <strong>Ottawa Fury</strong> </div>
-                                        </div>
                                     </div>
-                                </div>
+                                @endforeach
                                 <!--Box End-->
                                 <!--Box Start-->
-                                <div class="nms-box">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="team-logo-left"> <strong>FC Champs</strong> <img
-                                                    src="/images/mlogo1.png" alt=""> </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="nms-info">
-                                                <strong class="vs">VS</strong>
-                                                <p> <strong>Super Euro League</strong></p>
-                                                <p>20 December, 2018 | 04:00 PM GMT+</p>
-                                                <p><span>New Expo Stadium, NYK</span></p>
-                                                <a href="#">Buy Your Ticket</a>
+                                @foreach ($matches as $match)
+                                    <div class="nms-box">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="team-logo-left"> <img
+                                                        src="/images/{{ \App\Models\Club::find($match['TeamAID'])['Logo'] }}"
+                                                        alt=""><strong>{{ \App\Models\Club::find($match['TeamAID'])['ClubName'] }}</strong>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="nms-info">
+                                                    <strong class="vs">VS</strong>
+                                                    <p> <strong>Super Euro League</strong></p>
+                                                    <p>{{ $match['DateTimeStart'] }} | 04:00 PM GMT+</p>
+                                                    <p><span>{{ $match['Stadium'] }}</span></p>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="team-logo-right"><img
+                                                        src="images/{{ \App\Models\Club::find($match['TeamBID'])['Logo'] }}"
+                                                        alt="">
+                                                    <strong>{{ \App\Models\Club::find($match['TeamBID'])['ClubName'] }}</strong>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-4">
-                                            <div class="team-logo-right"><img src="/images/mlogo2.png" alt="">
-                                                <strong>North Carolina</strong> </div>
-                                        </div>
                                     </div>
-                                </div>
+                                @endforeach
                                 <!--Box End-->
                             </div>
                             <!--Next Matches Schedule End-->
@@ -242,53 +307,211 @@
                                     </ul>
                                 </div>
                                 <!--widget start-->
-                                <!--widget start-->
-                                <div class="widget">
-                                    <h4>Team Player</h4>
-                                    <div class="team-squad-box">
-                                        <span class="star-tag"><i class="fas fa-star"></i></span> <a href="#"
-                                            class="follow">Follow</a>
-                                        <div class="ts-cap">
-                                            <h4>Ramsy Geordion</h4>
-                                            <p>League Captain</p>
-                                            <ul>
-                                                <li>29 <span>Age</span></li>
-                                                <li>87 <span>matches</span></li>
-                                                <li>113 <span>Goals</span></li>
-                                                <li>87 <span>matches</span></li>
-                                            </ul>
-                                        </div>
-                                        <img src="//images/tplayer5.jpg" alt="">
-                                    </div>
-                                </div>
+
                                 <!--widget start-->
                                 <!--widget start-->
                                 <div class="widget">
-                                    <h4>Featured Videos</h4>
-                                    <div class="featured-video-widget">
-                                        <div class="fvideo-box mb15">
-                                            <div class="fvid-cap">
-                                                <a class="vicon" href="#"><img src="/images/play.png"
-                                                        alt=""></a>
-                                                <div class="fvid-right">
-                                                    <h5><a href="#">Success is a Result of Hard Work </a></h5>
-                                                    <span><i class="far fa-clock"></i> 4:32</span> <span><i
-                                                            class="far fa-eye"></i> 174</span>
-                                                </div>
+                                    <h4>Top Stories</h4>
+                                    <div class="top-stories-widget">
+                                        <div id="top-stories" class="owl-carousel owl-theme">
+                                            <!--Slide 1 Start-->
+                                            <div class="item">
+                                                <ul class="top-stories">
+                                                    <!--Story Start-->
+                                                    <li class="story-row">
+                                                        <div class="ts-thumb"><img src="/images/tsimg1.jpg"
+                                                                alt=""> </div>
+                                                        <div class="ts-txt">
+                                                            <h5> <a href="#">Success is not Accident
+                                                                    it’s a Result of Hard Work </a>
+                                                            </h5>
+                                                            <ul class="tsw-meta">
+                                                                <li><a href="#">NFL League</a></li>
+                                                                <li>12 Mar, 2020</li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <!--Story End-->
+                                                    <!--Story Start-->
+                                                    <li class="story-row">
+                                                        <div class="ts-thumb"><img src="/images/tsimg1.jpg"
+                                                                alt=""> </div>
+                                                        <div class="ts-txt">
+                                                            <h5> <a href="#">Success is not Accident
+                                                                    it’s a Result of Hard Work </a>
+                                                            </h5>
+                                                            <ul class="tsw-meta">
+                                                                <li><a href="#">NFL League</a></li>
+                                                                <li>12 Mar, 2020</li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <!--Story End-->
+                                                    <!--Story Start-->
+                                                    <li class="story-row">
+                                                        <div class="ts-thumb"><img src="/images/tsimg1.jpg"
+                                                                alt=""> </div>
+                                                        <div class="ts-txt">
+                                                            <h5> <a href="#">Success is not Accident
+                                                                    it’s a Result of Hard Work </a>
+                                                            </h5>
+                                                            <ul class="tsw-meta">
+                                                                <li><a href="#">NFL League</a></li>
+                                                                <li>12 Mar, 2020</li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <!--Story End-->
+                                                    <!--Story Start-->
+                                                    <li class="story-row">
+                                                        <div class="ts-thumb"><img src="/images/tsimg1.jpg"
+                                                                alt=""> </div>
+                                                        <div class="ts-txt">
+                                                            <h5> <a href="#">Success is not Accident
+                                                                    it’s a Result of Hard Work </a>
+                                                            </h5>
+                                                            <ul class="tsw-meta">
+                                                                <li><a href="#">NFL League</a></li>
+                                                                <li>12 Mar, 2020</li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <!--Story End-->
+                                                </ul>
                                             </div>
-                                            <img src="/images/fvid1.jpg" alt="">
-                                        </div>
-                                        <div class="fvideo-box">
-                                            <div class="fvid-cap">
-                                                <a class="vicon" href="#"><img src="/images/play.png"
-                                                        alt=""></a>
-                                                <div class="fvid-right">
-                                                    <h5><a href="#">Success is a Result of Hard Work </a></h5>
-                                                    <span><i class="far fa-clock"></i> 4:32</span> <span><i
-                                                            class="far fa-eye"></i> 174</span>
-                                                </div>
+                                            <!--Slide 1 End-->
+                                            <!--Slide 2 Start-->
+                                            <div class="item">
+                                                <ul class="top-stories">
+                                                    <!--Story Start-->
+                                                    <li class="story-row">
+                                                        <div class="ts-thumb"><img src="/images/tsimg1.jpg"
+                                                                alt=""> </div>
+                                                        <div class="ts-txt">
+                                                            <h5> <a href="#">Success is not Accident
+                                                                    it’s a Result of Hard Work </a>
+                                                            </h5>
+                                                            <ul class="tsw-meta">
+                                                                <li><a href="#">NFL League</a></li>
+                                                                <li>12 Mar, 2020</li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <!--Story End-->
+                                                    <!--Story Start-->
+                                                    <li class="story-row">
+                                                        <div class="ts-thumb"><img src="/images/tsimg1.jpg"
+                                                                alt=""> </div>
+                                                        <div class="ts-txt">
+                                                            <h5> <a href="#">Success is not Accident
+                                                                    it’s a Result of Hard Work </a>
+                                                            </h5>
+                                                            <ul class="tsw-meta">
+                                                                <li><a href="#">NFL League</a></li>
+                                                                <li>12 Mar, 2020</li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <!--Story End-->
+                                                    <!--Story Start-->
+                                                    <li class="story-row">
+                                                        <div class="ts-thumb"><img src="/images/tsimg1.jpg"
+                                                                alt=""> </div>
+                                                        <div class="ts-txt">
+                                                            <h5> <a href="#">Success is not Accident
+                                                                    it’s a Result of Hard Work </a>
+                                                            </h5>
+                                                            <ul class="tsw-meta">
+                                                                <li><a href="#">NFL League</a></li>
+                                                                <li>12 Mar, 2020</li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <!--Story End-->
+                                                    <!--Story Start-->
+                                                    <li class="story-row">
+                                                        <div class="ts-thumb"><img src="/images/tsimg1.jpg"
+                                                                alt=""> </div>
+                                                        <div class="ts-txt">
+                                                            <h5> <a href="#">Success is not Accident
+                                                                    it’s a Result of Hard Work </a>
+                                                            </h5>
+                                                            <ul class="tsw-meta">
+                                                                <li><a href="#">NFL League</a></li>
+                                                                <li>12 Mar, 2020</li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <!--Story End-->
+                                                </ul>
                                             </div>
-                                            <img src="/images/fvid2.jpg" alt="">
+                                            <!--Slide 2 End-->
+                                            <!--Slide 3 Start-->
+                                            <div class="item">
+                                                <ul class="top-stories">
+                                                    <!--Story Start-->
+                                                    <li class="story-row">
+                                                        <div class="ts-thumb"><img src="/images/tsimg1.jpg"
+                                                                alt=""> </div>
+                                                        <div class="ts-txt">
+                                                            <h5> <a href="#">Success is not Accident
+                                                                    it’s a Result of Hard Work </a>
+                                                            </h5>
+                                                            <ul class="tsw-meta">
+                                                                <li><a href="#">NFL League</a></li>
+                                                                <li>12 Mar, 2020</li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <!--Story End-->
+                                                    <!--Story Start-->
+                                                    <li class="story-row">
+                                                        <div class="ts-thumb"><img src="/images/tsimg1.jpg"
+                                                                alt=""> </div>
+                                                        <div class="ts-txt">
+                                                            <h5> <a href="#">Success is not Accident
+                                                                    it’s a Result of Hard Work </a>
+                                                            </h5>
+                                                            <ul class="tsw-meta">
+                                                                <li><a href="#">NFL League</a></li>
+                                                                <li>12 Mar, 2020</li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <!--Story End-->
+                                                    <!--Story Start-->
+                                                    <li class="story-row">
+                                                        <div class="ts-thumb"><img src="/images/tsimg1.jpg"
+                                                                alt=""> </div>
+                                                        <div class="ts-txt">
+                                                            <h5> <a href="#">Success is not Accident
+                                                                    it’s a Result of Hard Work </a>
+                                                            </h5>
+                                                            <ul class="tsw-meta">
+                                                                <li><a href="#">NFL League</a></li>
+                                                                <li>12 Mar, 2020</li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <!--Story End-->
+                                                    <!--Story Start-->
+                                                    <li class="story-row">
+                                                        <div class="ts-thumb"><img src="/images/tsimg1.jpg"
+                                                                alt=""> </div>
+                                                        <div class="ts-txt">
+                                                            <h5> <a href="#">Success is not Accident
+                                                                    it’s a Result of Hard Work </a>
+                                                            </h5>
+                                                            <ul class="tsw-meta">
+                                                                <li><a href="#">NFL League</a></li>
+                                                                <li>12 Mar, 2020</li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <!--Story End-->
+                                                </ul>
+                                            </div>
+                                            <!--Slide 3 End-->
                                         </div>
                                     </div>
                                 </div>
@@ -319,7 +542,8 @@
                                         </li>
                                         <li>
                                             <div class="social rss"> <i class="fas fa-rss"></i> <strong> 24,793 </strong>
-                                                <span>Likes</span> </div>
+                                                <span>Likes</span>
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>

@@ -142,8 +142,8 @@
 
         <script>
             const data = {
-                email: 'son@gmail.com',
-                password: 'hongson2003',
+                email: 'n@gmail.com',
+                password: 'baothi2004',
             }
             var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
             fetch('/api/account/sign-in', {

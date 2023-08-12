@@ -9,11 +9,13 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\ClientPlayerController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PositionMatchController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\MatchController;
 use App\Http\Controllers\GoalController;
+use App\Http\Controllers\FixturesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,8 +53,8 @@ Route::get('/app/test', function () {
 $sharedData = ['title' => 'Soccer'];
 
 Route::get('/', fn() => view('client', $sharedData));
-Route::get('player', [PlayerController::class,'player']);
-Route::get('player-details/{id}', [PlayerController::class,'player_details']);
+Route::get('player', [ClientPlayerController::class,'player']);
+Route::get('player-details/{id}', [ClientPlayerController::class,'player_details']);
 Route::get('match-results', [MatchController::class, 'matches']);
 Route::get('match-results-details', fn() => view('client-pages.match-results-details.index', $sharedData));
 

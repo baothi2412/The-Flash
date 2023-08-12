@@ -129,34 +129,7 @@
             <div class="col-lg-4">
               <div class="sidebar">
                 <!--widget start-->
-                <div class="widget">
-                  <h4>Last Match Result</h4>
-                  <div class="last-match-widget">
-                    <p> <strong>Super Asia Cup</strong> 18 Dec. 2018  |  04:00-07:00 </p>
-                    <ul class="match-teams-vs">
-                      <li class="team-logo"><img src="/images/nmf-logo1.png" alt=""> <strong>FC Champs</strong> </li>
-                      <li class="mvs">
-                        <ul class="mres">
-                          <li> <strong>2</strong> <span>L</span> </li>
-                          <li> <strong>3</strong> <span>W</span> </li>
-                        </ul>
-                      </li>
-                      <li class="team-logo"><img src="/images/nmf-logo2.png" alt=""> <strong>Tigers</strong> </li>
-                    </ul>
-                    <ul class="mp-goals">
-                      <li>
-                        <p>D. Charlie <span>(1 goal)</span></p>
-                        <p>J. Kevin <span>(1 goal)</span></p>
-                      </li>
-                      <li>
-                        <p>Jon T. <span>(1 goal)</span></p>
-                        <p> Steven D. <span>(1 goal)</span></p>
-                        <p> Smith R. <span>(1 goal)</span></p>
-                      </li>
-                    </ul>
-                    <div class="matchreport"> <a href="#">Match Report</a> </div>
-                  </div>
-                </div>
+
                 <!--widget end-->
                 <!--widget start-->
                 <div class="widget">
