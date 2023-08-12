@@ -200,20 +200,7 @@
                 <div class="col-lg-4">
                    <div class="sidebar">
                       <!--widget start-->
-                      <div class="widget">
-                         <h4>Upcoming Match </h4>
-                         <div class="last-match-widget">
-                            <p> <strong>Super Asia Cup</strong> 18 Dec. 2018  |  04:00-07:00 </p>
-                            <ul class="match-teams-vs">
-                               <li class="team-logo"><img src="images/nmf-logo1.png" alt=""> <strong>FC Champs</strong> </li>
-                               <li class="mvs"> <span class="vs">VS</span> </li>
-                               <li class="team-logo"><img src="images/nmf-logo2.png" alt=""> <strong>Tigers</strong> </li>
-                            </ul>
-                            <p class="mloc"> <i class="fas fa-location-arrow"></i> Expo Center Stadium</p>
-                            <div class="defaultCountdown"></div>
-                            <div class="buyticket-btn"><a href="#">Buy Ticket</a></div>
-                         </div>
-                      </div>
+
                       <!--widget start-->
                       <!--widget start-->
                       <div class="widget">

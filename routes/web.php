@@ -41,12 +41,12 @@ Route::get('player-details', fn() => view('client-pages.player-details.index', $
 Route::get('match-results', fn() => view('client-pages.match-results.index', $sharedData));
 Route::get('match-results-details', fn() => view('client-pages.match-results-details.index', $sharedData));
 Route::get('fixtures', fn() => view('client-pages.fixtures.index', $sharedData));
-Route::get('features', fn() => view('client-pages.features.index', $sharedData));
+
 Route::get('point-table', fn() => view('client-pages.point-table.index', $sharedData));
-Route::get('news', fn() => view('client-pages.news.index', $sharedData));
 Route::get('contact', fn() => view('client-pages.contact.index', $sharedData));
 Route::get('feedback', fn() => view('client-pages.feedback.index', $sharedData));
 Route::get('squad', fn() => view('client-pages.squad.index', $sharedData));
+Route::get('aboutus', fn() => view('client-pages.aboutus.index', $sharedData));
 
 
 
