@@ -46,6 +46,8 @@ const apiService = {
 
                     const elmID = 'jquery-dt-tbody';
 
+                    console.log(html)
+
                     this.renderChild(html, elmID);
                     
                     toast({

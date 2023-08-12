@@ -25,7 +25,7 @@
             </div>
             <div class="body">
                 <div class="table-responsive">
-                    <table class="table js-basic-example dataTable spacing5">
+                    <table class="table js-basic-example dataTable spacing5" id="data-table">
                         <thead>
                             <tr>
                                 @foreach ($columnsName as $column)

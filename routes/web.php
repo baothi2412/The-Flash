@@ -33,6 +33,21 @@ Route::get('/', function () {
         'records' => $data
     ]);
 });
+$sharedData = ['title' => 'Soccer'];
+
+Route::get('/', fn() => view('client', $sharedData));
+Route::get('player', fn() => view('client-pages.player.index', $sharedData));
+Route::get('player-details', fn() => view('client-pages.player-details.index', $sharedData));
+Route::get('match-results', fn() => view('client-pages.match-results.index', $sharedData));
+Route::get('match-results-details', fn() => view('client-pages.match-results-details.index', $sharedData));
+Route::get('fixtures', fn() => view('client-pages.fixtures.index', $sharedData));
+Route::get('features', fn() => view('client-pages.features.index', $sharedData));
+Route::get('point-table', fn() => view('client-pages.point-table.index', $sharedData));
+Route::get('news', fn() => view('client-pages.news.index', $sharedData));
+Route::get('contact', fn() => view('client-pages.contact.index', $sharedData));
+Route::get('feedback', fn() => view('client-pages.feedback.index', $sharedData));
+Route::get('squad', fn() => view('client-pages.squad.index', $sharedData));
+
 
 
 // Trả về view login cho admin page
@@ -93,7 +108,7 @@ Route::prefix('/api')->group(function() {
     // Sign in, sign out
     Route::prefix('/account')->group(function() {
         Route::post('/sign-in', [AccountController::class, 'signInCheck']);
-    //     // Route::post('/sign-up', [AccountController::class, 'signUp']);
+        // Route::post('/sign-up', [AccountController::class, 'signUp']);
     });
 
     // Routes cần xác thực user

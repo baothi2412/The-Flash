@@ -11,10 +11,6 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function store(Request $request) {
-        $validatedData = $request->validate([
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:8',
-        ]);
 
         $name = $request->input('name');
         $email = $request->input('email');
@@ -84,4 +80,35 @@ class UserController extends Controller
             ]
         );
     }
+
+    // Load all user as html tr, td for tbody
+    public function allUserAsHtml() {
+        $users = User::all();
+        $html = "";
+
+        
+
+        foreach ($users as $user) {
+            $html .= '<tr role="row" class="even">
+                        <td>
+                                <td class="sorting_1">'.$user->id.'</td>
+                                <td>'.$user->name.'</td>
+                                <td>'.$user->email.'</td>
+                                <a id="button-component" class="warning " data-toggle="modal" data-target=".launch-pricing-modal">
+                                    <span class="text">
+                                        <img style="position: relative; right: 0; top: 0;" class="svg-icon" src="/svg/basic-icons/Pencil.svg" alt="SVG Icon">
+                                    </span>
+                                </a>                                        
+                                <a id="button-component" class="danger " data-toggle="modal" data-target=".launch-pricing-modal">
+                                    <span class="text">
+                                            <img style="position: relative; right: 0; top: 0;" class="svg-icon" src="/svg/basic-icons/Trash.svg" alt="SVG Icon">
+                                    </span>
+                                </a>                                    
+                        </td>
+                    </tr>';
+        }
+
+        return response($html)->header('Content-Type', 'text/html');
+    }
+
 }
