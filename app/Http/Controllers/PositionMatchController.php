@@ -15,5 +15,70 @@ class PositionMatchController extends Controller
             'position'=>$position,
 
         ]);
+ 
+
+
+    }
+
+    public function store(Request$request){
+        $id = $request->input('id');
+        $matchID = $request->file('MatchID');
+        $playerID = $request->input('PlayerID');
+        $positionInMatch = $request->input('PositionInMatch');
+   
+
+        $position = new Position();
+        
+       
+        $position->id = $$id;
+        $position->MatchID = $matchID;
+        $position->PlayerID = $playerID;
+        $position->birthdate = $positionInMatch;
+ 
+
+        $position->save();
+
+        return response()->json(
+            [
+                'isSuccess' => true,
+                'message' => 'Successfully creation position',
+                'data' => $position
+            ]
+        );
+    
+    }
+    public function update(Request $request)
+    {
+
+        $id = $request->input('id');
+        $matchID = $request->file('MatchID');
+        $playerID = $request->input('PlayerID');
+        $positionInMatch = $request->input('PositionInMatch');
+
+        $position = Position::find($id);
+
+       
+        $position->MatchID = $matchID;
+        $position->PlayerID = $playerID;
+        $position->PositionInMatch = $positionInMatch;
+        
+
+        $position->save();
+        
+        return response()->json(
+            [
+                'isSuccess' => true,
+                'message' => 'Successfully uploaded position',
+                'data' => $position
+            ]
+        );
+
+    }
+    public function detail($id) {
+        $position = Position::find($id);
+
+        return response()->json([
+            'position' => $position
+        ]);
     }
 }

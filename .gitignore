@@ -15,4 +15,8 @@ yarn-error.log
 /.idea
 /.vscode
 .env
+<<<<<<< HEAD
+vendor
+=======
 /vendor
+>>>>>>> 1e068d84a7b8055ecbc8c00507b73e73da2d8d39

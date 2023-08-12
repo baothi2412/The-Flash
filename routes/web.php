@@ -14,6 +14,7 @@ use App\Http\Controllers\PositionMatchController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\MatchController;
 use App\Http\Controllers\GoalController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -92,64 +93,65 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
     Route::get('/logout', [AccountController::class, 'logout']);
 
     // Feedbacks
-    Route::prefix('/feedbacks')->group(function() {
+    Route::prefix('/feedbacks')->group(function () {
         Route::get('/', [FeedbackController::class, 'index']);
     });
     //Contact
-    Route::prefix('/contacts')->group(function() {
+    Route::prefix('/contacts')->group(function () {
         Route::get('/', [ContactController::class, 'index']);
 
     });
-    Route::prefix('/players')->group(function() {
+    Route::prefix('/players')->group(function () {
         Route::get('/', [PlayerController::class, 'index']);
 
     });
-    Route::prefix('/clubs')->group(function() {
+    Route::prefix('/clubs')->group(function () {
         Route::get('/', [ClubController::class, 'index']);
 
     });
-    Route::prefix('/position')->group(function() {
+    Route::prefix('/position')->group(function () {
         Route::get('/', [PositionMatchController::class, 'index']);
 
     });
-    Route::prefix('/tournaments')->group(function() {
+    Route::prefix('/tournaments')->group(function () {
         Route::get('/', [TournamentController::class, 'index']);
 
     });
-    Route::prefix('/matches')->group(function() {
+    Route::prefix('/matches')->group(function () {
         Route::get('/', [MatchController::class, 'index']);
     });
 
-    Route::prefix('/goals')->group(function() {
+    Route::prefix('/goals')->group(function () {
         Route::get('/', [GoalController::class, 'index']);
     });
 
 });
 
 // Prefix /api khi gọi lên server lấy api
-Route::prefix('/api')->group(function() {
+Route::prefix('/api')->group(function () {
 
     // Sign in, sign out
-    Route::prefix('/account')->group(function() {
+    Route::prefix('/account')->group(function () {
         Route::post('/sign-in', [AccountController::class, 'signInCheck']);
         // Route::post('/sign-up', [AccountController::class, 'signUp']);
     });
-
+   
     // Routes cần xác thực user
     Route::middleware(['jwt.auth'])->group(function () {
-        Route::prefix('/user')->group(function() {
+        Route::prefix('/user')->group(function () {
             Route::post('/store', [UserController::class, 'store']);
             Route::put('/update', [UserController::class, 'update']);
             Route::get('/{id}', [UserController::class, 'detail']);
             Route::delete('/delete/{id}', [UserController::class, 'delete']);
         });
 
-        Route::prefix('/player')->group(function() {
+        Route::prefix('/player')->group(function () {
             Route::post('/store', [PlayerController::class, 'store']);
         });
 
-        Route::prefix('/club')->group(function() {
+        Route::prefix('/club')->group(function () {
             Route::post('/store', [ClubController::class, 'store']);
+            Route::post('/update', [ClubController::class, 'update']);
         });
 
         Route::prefix('/tournament')->group(function() {
