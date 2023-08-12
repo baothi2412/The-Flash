@@ -327,7 +327,7 @@
              <div class="col-lg-4">
                 <div class="sidebar">
                    <!--widget start-->
-                   <div class="widget sidebar-ad"> <img src="images/sideadbanner1.png" alt=""> </div>
+                   <div class="widget sidebar-ad"> <img src="images/sideadbanner1.jpg" alt=""> </div>
                    <!--widget end-->
                    <!--widget start-->
                    <div class="widget">
