@@ -110,4 +110,10 @@ class UserController extends Controller
 
         return response($html)->header('Content-Type', 'text/html');
     }
+
+    public function all() {
+        return response()->json([
+            'users' => User::all(),
+        ]);
+    }
 }

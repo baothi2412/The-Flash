@@ -29,8 +29,6 @@ class MyMatch extends Model
         'Type',
         'created_at',
         'updated_at	',
-
-
     ];
 
     /**

@@ -77,6 +77,7 @@
                                   <strong class="vs">VS</strong>
                                   <p> <strong>Super Euro League</strong></p>
                                   <p>20 December, 2018   |   04:00 PM GMT+</p>
+                                  {{-- <li class="match-info"> <strong>{{$match['Stadium']}}</strong> <span>{{$match['DateTimeStart']}}<em>|</em> {{$match['DateTimeEnd']}}</span> <a href="/squad">Squad </a></li> --}}
                                   <p><span>New Expo Stadium, NYK</span></p>
                                   <a href="#">Buy Your Ticket</a>
                                </div>

@@ -15,62 +15,11 @@ const apiService = {
             .then(response => response.json())
             .then(data => {
                 if (data.isSuccess) {
-                    const dataReceive = data.data;
-                    const listKeys = Object.keys(dataReceive);
-
-                    const ignore = [
-                        'id',
-                        'password',
-                        'created_at',
-                        'updated_at',
-                        'email_verified_at',
-                        'remember_token',
-                    ];
-
-                    let imageCols = data.imageColumns ?? [];
-
-                    const tdElms = listKeys.filter(key => !ignore.includes(key)).map(key => {
-                        if (imageCols.map(col => col.toLowerCase()).includes(key.toLowerCase())) {
-                            return `<td>
-                                        <img 
-                                            src="/images/file-uploads/${dataReceive[key]}" 
-                                            alt="Image"
-                                            width="60px"
-                                        >
-                                    </td>`;
-                        } else {
-                            return `<td>${dataReceive[key]}</td>`;
-                        }
-                    }).join('');
-
-                    const html = `<tr data-id="${dataReceive.id}" role="row" class="even">
-                                    <td class="sorting_1">${dataReceive.id}</td>
-                                    ${tdElms}
-                                    <td>
-                                            <a onclick="changeID(${dataReceive.id})" id="button-component" class="warning " data-toggle="modal" data-target=".edit-form-modal">
-                                                <span class="text">
-                                                    <img style="position: relative; right: 0; top: 0;" class="svg-icon" src="/svg/basic-icons/Pencil.svg" alt="SVG Icon">
-                                                </span>
-                                            </a>                                        
-                                            <a onclick="deleteWithID(${dataReceive.id})" id="button-component" class="danger " data-toggle="modal" data-target="#deleteModal">
-                                                <span class="text">
-                                                        <img style="position: relative; right: 0; top: 0;" class="svg-icon" src="/svg/basic-icons/Trash.svg" alt="SVG Icon">
-                                                </span>
-                                            </a>                                    
-                                    </td>
-                                </tr>`;
-
-                    const elmID = 'jquery-dt-tbody';
-
-                    console.log(html)
-
-                    this.renderChild(html, elmID);
-                    
-                    toast({
-                        title: 'Insert Success',
-                        message: 'Successfully insert data',
-                        type: 'success'
-                    })
+                    fetch('/api/user/all')
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log(data);
+                        })
                 }
                 
             })
