@@ -22,7 +22,6 @@ class Feedback extends Model
         'Subject',
         'Content',
         'Response',
-
     ];
 
     /**

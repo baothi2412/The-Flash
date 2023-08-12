@@ -16,4 +16,26 @@ class FeedbackController extends Controller
             'feedbacks' => $feedbacks,
         ]);
     }
+
+    public function submit(Request $request) {
+        $feedback = new Feedback();
+
+        $feedback->email = $request->input('email');
+        $feedback->subject = $request->input('subject');
+        $feedback->content = $request->input('content');
+        $feedback->response = 0;
+
+        $feedback->save();
+
+        $details = [
+            'title' => 'Thank you',
+            'body' => 'We received your feedback. Thank your for that!'
+        ];
+       
+        \Mail::to($request->input('email'))->send(new \App\Mail\SoccerVerseMail($details));
+
+        $request->session()->flash('feedback', 'OK');
+
+        return back();
+    }
 }

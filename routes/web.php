@@ -25,10 +25,22 @@ use App\Http\Controllers\GoalController;
 |
 */
 
+// Route::get('send-mail', function () {
+   
+//     $details = [
+//         'title' => 'Mail from ItSolutionStuff.com',
+//         'body' => 'This is for testing email using smtp'
+//     ];
+   
+//     \Mail::to('nhsona21171@cusc.ctu.edu.vn')->send(new \App\Mail\SoccerVerseMail($details));
+   
+//     dd("Email is Sent.");
+// });
+
 Route::get('/app/test', function () {
     $club = \DB::connection()->getSchemaBuilder()->getColumnListing((new User)->getTable());
     $data = User::all();
-    return view('test', [
+    return view('welcome', [
         'club' => $club,
         'title' => 'TEST',
         'records' => $data
@@ -49,6 +61,14 @@ Route::get('news', fn() => view('client-pages.news.index', $sharedData));
 Route::get('contact', fn() => view('client-pages.contact.index', $sharedData));
 Route::get('feedback', fn() => view('client-pages.feedback.index', $sharedData));
 Route::get('squad', fn() => view('client-pages.squad.index', $sharedData));
+
+Route::prefix('/feedback')->group(function() {
+    Route::post('/submit', [FeedbackController::class, 'submit']);
+});
+Route::prefix('/contact')->group(function() {
+    Route::post('/submit', [ContactController::class, 'submit']);
+});
+
 
 
 
@@ -74,7 +94,6 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
     // Feedbacks
     Route::prefix('/feedbacks')->group(function() {
         Route::get('/', [FeedbackController::class, 'index']);
-
     });
     //Contact
     Route::prefix('/contacts')->group(function() {

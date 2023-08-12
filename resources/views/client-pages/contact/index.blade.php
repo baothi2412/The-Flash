@@ -65,26 +65,29 @@
              <!--Form Start-->
              <div class="col-lg-10">
                 <div class="contact-form">
-                   <h2> Contact us</h2>
-                   <ul class="form-row">
+                   <form action="/contact/submit" method="POST">
+                     @csrf
+                     <h2> Contact us</h2>
+                     <ul class="form-row">
 
-                      <li class="half-col">
-                         <input type="text" class="form-control" placeholder="Email">
-                      </li>
-                      <li class="half-col">
-                        <input type="text" class="form-control" placeholder="Phone">
-                     </li>
+                        <li class="half-col">
+                           <input name="email" type="text" class="form-control" placeholder="Email">
+                        </li>
+                        <li class="half-col">
+                           <input name="phone" type="text" class="form-control" placeholder="Phone">
+                        </li>
 
-                      <li class="half-col">
-                         <input type="text" class="form-control" placeholder="Subject">
-                      </li>
-                      <li class="full-col">
-                         <textarea class="form-control" placeholder="Content"></textarea>
-                      </li>
-                      <li class="full-col">
-                         <button type="button">Contact us Now</button>
-                      </li>
-                   </ul>
+                        <li class="half-col">
+                           <input name="subject" type="text" class="form-control" placeholder="Subject">
+                        </li>
+                        <li class="full-col">
+                           <textarea name="content" class="form-control" placeholder="Content"></textarea>
+                        </li>
+                        <li class="full-col">
+                           <button>Contact us Now</button>
+                        </li>
+                     </ul>
+                   </form>
                 </div>
              </div>
              <!--Form End-->
