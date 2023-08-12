@@ -92,15 +92,9 @@
                 <li class="nav-item drop-down"> <a href="/match-results">Matches</a>
 
                 </li>
-				<li class="nav-item drop-down"> <a href="/player">Players</a>
-                </li>
-                <li class="nav-item drop-down"> <a href="/features">Features</a>
-
+				          <li class="nav-item drop-down"> <a href="/player">Players</a>
                 </li>
                 <li class="nav-item drop-down"> <a href="/point-table">Point Table</a>
-
-                </li>
-                <li class="nav-item drop-down"> <a href="/news">News</a>
 
                 </li>
                 <li class="nav-item drop-down"> <a href="/fixtures">Fixtures</a>
@@ -110,6 +104,9 @@
 
                 </li>
                 <li class="nav-item drop-down"> <a href="/feedback">Feedback</a>
+
+                </li>
+                <li class="nav-item drop-down"> <a href="/aboutus">About us</a>
 
                 </li>
                 {{-- <li class="nav-item drop-down"> <a href="/squad">Squad</a> --}}

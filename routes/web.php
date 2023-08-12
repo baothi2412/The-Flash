@@ -26,10 +26,22 @@ use App\Http\Controllers\GoalController;
 |
 */
 
+// Route::get('send-mail', function () {
+   
+//     $details = [
+//         'title' => 'Mail from ItSolutionStuff.com',
+//         'body' => 'This is for testing email using smtp'
+//     ];
+   
+//     \Mail::to('nhsona21171@cusc.ctu.edu.vn')->send(new \App\Mail\SoccerVerseMail($details));
+   
+//     dd("Email is Sent.");
+// });
+
 Route::get('/app/test', function () {
     $club = \DB::connection()->getSchemaBuilder()->getColumnListing((new User)->getTable());
     $data = User::all();
-    return view('test', [
+    return view('welcome', [
         'club' => $club,
         'title' => 'TEST',
         'records' => $data
@@ -44,12 +56,20 @@ Route::get('player-details', fn() => view('client-pages.player-details.index', $
 Route::get('match-results', fn() => view('client-pages.match-results.index', $sharedData));
 Route::get('match-results-details', fn() => view('client-pages.match-results-details.index', $sharedData));
 Route::get('fixtures', fn() => view('client-pages.fixtures.index', $sharedData));
-Route::get('features', fn() => view('client-pages.features.index', $sharedData));
+
 Route::get('point-table', fn() => view('client-pages.point-table.index', $sharedData));
-Route::get('news', fn() => view('client-pages.news.index', $sharedData));
 Route::get('contact', fn() => view('client-pages.contact.index', $sharedData));
 Route::get('feedback', fn() => view('client-pages.feedback.index', $sharedData));
 Route::get('squad', fn() => view('client-pages.squad.index', $sharedData));
+Route::get('aboutus', fn() => view('client-pages.aboutus.index', $sharedData));
+
+Route::prefix('/feedback')->group(function() {
+    Route::post('/submit', [FeedbackController::class, 'submit']);
+});
+Route::prefix('/contact')->group(function() {
+    Route::post('/submit', [ContactController::class, 'submit']);
+});
+
 
 
 
@@ -75,7 +95,6 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
     // Feedbacks
     Route::prefix('/feedbacks')->group(function () {
         Route::get('/', [FeedbackController::class, 'index']);
-
     });
     //Contact
     Route::prefix('/contacts')->group(function () {
