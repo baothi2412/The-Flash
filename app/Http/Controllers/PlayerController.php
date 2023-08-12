@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Player;
+use Illuminate\Http\JsonResponse;
 class PlayerController extends Controller
 {
     public function index(Request $request) {
@@ -18,8 +19,14 @@ class PlayerController extends Controller
             ]
         ]);
     }
+    public function detail($id) {
+        $Player = Player::find($id);
 
-    public function store(Request $request) {
+        return response()->json([
+            'user' => $Player
+        ]);
+    }
+    public function store(Request $request):JsonResponse {
 
         $clubID = $request->input('ClubID');
         $avatar = $request->file('Avatar');
@@ -56,4 +63,5 @@ class PlayerController extends Controller
             ]
         );
     }
+    
 }

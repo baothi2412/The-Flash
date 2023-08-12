@@ -17,17 +17,12 @@ class Tournament extends Model
 
 
     protected $fillable = [
-        'id',
         'Logo',
         'TournamentName	',
         'Description',
         'MatchCount',
         'YearHeld',
         'OrganizingCountry',
-        'created_at',
-        'updated_at',
-
-
     ];
 
     /**

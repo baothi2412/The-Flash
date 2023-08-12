@@ -43,7 +43,7 @@ class UserController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
 
-        $user = user::find($id);
+        $user =User::find($id);
 
         $user->name = $name;
         $user->email = $email;

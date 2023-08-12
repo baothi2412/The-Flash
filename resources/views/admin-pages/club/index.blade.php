@@ -3,9 +3,9 @@
 
 @section('content')
     <x-create-form title="Create New User" :columnsName="$clubs" :fileColumnsName="$fileColumnsName"></x-create-form>
-    <x-edit-form title="Edit User" :columnsName="$clubs"></x-edit-form>
+    <x-edit-form title="Edit User" :columnsName="$clubs" :fileColumnsName="$fileColumnsName"></x-edit-form>
     <x-delete-modal title="Delete Confirmation" content="Are you sure you want to delete it!"></x-delete-modal>
-    <x-jquery-data-table :records="$records" :columnsName="$clubs" title="Example Title" subTitle="Basic Example"></x-jquery-data-table>
+    <x-jquery-data-table :imageColumns="$imageColumns" :records="$records" :columnsName="$clubs" title="Club Management" subTitle="You can manage clubs in here"></x-jquery-data-table>
 
     <script>
         const dataSubmit = {};

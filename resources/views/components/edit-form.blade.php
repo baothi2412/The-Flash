@@ -7,8 +7,9 @@
                         <h2>{{ $title }}</h2>
                     </div>
                     <div class="body">
-                        {{-- <input type="hidden" name="{{$clnName}}" class="edit-form-input"> --}}
-                        @foreach ($columnsName as $clnName)
+                        <form id="edit-form" method="PUT" enctype="multipart/form-data">
+                            {{-- <input type="hidden" name="{{$clnName}}" class="edit-form-input"> --}}
+                            @foreach ($columnsName as $clnName)
                             @if (!in_array($clnName, $ignoreColumns))
                                 <div class="input-group input-group-sm mb-3">
                                     @if ($clnName == 'password')
@@ -17,12 +18,17 @@
                                         @if ($clnName == 'id')
                                             <input type="hidden" name="{{$clnName}}" class="edit-form-input" id="editFormInputID">
                                         @else
-                                        <input name="{{$clnName}}" placeholder="Enter {{$clnName}}" type="text" class="form-control edit-form-input" aria-label="Small" aria-describedby="inputGroup-sizing-sm" autocomplete="off">
+                                            @if (in_array($clnName, $fileColumnsName))
+                                                <input name="{{$clnName}}" placeholder="Enter {{$clnName}}" type="file" class="form-control create-form-input" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                                            @else
+                                                <input name="{{$clnName}}" placeholder="Enter {{$clnName}}" type="text" class="form-control edit-form-input" aria-label="Small" aria-describedby="inputGroup-sizing-sm" autocomplete="off">
+                                            @endif
                                         @endif
                                     @endif
                                 </div>
                             @endif
                         @endforeach
+                        </form>
             
                         {{-- <x-select2-dropdown></x-select2-dropdown> --}}
                         
