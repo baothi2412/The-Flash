@@ -31,7 +31,7 @@ class PlayerController extends Controller
         $story = $request->input('Story');
 
         $player = new Player();
-        
+
         // Image upload
         $imgName = 'img'.time().'-'.Str::slug($name).'.'.$avatar->extension();
 
@@ -56,4 +56,27 @@ class PlayerController extends Controller
             ]
         );
     }
+    public function player()
+{
+    $players = Player::all();
+
+    return view('client-pages.player.index', [
+        'players' => $players
+    ]);
+}
+
+public function player_details($id)
+{
+    $player = Player::find($id);
+
+    if (!$player) {
+        // Xử lý trường hợp không tìm thấy cầu thủ
+        return redirect()->route('player.index')->with('error', 'Player not found.');
+    }
+
+    return view('client-pages.player-details.index', [
+        'player' => $player
+    ]);
+}
+
 }

@@ -14,6 +14,7 @@ use App\Http\Controllers\PositionMatchController;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\MatchController;
 use App\Http\Controllers\GoalController;
+use App\Http\Controllers\FixturesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,14 +27,14 @@ use App\Http\Controllers\GoalController;
 */
 
 // Route::get('send-mail', function () {
-   
+
 //     $details = [
 //         'title' => 'Mail from ItSolutionStuff.com',
 //         'body' => 'This is for testing email using smtp'
 //     ];
-   
+
 //     \Mail::to('nhsona21171@cusc.ctu.edu.vn')->send(new \App\Mail\SoccerVerseMail($details));
-   
+
 //     dd("Email is Sent.");
 // });
 
@@ -50,11 +51,12 @@ Route::get('/app/test', function () {
 $sharedData = ['title' => 'Soccer'];
 
 Route::get('/', fn() => view('client', $sharedData));
-Route::get('player', fn() => view('client-pages.player.index', $sharedData));
-Route::get('player-details', fn() => view('client-pages.player-details.index', $sharedData));
-Route::get('match-results', fn() => view('client-pages.match-results.index', $sharedData));
+Route::get('player', [PlayerController::class,'player']);
+Route::get('player-details/{id}', [PlayerController::class,'player_details']);
+Route::get('match-results', [MatchController::class, 'matches']);
 Route::get('match-results-details', fn() => view('client-pages.match-results-details.index', $sharedData));
-Route::get('fixtures', fn() => view('client-pages.fixtures.index', $sharedData));
+
+Route::get('fixtures', [FixturesController::class,'fixture']);
 
 Route::get('point-table', fn() => view('client-pages.point-table.index', $sharedData));
 Route::get('contact', fn() => view('client-pages.contact.index', $sharedData));
