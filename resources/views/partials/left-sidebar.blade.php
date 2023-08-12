@@ -32,7 +32,7 @@
                 {{-- <li class="header">Main</li>
                 <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li> --}}
                 <li class="header">Categories</li>
-                <li><a href="/admin/feedbacks"><img class="svg-icon" src="/svg/basic-icons/Cup.svg" alt="SVG Icon"><span>Tournaments</span></a></li>
+                <li><a href="/admin/tournaments"><img class="svg-icon" src="/svg/basic-icons/Cup.svg" alt="SVG Icon"><span>Tournaments</span></a></li>
                 <li><a href="/admin/players"><img class="svg-icon" src="/svg/people/Anonymous-2.svg" alt="SVG Icon"><span>Players</span> <!-- <span class="badge badge-default mr-0">12</span></a></li> -->
                 <li><a href="/admin/clubs"><img class="svg-icon" src="/svg/users/Male-Group-1.svg" alt="SVG Icon"><span>Clubs</span></a></li>
                 <li><a href="/admin/matches"><img class="svg-icon" src="/svg/shapes/Rectangle-2.svg" alt="SVG Icon"><span>Matches</span></a></li>
