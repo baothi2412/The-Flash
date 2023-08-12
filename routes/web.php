@@ -151,6 +151,12 @@ Route::prefix('/api')->group(function() {
         Route::prefix('/club')->group(function() {
             Route::post('/store', [ClubController::class, 'store']);
         });
-    });
 
+        Route::prefix('/tournament')->group(function() {
+            Route::post('/store', [TournamentController::class, 'store']);
+            Route::put('/update', [TournamentController::class, 'update']);
+            Route::get('/{id}', [TournamentController::class, 'detail']);
+            Route::delete('/delete/{id}', [TournamentController::class, 'delete']);
+        });
+    });
 });

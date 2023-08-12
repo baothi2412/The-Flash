@@ -13,11 +13,12 @@ class JqueryDataTable extends Component
     public $columnsName;
     public $records;
     public $ignoreColumns;
+    public $imageColumns;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($title, $subTitle, $columnsName, $records)
+    public function __construct($title, $subTitle, $columnsName, $records, $imageColumns = [])
     {
         $this->title = $title;
         $this->subTitle = $subTitle;
@@ -30,6 +31,7 @@ class JqueryDataTable extends Component
             'email_verified_at',
             'remember_token',
         ];
+        $this->imageColumns = $imageColumns;
     }
 
     /**

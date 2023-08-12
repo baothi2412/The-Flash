@@ -51,7 +51,18 @@
                                 <tr data-id="{{$record->id}}">
                                     @foreach ($columnsName as $column)
                                         @if (!in_array($column, $ignoreColumns))
-                                            <td>{{ $record[$column] }}</td>
+                                            @if (in_array($column, $imageColumns))
+                                                <td>
+                                                    <img 
+                                                        src="/images/file-uploads/{{ $record[$column] }}" 
+                                                        alt="Image"
+                                                        width="60px"
+                                                    >
+                                                </td>
+                                            @else
+                                                <td>{{ $record[$column] }}</td>
+                                            @endif
+                                        @else
                                         @endif
                                     @endforeach
                                     <td>
