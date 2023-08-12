@@ -37,11 +37,14 @@
 
 <style>
     td.details-control {
-    background: url('assets/images/details_open.png') no-repeat center center;
-    cursor: pointer;
-}
+        background: url('assets/images/details_open.png') no-repeat center center;
+        cursor: pointer;
+    }
     tr.shown td.details-control {
         background: url('assets/images/details_close.png') no-repeat center center;
+    }
+    ::-webkit-scrollbar {
+    width: 0;
     }
 </style>
 

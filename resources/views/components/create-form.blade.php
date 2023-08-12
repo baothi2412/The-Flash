@@ -32,7 +32,22 @@
 </div>
 
 <script>
-    // $(document).ready(function() {
-    //     $('.select2').select2();
-    // });
+    const dataSubmit = {};
+    const createFormInputs = document.querySelectorAll('input.create-form-input');
+    const createFormSubmitBtn = document.querySelector('a.create-form-submit-button');
+
+    createFormSubmitBtn.onclick = function(e) {
+        createFormInputs.forEach(input => {
+            const inputName = input.name;
+            dataSubmit[inputName] = input.value;
+        });
+        apiService.post('/api/user/store', dataSubmit);
+        document.querySelector('.launch-pricing-modal').click();
+    }
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('.select2').select2();
+    });
 </script>

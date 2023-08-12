@@ -12,22 +12,22 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('matches', function (Blueprint $table) {
-            $table->id('MatchID');
+            $table->id();
             $table->unsignedBigInteger('TournamentID');
             $table->dateTime('DateTimeStart');
             $table->dateTime('DateTimeEnd');
             $table->string('Stadium');
-            $table->unsignedBigInteger('TeamA');
+            $table->unsignedBigInteger('TeamAID');
             $table->string('TeamAFormation');
-            $table->unsignedBigInteger('TeamB');
+            $table->unsignedBigInteger('TeamBID');
             $table->string('TeamBFormation');
             $table->string('Score');
             $table->string('Type');
             $table->timestamps();
         
-            $table->foreign('TournamentID')->references('TournamentID')->on('tournaments');
-            $table->foreign('TeamA')->references('ClubID')->on('clubs');
-            $table->foreign('TeamB')->references('ClubID')->on('clubs');
+            $table->foreign('TournamentID')->references('id')->on('tournaments');
+            $table->foreign('TeamAID')->references('id')->on('clubs');
+            $table->foreign('TeamBID')->references('id')->on('clubs');
         });        
     }
 
