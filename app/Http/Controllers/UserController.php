@@ -110,5 +110,4 @@ class UserController extends Controller
 
         return response($html)->header('Content-Type', 'text/html');
     }
-
 }

@@ -36,20 +36,7 @@
     </div>
 </div>
 
-<script>
-    const editDataSubmit = {};
-    const editFormInputs = document.querySelectorAll('input.edit-form-input');
-    const editFormSubmitBtn = document.querySelector('a.edit-form-submit-button');
 
-    editFormSubmitBtn.onclick = function(e) {
-        editFormInputs.forEach(input => {
-            const inputName = input.name;
-            editDataSubmit[inputName] = input.value;
-        });
-        apiService.put('/api/user/update', editDataSubmit);
-        document.querySelector('.edit-form-modal').click();
-    }
-</script>
 
 {{-- <script>
     $(document).ready(function() {

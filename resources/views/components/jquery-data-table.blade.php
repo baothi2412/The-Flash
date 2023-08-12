@@ -68,32 +68,3 @@
     </div>
 </div>
 
-<script>
-    function changeID(id) {
-        const idEditInputElm = document.getElementById('editFormInputID')
-        idEditInputElm.value = id;
-
-        fetch('/api/user/' + id, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': csrfToken, // Thay csrfToken bằng giá trị thực tế
-                'Authorization': `Bearer ${JSON.parse(localStorage.getItem('access_token'))}`
-            },
-        })
-            .then(response => response.json())
-            .then(data => {
-                const editFormInputs = document.querySelectorAll('input.edit-form-input');
-                editFormInputs.forEach(input => {
-                    input.value = data.user[input.name]
-                })
-            })
-            .catch(error => {
-                console.log(error)
-            });
-    }
-
-    function deleteWithID(id) {
-        document.getElementById('idToDelete').value = id;
-    }
-</script>

@@ -97,12 +97,12 @@ const apiService = {
                     const html = `<td class="sorting_1">${dataReceive.id}</td>
                                     ${tdElms}
                                     <td>
-                                            <a onlick="changeID(${dataReceive.id})" id="button-component" class="warning " data-toggle="modal" data-target=".launch-pricing-modal">
+                                            <a onlick="changeID(${dataReceive.id})" id="button-component" class="warning " data-toggle="modal" data-target=".edit-form-modal">
                                                 <span class="text">
                                                     <img style="position: relative; right: 0; top: 0;" class="svg-icon" src="/svg/basic-icons/Pencil.svg" alt="SVG Icon">
                                                 </span>
                                             </a>                                        
-                                            <a id="button-component" class="danger " data-toggle="modal" data-target=".launch-pricing-modal">
+                                            <a onclick="deleteWithID(${dataReceive.id})" id="button-component" class="danger " data-toggle="modal" data-target="#deleteModal">
                                                 <span class="text">
                                                         <img style="position: relative; right: 0; top: 0;" class="svg-icon" src="/svg/basic-icons/Trash.svg" alt="SVG Icon">
                                                 </span>

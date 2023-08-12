@@ -17,18 +17,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    const confirmDeleteBtn = document.getElementById('confirmDeleteBtn')
-    confirmDeleteBtn.onclick = function() {
-        apiService.delete('/api/user/delete/' + document.getElementById('idToDelete').value);
-        // const deleteModal = document.getElementById('deleteModal')
-        // deleteModal.classList.remove('show')
-        // deleteModal.style.display = 'none';
-        // deleteModal.ariaHidden = 'true';
-        // deleteModal.removeAttribute('aria-modal')
-        // document.querySelector('.modal-backdrop').remove()
-        document.getElementById('closeDeleteModalBtn').click();
-    }
-    
-</script>
