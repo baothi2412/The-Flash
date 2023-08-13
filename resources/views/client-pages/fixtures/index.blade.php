@@ -11,6 +11,7 @@
           <li> <a href="#"> Fixtures </a> </li>
        </ul>
     </div>
+<<<<<<< HEAD
  </div>
  <style>
  .match-left .mtl-left img {
@@ -188,6 +189,27 @@
                 <div class="col-lg-4">
                    <div class="sidebar">
                       <!--widget start-->
+=======
+    <style>
+        .row img {
+            width: 73px;
+            height: 50px;
+        }
+    </style>
+    <!--Main Slider Start-->
+    <!--Main Content Start-->
+    <div class="main-content innerpagebg wf100">
+        <!--team Page Start-->
+        <div class="team wf100 p80">
+            <!--Start-->
+            <div class="player-squad">
+                <div class="container">
+                    <div class="row">
+                        <!--Fixture Start-->
+                        <div class="col-lg-8">
+                            <!--Last Match Result Start-->
+                            <div class="last-match-result-full mb-60">
+>>>>>>> f4252965222b7bedbd30c7bc394bd72b2ae3c8d6
 
                       <!--widget start-->
                       <!--widget start-->

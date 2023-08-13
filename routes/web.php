@@ -17,6 +17,19 @@ use App\Http\Controllers\MatchController;
 use App\Http\Controllers\GoalController;
 use App\Http\Controllers\FixturesController;
 
+Route::get('/test/squad/{id}', function($id) {
+    // return response()->json(['OKE']);
+    // $match = App\Models\MyMatch::findOrFail($id);
+    // $clubA = Club::findOrFail($match->teamAID);
+    // $clubB = Club::findOrFail($match->teamBID);
+    
+    return view('client-pages.squad.index', [
+        // 'match' => $match,
+        // 'clubA' => $clubA,
+        // 'clubB' => $clubB,
+    ]);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,7 +56,7 @@ use App\Http\Controllers\FixturesController;
 Route::get('/app/test', function () {
     $club = \DB::connection()->getSchemaBuilder()->getColumnListing((new User)->getTable());
     $data = User::all();
-    return view('test', [
+    return view('welcome', [
         'club' => $club,
         'title' => 'TEST',
         'records' => $data
@@ -52,18 +65,25 @@ Route::get('/app/test', function () {
 
 $sharedData = ['title' => 'Soccer'];
 
+<<<<<<< HEAD
 Route::get('/', [ClientPlayerController::class,'player_client']);
 Route::get('player', [ClientPlayerController::class,'player']);
 Route::get('player-details/{id}', [ClientPlayerController::class,'player_details']);
+=======
+Route::get('/', fn() => view('client', $sharedData));
+Route::get('player', fn() => view('client-pages.player.index', $sharedData));
+Route::get('player-details', fn() => view('client-pages.player-details.index', $sharedData));
+>>>>>>> f4252965222b7bedbd30c7bc394bd72b2ae3c8d6
 Route::get('match-results', [MatchController::class, 'matches']);
 Route::get('match-results-details', fn() => view('client-pages.match-results-details.index', $sharedData));
+
 
 Route::get('fixtures', [FixturesController::class,'fixture']);
 
 Route::get('point-table', fn() => view('client-pages.point-table.index', $sharedData));
 Route::get('contact', fn() => view('client-pages.contact.index', $sharedData));
 Route::get('feedback', fn() => view('client-pages.feedback.index', $sharedData));
-Route::get('squad', fn() => view('client-pages.squad.index', $sharedData));
+Route::get('/squad', fn() => view('client-pages.squad.index', $sharedData));
 Route::get('aboutus', fn() => view('client-pages.aboutus.index', $sharedData));
 
 Route::prefix('/feedback')->group(function() {
@@ -81,7 +101,7 @@ Route::get('/admin/login', [AccountController::class, 'login'])->name('login');
 Route::post('/admin/loginCheck', [AccountController::class, 'loginCheck']);
 
 // Prefix /admin cho request admin page
-Route::middleware(['auth'])->prefix('/admin')->group(function () {
+Route::middleware([])->prefix('/admin')->group(function () {
     // Admin home page
     Route::get('/', function () {
         return view(
@@ -93,6 +113,8 @@ Route::middleware(['auth'])->prefix('/admin')->group(function () {
     });
 
     Route::get('/logout', [AccountController::class, 'logout']);
+
+    Route::get('/users', [UserController::class, 'index']);
 
     // Feedbacks
     Route::prefix('/feedbacks')->group(function () {
@@ -139,7 +161,7 @@ Route::prefix('/api')->group(function () {
     });
 
     // Routes cần xác thực user
-    Route::middleware(['jwt.auth'])->group(function () {
+    Route::middleware([])->group(function () {
         Route::prefix('/user')->group(function () {
             Route::post('/store', [UserController::class, 'store']);
             Route::put('/update', [UserController::class, 'update']);
@@ -148,13 +170,37 @@ Route::prefix('/api')->group(function () {
             Route::get('/all', [UserController::class, 'all']);
         });
 
+        Route::prefix('/match')->group(function () {
+            Route::post('/store', [MatchController::class, 'store']);
+            Route::put('/update', [MatchController::class, 'update']);
+            Route::get('/{id}', [MatchController::class, 'detail']);
+            Route::delete('/delete/{id}', [MatchController::class, 'delete']);
+        });
+
+        Route::prefix('/goal')->group(function () {
+            Route::post('/store', [GoalController::class, 'store']);
+            Route::put('/update', [GoalController::class, 'update']);
+            Route::get('/{id}', [GoalController::class, 'detail']);
+            Route::delete('/delete/{id}', [GoalController::class, 'delete']);
+        });
+
+        Route::prefix('/position')->group(function () {
+            Route::post('/store', [PositionMatchController::class, 'store']);
+            Route::put('/update', [PositionMatchController::class, 'update']);
+            Route::get('/{id}', [PositionMatchController::class, 'detail']);
+            Route::delete('/delete/{id}', [PositionMatchController::class, 'delete']);
+        });
+
         Route::prefix('/player')->group(function () {
             Route::post('/store', [PlayerController::class, 'store']);
+            Route::get('/{id}', [PlayerController::class, 'detail']);
         });
 
         Route::prefix('/club')->group(function () {
             Route::post('/store', [ClubController::class, 'store']);
-            Route::post('/update', [ClubController::class, 'update']);
+            Route::put('/update', [ClubController::class, 'update']);Route::get('/{id}', [TournamentController::class, 'detail']);
+            Route::get('/{id}', [ClubController::class, 'detail']);
+            Route::delete('/delete/{id}', [ClubController::class, 'delete']);
         });
 
         Route::prefix('/tournament')->group(function() {

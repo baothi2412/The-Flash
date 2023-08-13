@@ -87,7 +87,7 @@ const apiService = {
         const form = document.getElementById('edit-form')
 
         fetch(url, {
-            method: 'PUT',
+            method: 'POST',
             headers: {
                 'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
                 'X-CSRF-TOKEN': csrfToken, // Thay csrfToken bằng giá trị thực tế

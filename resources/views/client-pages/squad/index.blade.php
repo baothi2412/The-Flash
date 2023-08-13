@@ -142,17 +142,17 @@
                 font-size: 20px;
             }
 
-            main{
+            main {
                 margin-top: -200px;
             }
-            .menu{
+
+            .menu {
                 top: 390px;
                 left: 50px;
                 transform: scale(0.9);
             }
 
         }
-
 
         .static {
             position: absolute;
@@ -791,7 +791,7 @@
         </div>
 
         <li style="--i:0;--clr:#1877f2">
-            <a href="/"><ion-icon name="home"></ion-icon></a>
+            <a href="#"><ion-icon name="home"></ion-icon></a>
         </li>
         <li style="--i:1;--clr:#25d366">
             <a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a>
@@ -892,11 +892,252 @@
             $loading = null;
 
             $switcher = null;
+            const formations = [
+                {
+                    formation: 'away',
+                    players: [
+                        { x: 180, y: -230 },
+                        { x: 0, y: -230 },
+                        { x: -180, y: -230 },
+                        { x: 180, y: 50 },
+                        { x: 0, y: 50 },
+                        { x: -180, y: 50 },
+                        { x: 250, y: 250 },
+                        { x: 80, y: 250 },
+                        { x: -80, y: 250 },
+                        { x: -250, y: 250 },
+                        { x: 0, y: 410 }
+                    ]
+
+                },
+                {
+                    formation: '3-4-3',
+                    players: [
+                        { x: 150, y: -190 },
+                        { x: 0, y: -190 },
+                        { x: -150, y: -190 },
+                        { x: 250, y: 50 },
+                        { x: 90, y: 50 },
+                        { x: -90, y: 50 },
+                        { x: -250, y: 50 },
+                        { x: 150, y: 250 },
+                        { x: 0, y: 250 },
+                        { x: -150, y: 250 },
+                        { x: 0, y: 410 }
+                    ]
+                },
+                {
+                    formation: '4231',
+                    players: [
+                        { x: 0, y: -250 },
+                        { x: 190, y: -70 },
+                        { x: 0, y: -70 },
+                        { x: -190, y: -70 },
+                        { x: 70, y: 70 },
+                        { x: -70, y: 70 },
+                        { x: 250, y: 250 },
+                        { x: 80, y: 250 },
+                        { x: -80, y: 250 },
+                        { x: -250, y: 250 },
+                        { x: 0, y: 410 }
+                    ]
+                },
+                {
+                    formation: '4-2-4',
+                    players: [
+                        { x: 250, y: -190 },
+                        { x: 80, y: -190 },
+                        { x: -80, y: -190 },
+                        { x: -250, y: - 190 },
+                        { x: 90, y: 20 },
+                        { x: -90, y: 20 },
+                        { x: 250, y: 250 },
+                        { x: 80, y: 250 },
+                        { x: -80, y: 250 },
+                        { x: -250, y: 250 },
+                        { x: 0, y: 410 }
+                    ]
+                },
+                {
+                    formation: '3-1-4-2',
+                    players: [
+                        { x: 75, y: -200 },
+                        { x: -75, y: -200 },
+                        { x: 250, y: 0 },
+                        { x: 110, y: 0 },
+                        { x: 0, y: 130 },
+                        { x: -110, y: 0 },
+                        { x: -250, y: 0 },
+                        { x: 150, y: 270 },
+                        { x: 0, y: 270 },
+                        { x: -150, y: 270 },
+                        { x: 0, y: 410 }
+                    ]
+                },
+                {
+                    formation: '4-3-3',
+                    players: [
+                        { x: 180, y: -230 },
+                        { x: 0, y: -230 },
+                        { x: -180, y: -230 },
+                        { x: 180, y: 50 },
+                        { x: 0, y: 50 },
+                        { x: -180, y: 50 },
+                        { x: 250, y: 250 },
+                        { x: 80, y: 250 },
+                        { x: -80, y: 250 },
+                        { x: -250, y: 250 },
+                        { x: 0, y: 410 }
+                    ]
+
+                },
+                {
+                    formation: '4-4-2',
+                    players: [
+                        { x: 80, y: -190 },
+                        { x: -80, y: -190 },
+                        { x: 250, y: 50 },
+                        { x: 80, y: 50 },
+                        { x: -80, y: 50 },
+                        { x: -250, y: 50 },
+                        { x: 250, y: 250 },
+                        { x: 80, y: 250 },
+                        { x: -80, y: 250 }, { x: -250, y: 250 },
+                        { x: 0, y: 410 }
+                    ]
+                },
+                {
+                    formation: '3-5-2',
+                    players: [
+                        { x: 75, y: -200 },
+                        { x: -75, y: -200 },
+                        { x: 250, y: -70 },
+                        { x: 130, y: 50 },
+                        { x: 0, y: 130 },
+                        { x: -130, y: 50 },
+                        { x: -250, y: -70 },
+                        { x: 150, y: 270 },
+                        { x: 0, y: 290 },
+                        { x: -150, y: 270 },
+                        { x: 0, y: 410 }
+                    ]
+                },
+                {
+                    formation: '5-4-1',
+                    players: [
+                        { x: 0, y: -200 },
+                        { x: 200, y: -50 },
+                        { x: 75, y: 50 },
+                        { x: -75, y: 50 },
+                        { x: -200, y: -50 },
+                        { x: 250, y: 200 },
+                        { x: 130, y: 300 },
+                        { x: 0, y: 300 },
+                        { x: -130, y: 300 },
+                        { x: -250, y: 200 },
+                        { x: 0, y: 410 }
+                    ]
+                },
+                {
+                    formation: '3-5-1-1',
+                    players: [
+                        { x: 0, y: -190 },
+                        { x: 0, y: -10 },
+                        { x: 225, y: -10 },
+                        { x: 125, y: 80 },
+                        { x: 0, y: 145 },
+                        { x: -125, y: 80 },
+                        { x: -225, y: -10 },
+                        { x: 150, y: 240 },
+                        { x: 0, y: 280 },
+                        { x: -150, y: 240 },
+                        { x: 0, y: 410 }
+                    ]
+                },
+                {
+                    formation: '4-4-2-D',
+                    players: [
+                        { x: 130, y: -160 },
+                        { x: 0, y: -155 },
+                        { x: -130, y: -160 },
+                        { x: 225, y: 30 },
+                        { x: 0, y: 15 },
+                        { x: 0, y: 165 },
+                        { x: -225, y: 30 },
+                        { x: 225, y: 297 },
+                        { x: 0, y: 297 },
+                        { x: -225, y: 297 },
+                        { x: 0, y: 410 }
+                    ]
+                },
+                {
+                    formation: '5-3-2',
+                    players: [
+                        { x: 75, y: -190 },
+                        { x: -75, y: -190 },
+                        { x: 200, y: 50 },
+                        { x: 0, y: 140 },
+                        { x: 0, y: -10 },
+                        { x: -200, y: 50 },
+                        { x: 235, y: 280 },
+                        { x: 75, y: 300 },
+                        { x: -75, y: 300 },
+                        { x: -235, y: 280 },
+                        { x: 0, y: 410 }
+                    ]
+                },
+                {
+                    formation: '4-1-2-1-2',
+                    players: [
+                        { x: -100, y: 250 },
+                        { x: 100, y: 250 },
+                        { x: 250, y: 250 },
+                        { x: -250, y: 250 },
+                        { x: -150, y: 50 },
+                        { x: 0, y: 150 },
+                        { x: 150, y: 50 },
+                        { x: 0, y: 0 },
+                        { x: -110, y: -190 },
+                        { x: 110, y: -190 },
+                        { x: 0, y: 410 }
+                    ]
+                }]
+            var homex = [];
+            var homey = [];
+            const compareFormations = (selectedFormation, playFormat) => {
+                playFormat.forEach(formation => {
+                    if (selectedFormation === formation.formation) {
+                        formation.players.forEach(player => {
+                            const { x, y } = player;
+                            homex.push(x);
+                            homey.push(y);
+                        });
+                    }
+                });
+            };
+
+            var awayx = [];
+            var awayy = [];
+            const compareFormationsB = (selectedFormation, playFormat) => {
+                playFormat.forEach(formation => {
+                    if (selectedFormation === formation.formation) {
+                        formation.players.forEach(player => {
+                            const { x, y } = player;
+                            awayx.push(x);
+                            awayy.push(y);
+                        });
+                    }
+                });
+            };
+            compareFormations("4-1-2-1-2", formations);
+
+            compareFormationsB("4-3-3", formations);
 
             data = {
                 players: {
                     home: [
                         {
+
                             //Forward
                             name: 'tiền đạo 2',
                             asset: 'bm-pizarro.jpg',
@@ -907,8 +1148,8 @@
                             dob: '36',
                             goals: 1,
                             games: 16,
-                            x: 250,
-                            y: -190
+                            x: homex[0],
+                            y: homey[0]
                         },
                         {
                             //Forward
@@ -921,8 +1162,8 @@
                             dob: '36',
                             goals: 1,
                             games: 16,
-                            x: 80,
-                            y: -190
+                            x: homex[1],
+                            y: homey[1]
                         }, {
                             name: 'tiền vệ 4',
                             asset: 'bm-robben.png',
@@ -933,8 +1174,8 @@
                             dob: '32',
                             goals: 19,
                             games: 30,
-                            x: -80,
-                            y: -190
+                            x: homex[2],
+                            y: homey[2]
                         }, {
                             name: 'tiền vệ 3',
                             asset: 'bm-rilbery.jpg',
@@ -945,8 +1186,8 @@
                             dob: '32',
                             goals: 9,
                             games: 22,
-                            x: -250,
-                            y: -190
+                            x: homex[3],
+                            y: homey[3]
                         }, {
                             name: 'tiền vệ 2',
                             asset: 'bm-schweinsteiger.jpg',
@@ -957,8 +1198,8 @@
                             dob: '31',
                             goals: 21,
                             games: 3,
-                            x: 90,
-                            y: 20
+                            x: homex[4],
+                            y: homey[4]
                         }, {
                             name: 'tiền vệ 1',
                             asset: 'bm-martinez.jpg',
@@ -969,8 +1210,8 @@
                             dob: '28',
                             goals: 0,
                             games: 2,
-                            x: -90,
-                            y: 20
+                            x: homex[5],
+                            y: homey[5]
                         }, {
                             name: 'hậu vệ 4',
                             asset: 'bm-alaba.jpg',
@@ -981,8 +1222,8 @@
                             dob: '24',
                             goals: 5,
                             games: 27,
-                            x: -250,
-                            y: 250
+                            x: homex[6],
+                            y: homey[6]
                         }, {
                             name: 'hậu vệ 3',
                             asset: 'bm-lahm.jpg',
@@ -993,8 +1234,8 @@
                             dob: '32',
                             goals: 2,
                             games: 25,
-                            x: 250,
-                            y: 250
+                            x: homex[7],
+                            y: homey[7]
                         }, {
                             name: 'hậu vệ 2',
                             asset: 'bm-benatia.jpg',
@@ -1005,8 +1246,8 @@
                             dob: '31',
                             goals: 21,
                             games: 1,
-                            x: 80,
-                            y: 250
+                            x: homex[8],
+                            y: homey[8]
                         }, {
                             name: 'Hậu vệ 1',
                             asset: 'bm-dante.jpg',
@@ -1017,8 +1258,8 @@
                             dob: '32',
                             goals: 0,
                             games: 34,
-                            x: -80,
-                            y: 250
+                            x: homex[9],
+                            y: homey[9]
                         }, {
                             name: 'thủ môn',
                             asset: 'bm-neuer.jpg',
@@ -1029,131 +1270,145 @@
                             dob: '29',
                             goals: 0,
                             games: 48,
-                            x: 0,
-                            y: 410
+                            x: homex[10],
+                            y: homey[10]
                         }
                     ],
                     away: [
-                        {
-                            name: 'Benzema',
-                            asset: 'rm-benzema.jpg',
-                            origin: 'France',
-                            height: '1.87m',
-                            shirt: '9',
+                        {  //Forward
+                            name: 'tiền đạo 2',
+                            asset: 'bm-pizarro.jpg',
+                            origin: 'Peru',
+                            height: '1.84m',
+                            shirt: '14',
                             pos: 'Forward',
                             dob: '36',
                             goals: 1,
                             games: 16,
-                            x: 110,
-                            y: -190
+                            x: awayx[0],
+                            y: awayy[0]
+                        },
+                        {  //Forward
+                            name: 'tiền đạo 1',
+                            asset: 'bm-pizarro.jpg',
+                            origin: 'Peru',
+                            height: '1.84m',
+                            shirt: '14',
+                            pos: 'Forward',
+                            dob: '36',
+                            goals: 1,
+                            games: 16,
+                            x: awayx[1],
+                            y: awayy[1]
                         }, {
-                            name: 'Bale',
-                            asset: 'rm-bale.jpg',
-                            origin: 'Wales',
-                            height: '1.83m',
-                            shirt: '11',
-                            pos: 'Midfield',
-                            dob: '26',
+                            name: 'tiền vệ 4',
+                            asset: 'bm-robben.png',
+                            origin: 'Holland',
+                            height: '1.80m',
+                            shirt: '10',
+                            pos: 'Forward',
+                            dob: '32',
                             goals: 19,
                             games: 30,
-                            x: -110,
-                            y: -190
+                            x: awayx[2],
+                            y: awayy[2]
                         }, {
-                            name: 'carvajal',
-                            asset: 'rm-carvajal.jpg',
-                            origin: 'Spain',
+                            name: 'tiền vệ 3',
+                            asset: 'bm-rilbery.jpg',
+                            origin: 'France',
                             height: '1.70m',
-                            shirt: '15',
-                            pos: 'Defender',
+                            shirt: '7',
+                            pos: 'Midfield',
                             dob: '32',
                             goals: 9,
                             games: 22,
-                            x: 150,
-                            y: 50
+                            x: awayx[3],
+                            y: awayy[3]
                         }, {
-                            name: 'Silva',
-                            asset: 'rm-silva.jpg',
-                            origin: 'Brazil',
+                            name: 'tiền vệ 2',
+                            asset: 'bm-schweinsteiger.jpg',
+                            origin: 'Germany',
                             height: '1.87m',
-                            shirt: '16',
+                            shirt: '24',
                             pos: 'Forward',
-                            dob: '22',
+                            dob: '31',
                             goals: 21,
                             games: 3,
-                            x: 0,
-                            y: 100
+                            x: awayx[4],
+                            y: awayy[4]
                         }, {
-                            name: 'Kroos',
-                            asset: 'rm-kroos.jpg',
-                            origin: 'Germany',
-                            height: '1.82',
+                            name: 'tiền vệ 1',
+                            asset: 'bm-martinez.jpg',
+                            origin: 'Spain',
+                            height: '1.90m',
                             shirt: '8',
                             pos: 'Midfield',
-                            dob: '25',
+                            dob: '28',
                             goals: 0,
                             games: 2,
-                            x: -150,
-                            y: 50
+                            x: awayx[5],
+                            y: awayy[5]
                         }, {
-                            name: 'Modric',
-                            asset: 'rm-modric.jpg',
-                            origin: 'Croatia',
-                            height: '1.74m',
-                            shirt: '19',
-                            pos: 'Midfield',
-                            dob: '30',
+                            name: 'hậu vệ 4',
+                            asset: 'bm-alaba.jpg',
+                            origin: 'Austria',
+                            height: '1.80m',
+                            shirt: '27',
+                            pos: 'Defence',
+                            dob: '24',
                             goals: 5,
                             games: 27,
-                            x: -200,
-                            y: 180
+                            x: awayx[6],
+                            y: awayy[6]
                         }, {
-                            name: 'Nacho',
-                            asset: 'rm-nacho.jpg',
+                            name: 'hậu vệ 3',
+                            asset: 'bm-lahm.jpg',
                             origin: 'Germany',
-                            height: '1.79',
-                            shirt: '18',
+                            height: '1.70',
+                            shirt: '21',
                             pos: 'Defence',
-                            dob: '25',
+                            dob: '32',
                             goals: 2,
                             games: 25,
-                            x: 200,
-                            y: 180
+                            x: awayx[7],
+                            y: awayy[7]
                         }, {
-                            name: 'Ramos',
-                            asset: 'rm-ramos.jpg',
-                            origin: 'Spain',
-                            height: '1.83m',
-                            shirt: '4',
+                            name: 'hậu vệ 2',
+                            asset: 'bm-benatia.jpg',
+                            origin: 'France',
+                            height: '1.87m',
+                            shirt: '5',
                             pos: 'Defence',
                             dob: '31',
                             goals: 21,
                             games: 1,
-                            x: 100,
-                            y: 300
+                            x: awayx[8],
+                            y: awayy[8]
                         }, {
-                            name: 'Pepe',
-                            asset: 'rm-pepe.jpg',
+                            name: 'Hậu vệ 1',
+                            asset: 'bm-dante.jpg',
                             origin: 'Brazil',
-                            height: '1.88m',
-                            shirt: '3',
+                            height: '1.87m',
+                            shirt: '4',
                             pos: 'Defence',
                             dob: '32',
                             goals: 0,
                             games: 34,
-                            x: -100,
-                            y: 300
+                            x: awayx[9],
+                            y: awayy[9]
                         }, {
-                            name: 'Casillas',
-                            asset: 'rm-casillas.jpg',
-                            origin: 'Spain',
-                            height: '1.85m',
+                            name: 'thủ môn',
+                            asset: 'bm-neuer.jpg',
+                            origin: 'Germany',
+                            height: '1.93m',
                             shirt: '1',
                             pos: 'Goalie',
-                            dob: '34',
+                            dob: '29',
                             goals: 0,
                             games: 48,
-                            x: 0,
-                            y: 410
+                            x: awayx[10],
+                            y: awayy[10]
+
                         }
                     ]
                 }
@@ -1234,7 +1489,7 @@
                     });
                 },
                 populateCard: function ($el, data) {
-                    console.log('el::: ', $el);
+
 
 
 
@@ -1610,4 +1865,3 @@
 
 
 </html>
-

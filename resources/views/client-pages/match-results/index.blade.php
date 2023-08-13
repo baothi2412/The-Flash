@@ -27,6 +27,15 @@
                      <a href="/match-results-details" ><h4>24 May, 2020 | <span>Super Euro League</span></h4></a>
                    </div>
                    <!--title end-->
+<<<<<<< HEAD
+=======
+                  <style>
+                      .last-match img{
+                          width: 72px;
+                          height: 50px;
+                      }
+                      </style>
+>>>>>>> f4252965222b7bedbd30c7bc394bd72b2ae3c8d6
                    @foreach ($matchList as $match)
                     <ul class="last-match">
                         <?php

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Club;
 use Illuminate\Http\Request;
 use  App\Models\MyMatch;
 class MatchController extends Controller
@@ -17,33 +18,30 @@ class MatchController extends Controller
         ]);
     }
    
-    public function store(Request$request){
-        $id = $request->input('id');
-        $scoringPlayerID = $request->input('ScoringPlayerID');
-        $DateTimeStart = $request->input('DateTimeStart');
+    public function store(Request $request){
+        $tournamentID = $request->input('TournamentID');
+        $dateTimeStart = $request->input('DateTimeStart');
         $dateTimeEnd = $request->input('DateTimeEnd');
         $stadium = $request->input('Stadium');
         $teamAID = $request->input('TeamAID');
         $teamAFormation = $request->input('TeamAFormation');
         $teamBID = $request->input('TeamBID');
-        $teamBForScoremation = $request->input('TeamBForScoremation');
+        $teamBFormation = $request->input('TeamBFormation');
         $score = $request->input('Score');
         $type = $request->input('Type');
 
         $match = new MyMatch();
         
-       
-        $match->id = $id;
-        $match->ScoringPlayerID = $scoringPlayerID;
-        $match->DateTimeStart = $DateTimeStart;
-        $match->DateTimeEnd = $dateTimeEnd;
-        $match->Stadium = $stadium;
-        $match->TeamAID = $teamAID;
-        $match->TeamAFormation = $teamAFormation;
-        $match->TeamBID = $teamBID;
-        $match->TeamBForScoremation = $teamBForScoremation;
-        $match->Score = $score;
-        $match->Type = $type;
+        $match->tournamentID = $tournamentID;
+        $match->dateTimeStart = $dateTimeStart;
+        $match->dateTimeEnd = $dateTimeEnd;
+        $match->stadium = $stadium;
+        $match->teamAID = $teamAID;
+        $match->teamAFormation = $teamAFormation;
+        $match->teamBID = $teamBID;
+        $match->teamBFormation = $teamBFormation;
+        $match->score = $score;
+        $match->type = $type;
         
 
         $match->save();
@@ -61,29 +59,29 @@ class MatchController extends Controller
     {
         $id = $request->input('id');
         $scoringPlayerID = $request->input('ScoringPlayerID');
-        $DateTimeStart = $request->input('DateTimeStart');
+        $dateTimeStart = $request->input('DateTimeStart');
         $dateTimeEnd = $request->input('DateTimeEnd');
         $stadium = $request->input('Stadium');
         $teamAID = $request->input('TeamAID');
         $teamAFormation = $request->input('TeamAFormation');
         $teamBID = $request->input('TeamBID');
-        $teamBForScoremation = $request->input('TeamBForScoremation');
+        $teamBFormation = $request->input('TeamBFormation');
         $score = $request->input('Score');
         $type = $request->input('Type');
 
         $match = MyMatch::find($id);
 
        
-        $match->ScoringPlayerID = $scoringPlayerID;
-        $match->DateTimeStart = $DateTimeStart;
-        $match->DateTimeEnd = $dateTimeEnd;
-        $match->Stadium = $stadium;
-        $match->TeamAID = $teamAID;
-        $match->TeamAFormation = $teamAFormation;
-        $match->TeamBID = $teamBID;
-        $match->TeamBForScoremation = $teamBForScoremation;
-        $match->Score = $score;
-        $match->Type = $type;
+        $match->scoringPlayerID = $scoringPlayerID;
+        $match->dateTimeStart = $dateTimeStart;
+        $match->dateTimeEnd = $dateTimeEnd;
+        $match->stadium = $stadium;
+        $match->teamAID = $teamAID;
+        $match->teamAFormation = $teamAFormation;
+        $match->teamBID = $teamBID;
+        $match->teamBFormation = $teamBFormation;
+        $match->score = $score;
+        $match->type = $type;
 
         $match->save();
         
@@ -113,6 +111,19 @@ class MatchController extends Controller
 
         return response()->json([
             'myMatch' => $myMatch
+        ]);
+    }
+
+    public function show($id)
+    {
+        $match = MyMatch::findOrFail($id);
+        $clubA = Club::findOrFail($match->clubA);
+        $clubB = Club::findOrFail($match->clubB);
+        
+        return view('client-pages.squad.index', [
+            'match' => $match,
+            'clubA' => $clubA,
+            'clubB' => $clubB,
         ]);
     }
 
