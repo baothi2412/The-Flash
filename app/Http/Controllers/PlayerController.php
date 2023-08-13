@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Player;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Str;
-
 class PlayerController extends Controller
 {
     public function index(Request $request) {
@@ -43,7 +42,7 @@ class PlayerController extends Controller
         $story = $request->input('Story');
 
         $player = new Player();
-        
+
         // Image upload
         $imgName = 'img'.time().'-'.Str::slug($name).'.'.$avatar->extension();
 
@@ -71,5 +70,5 @@ class PlayerController extends Controller
             ]
         );
     }
-    
+
 }

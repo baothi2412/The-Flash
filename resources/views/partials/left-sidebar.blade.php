@@ -16,7 +16,7 @@
                         {{ Auth::user()->name }}
                     @else
                         Anonymous User
-                    @endif    
+                    @endif
                 </strong></a>
                 <ul class="dropdown-menu dropdown-menu-right account vivify flipInY">
                     {{-- <li><a href="page-profile.html"><i class="fa fa-user"></i>My Profile</a></li>
