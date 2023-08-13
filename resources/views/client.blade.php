@@ -134,6 +134,7 @@
     <div class="main-content wf100">
         <!--Slide tabs start-->
         <!--Slide tabs start-->
+        <div class="dropdown">
         <div class="slider-tabs wf100">
             <div class="container">
                 <div class="row">
@@ -155,6 +156,7 @@
                                 <h6><a href="#">The will to prepare to win
                                         that makes the difference</a> </h6>
                                 <strong>Carolina Baltimore</strong>
+                            </div>
                             </div>
                         </li>
                     </ul>
@@ -218,14 +220,15 @@
                             <h5 class="title">Sonraki Maç</h5>
                             <div class="nmw-wrap">
                                 <ul class="match-teams-vs">
-                                    <li class="team-logo"><img src="images/uploads/kayserisporlogo.png" width="60"
-                                            height="60" alt="">
-                                        <div class="score-left"> <span></span> <strong></strong>
+                                    <li class="team-logo">
+                                        <img src="images/uploads/kayserisporlogo.png" width="60" height="60"
+                                             {{ isset($match['TeamAID']) ? 'alt="'. \App\Models\Club::find($match['TeamAID'])['Logo'] .'"' : '' }}>
                                     </li>
+
                                     <li class="mvs"> <strong class="vs">VS</strong> </li>
                                     <li class="team-logo"><img src="images/uploads/galatasaray.png" width="60"
-                                            height="60" alt="">
-                                        <div class="score-right"> <span></span> <strong></strong>
+                                            height="60"  {{ isset($match['TeamBID']) ? 'alt="'. \App\Models\Club::find($match['TeamID'])['Logo'] .'"' : '' }}>>
+                                        <div class="score-right">
                                     </li>
                                 </ul>
                                 <ul class="nmw-txt">
@@ -236,7 +239,7 @@
                                 </ul>
                                 <div id="countdown_timer"></div>
                                 <div style="clear:both"></div>
-                                <div class="buy-ticket"><a href="/match">Match Detail</a>
+                                <div class="buy-ticket">
                                 </div>
                             </div>
                         </div>

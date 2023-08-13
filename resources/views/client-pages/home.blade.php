@@ -370,7 +370,7 @@
                         <td>1</td>
                         <td><img src="../uploads/besiktas.png" width="15" height="15"  alt=""> </td>
                         <td><strong>BEŞİKTAŞ</strong></td>
-                        <td>40</td>
+                       <td>40</td>
                         <td>26</td>
                         <td>6</td>
                         <td>8</td>
