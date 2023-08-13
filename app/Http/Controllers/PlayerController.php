@@ -17,14 +17,17 @@ class PlayerController extends Controller
             'players'=>$player,
             'fileColumnsName' => [
                 'Avatar'
-            ]
+            ],
+            'imageColumns' => [
+                'Avatar'
+            ],
         ]);
     }
     public function detail($id) {
-        $Player = Player::find($id);
+        $player = Player::find($id);
 
         return response()->json([
-            'user' => $Player
+            'player' => $player
         ]);
     }
     public function store(Request $request):JsonResponse {
@@ -43,7 +46,7 @@ class PlayerController extends Controller
         // Image upload
         $imgName = 'img'.time().'-'.Str::slug($name).'.'.$avatar->extension();
 
-        $avatar->move(public_path('images\file-uploads\players'), $imgName);
+        $avatar->move(public_path('images\file-uploads'), $imgName);
 
         $player->clubID = $clubID;
         $player->avatar = $imgName;
@@ -60,7 +63,10 @@ class PlayerController extends Controller
             [
                 'isSuccess' => true,
                 'message' => 'Successfully creation',
-                'data' => $player
+                'data' => $player,
+                'imageColumns' => [
+                    'Avatar'
+                ],
             ]
         );
     }

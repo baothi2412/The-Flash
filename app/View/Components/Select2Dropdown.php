@@ -9,13 +9,17 @@ use Illuminate\View\Component;
 class Select2Dropdown extends Component
 {
     public $options;
+    public $name;
+    public $nameColumn;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($options = [])
+    public function __construct($nameColumn, $name, $options = [])
     {
+        $this->name = $name;
         $this->options = $options;
+        $this->nameColumn = $nameColumn;
     }
 
     /**

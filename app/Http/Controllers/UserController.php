@@ -10,6 +10,17 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+
+    public function index() {
+        $users = \DB::connection()->getSchemaBuilder()->getColumnListing((new User)->getTable());
+        $data = User::all();
+        return view('admin-pages.users.index', [
+            'users' => $users,
+            'title' => 'Users',
+            'records' => $data
+        ]);
+    }
+    
     public function store(Request $request) {
 
         $name = $request->input('name');

@@ -2,10 +2,10 @@
 
 
 @section('content')
-    <x-create-form title="Create New Player" :columnsName="$players" :fileColumnsName="$fileColumnsName"></x-create-form>
-    <x-edit-form title="Edit Player" :columnsName="$players" :fileColumnsName="$fileColumnsName"></x-edit-form>
+    <x-create-form title="Create New Goal" :columnsName="$goals"></x-create-form>
+    <x-edit-form title="Edit Goal" :columnsName="$goals"></x-edit-form>
     <x-delete-modal title="Delete Confirmation" content="Are you sure you want to delete it!"></x-delete-modal>
-    <x-jquery-data-table :imageColumns="$imageColumns"  :records="$records" :columnsName="$players" title="Player Management" subTitle="You can manage players in here"></x-jquery-data-table>
+    <x-jquery-data-table :records="$records" :columnsName="$goals" title="Goals Management" subTitle="You can manage Goals in here"></x-jquery-data-table>
 
     <script>
         const dataSubmit = {};
@@ -17,7 +17,7 @@
                 const inputName = input.name;
                 dataSubmit[inputName] = input.value;
             });
-            apiService.post('/api/player/store', dataSubmit);
+            apiService.post('/api/goal/store', dataSubmit);
             document.querySelector('.launch-pricing-modal').click();
         }
     </script>
@@ -32,7 +32,7 @@
                 const inputName = input.name;
                 editDataSubmit[inputName] = input.value;
             });
-            apiService.put('/api/user/update', editDataSubmit);
+            apiService.put('/api/goal/update', editDataSubmit);
             document.querySelector('.edit-form-modal').click();
         }
     </script>
@@ -40,7 +40,7 @@
     <script>
         const confirmDeleteBtn = document.getElementById('confirmDeleteBtn')
         confirmDeleteBtn.onclick = function() {
-            apiService.delete('/api/user/delete/' + document.getElementById('idToDelete').value);
+            apiService.delete('/api/goal/delete/' + document.getElementById('idToDelete').value);
             document.getElementById('closeDeleteModalBtn').click();
         }
         
@@ -51,7 +51,7 @@
             const idEditInputElm = document.getElementById('editFormInputID')
             idEditInputElm.value = id;
     
-            fetch('/api/user/' + id, {
+            fetch('/api/goal/' + id, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

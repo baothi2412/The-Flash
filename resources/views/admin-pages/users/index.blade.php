@@ -1,11 +1,12 @@
 @extends('layouts.admin.admin-layout')
 
-
 @section('content')
-    <x-create-form title="Create New Player" :columnsName="$players" :fileColumnsName="$fileColumnsName"></x-create-form>
-    <x-edit-form title="Edit Player" :columnsName="$players" :fileColumnsName="$fileColumnsName"></x-edit-form>
+    <x-create-form title="Create New User" :columnsName="$users"></x-create-form>
+    <x-edit-form title="Edit User" :columnsName="$users"></x-edit-form>
     <x-delete-modal title="Delete Confirmation" content="Are you sure you want to delete it!"></x-delete-modal>
-    <x-jquery-data-table :imageColumns="$imageColumns"  :records="$records" :columnsName="$players" title="Player Management" subTitle="You can manage players in here"></x-jquery-data-table>
+    <x-jquery-data-table :records="$records" :columnsName="$users" title="Example Title" subTitle="Basic Example"></x-jquery-data-table>
+
+    
 
     <script>
         const dataSubmit = {};
@@ -17,7 +18,7 @@
                 const inputName = input.name;
                 dataSubmit[inputName] = input.value;
             });
-            apiService.post('/api/player/store', dataSubmit);
+            apiService.post('/api/user/store', dataSubmit);
             document.querySelector('.launch-pricing-modal').click();
         }
     </script>
@@ -63,7 +64,7 @@
                 .then(data => {
                     const editFormInputs = document.querySelectorAll('input.edit-form-input');
                     editFormInputs.forEach(input => {
-                        input.value = data.player[input.name]
+                        input.value = data.user[input.name]
                     })
                 })
                 .catch(error => {
