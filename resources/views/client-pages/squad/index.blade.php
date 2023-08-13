@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soccer Verse</title>
+    <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -948,13 +948,13 @@
                         { x: 250, y: -190 },
                         { x: 80, y: -190 },
                         { x: -80, y: -190 },
-                        { x: -250, y: 190 },
+                        { x: -250, y: - 190 },
                         { x: 90, y: 20 },
                         { x: -90, y: 20 },
-                        { x: -250, y: 250 },
                         { x: 250, y: 250 },
                         { x: 80, y: 250 },
                         { x: -80, y: 250 },
+                        { x: -250, y: 250 },
                         { x: 0, y: 410 }
                     ]
                 },
@@ -994,16 +994,15 @@
                 {
                     formation: '4-4-2',
                     players: [
-                        { x: 110, y: -190 },
-                        { x: -110, y: -190 },
-                        { x: 200, y: 50 },
-                        { x: 0, y: 150 },
-                        { x: 0, y: -50 },
-                        { x: -200, y: 50 },
-                        { x: 225, y: 250 },
-                        { x: -100, y: 300 },
-                        { x: 100, y: 300 },
-                        { x: -225, y: 250 },
+                        { x: 80, y: -190 },
+                        { x: -80, y: -190 },
+                        { x: 250, y: 50 },
+                        { x: 80, y: 50 },
+                        { x: -80, y: 50 },
+                        { x: -250, y: 50 },
+                        { x: 250, y: 250 },
+                        { x: 80, y: 250 },
+                        { x: -80, y: 250 }, { x: -250, y: 250 },
                         { x: 0, y: 410 }
                     ]
                 },
@@ -1031,11 +1030,11 @@
                         { x: 75, y: 50 },
                         { x: -75, y: 50 },
                         { x: -200, y: -50 },
-                        { x: 235, y: 200 },
+                        { x: 250, y: 200 },
                         { x: 130, y: 300 },
                         { x: 0, y: 300 },
                         { x: -130, y: 300 },
-                        { x: -235, y: 200 },
+                        { x: -250, y: 200 },
                         { x: 0, y: 410 }
                     ]
                 },
@@ -1090,16 +1089,16 @@
                 {
                     formation: '4-1-2-1-2',
                     players: [
-                        { x: 0, y: -190 },
-                        { x: 0, y: -50 },
-                        { x: -110, y: 30 },
-                        { x: 250, y: -30 },
-                        { x: 120, y: -30 },
-                        { x: -250, y: -30 },
-                        { x: -200, y: 250 },
-                        { x: 200, y: 250 },
-                        { x: 100, y: -250 },
                         { x: -100, y: 250 },
+                        { x: 100, y: 250 },
+                        { x: 250, y: 250 },
+                        { x: -250, y: 250 },
+                        { x: -150, y: 50 },
+                        { x: 0, y: 150 },
+                        { x: 150, y: 50 },
+                        { x: 0, y: 0 },
+                        { x: -110, y: -190 },
+                        { x: 110, y: -190 },
                         { x: 0, y: 410 }
                     ]
                 }]
@@ -1130,14 +1129,15 @@
                     }
                 });
             };
-            compareFormations({{ $clubA }}, formations);
+            compareFormations("4-1-2-1-2", formations);
 
-            compareFormationsB({{ $clubB }}, formations);
+            compareFormationsB("4-3-3", formations);
 
             data = {
                 players: {
                     home: [
                         {
+
                             //Forward
                             name: 'tiền đạo 2',
                             asset: 'bm-pizarro.jpg',
@@ -1857,15 +1857,6 @@
         });
 
 
-    </script>
-    <script type="text/javascript">
-    function autoReloadPage() {
-        setInterval(function() {
-            location.reload();
-        }, 1000); 
-    }
-
-    autoReloadPage();
     </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
