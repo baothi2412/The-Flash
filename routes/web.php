@@ -66,13 +66,8 @@ Route::get('/app/test', function () {
 $sharedData = ['title' => 'Soccer'];
 
 Route::get('/', fn() => view('client', $sharedData));
-<<<<<<< HEAD
-Route::get('player', [ClientPlayerController::class,'player']);
-Route::get('player-details/{id}', [ClientPlayerController::class,'player_details']);
-=======
 Route::get('player', fn() => view('client-pages.player.index', $sharedData));
 Route::get('player-details', fn() => view('client-pages.player-details.index', $sharedData));
->>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
 Route::get('match-results', [MatchController::class, 'matches']);
 Route::get('match-results-details', fn() => view('client-pages.match-results-details.index', $sharedData));
 
