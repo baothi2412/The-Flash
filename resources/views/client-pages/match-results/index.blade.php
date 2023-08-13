@@ -27,6 +27,18 @@
                      <a href="/match-results-details" ><h4>24 May, 2020 | <span>Super Euro League</span></h4></a>
                    </div>
                    <!--title end-->
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+                  <style>
+                      .last-match img{
+                          width: 72px;
+                          height: 50px;
+                      }
+                      </style>
+>>>>>>> f4252965222b7bedbd30c7bc394bd72b2ae3c8d6
+>>>>>>> 9c2644c03ab423f6b882e7c3b3a8bb2cf7e181f9
                    @foreach ($matchList as $match)
                     <ul class="last-match">
                         <?php
@@ -77,7 +89,11 @@
                    @endforeach
                    <!--box end-->
                    <!--box start-->
+<<<<<<< HEAD
                    <@foreach ($matchList as $match)
+=======
+                   @foreach ($matchList as $match)
+>>>>>>> 9c2644c03ab423f6b882e7c3b3a8bb2cf7e181f9
                    <ul class="last-match">
                        <?php
                        $teamAResult;

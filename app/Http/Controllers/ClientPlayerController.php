@@ -23,28 +23,44 @@ class ClientPlayerController extends Controller
     }
 
     public function player()
-    {
-        $players = Player::all();
+{
+    // Retrieve all players
+    $players = Player::all();
 
-        return view('client-pages.player.index', [
-            'players' => $players
-        ]);
+    // Pass the players data to the player index view
+    return view('client-pages.player.index', [
+        'players' => $players
+    ]);
+}
+
+public function player_client()
+{
+    // Lấy danh sách tất cả cầu thủ từ bảng players
+    $players = Player::all();
+
+    // Truyền dữ liệu cầu thủ tới view "client"
+    return view('client', [
+        'players' => $players,
+    ]);
+}
+
+public function player_details($id)
+{
+    // Find the player by ID
+    $player = Player::find($id);
+
+    // Check if the player was found
+    if (!$player) {
+        // Handle the case when the player is not found
+        return redirect()->route('player.index')->with('error', 'Player not found.');
     }
 
-    public function player_details($id)
-    {
-        $player = Player::find($id);
+    // Pass the player data to the player details view
+    return view('client-pages.player-details.index', [
+        'player' => $player,
+    ]);
+}
 
-        if (!$player) {
-            // Xử lý trường hợp không tìm thấy cầu thủ
-            return redirect()->route('player.index')->with('error', 'Player not found.');
-        }
-
-        return view('client-pages.player-details.index', [
-            'player' => $player,
-
-        ]);
-    }
 
 
     public function store(Request $request){

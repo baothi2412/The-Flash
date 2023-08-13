@@ -43,31 +43,7 @@
                 <li><a href="#" class="yt"><i class="fab fa-youtube"></i></a></li>
               </ul>
             </div>
-            <div class="col-md-6 col-sm-6">
-              <ul class="toplinks">
-                 <li class="lang-btn">
-                    <div class="dropdown">
-                       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> ENG </button>
-                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                         <a class="dropdown-item" href="#">ENG</a>
-                         <a class="dropdown-item" href="#">FR</a>
-                         <a class="dropdown-item" href="#">GR</a>
-                         <a class="dropdown-item" href="#">AR</a>
-                       </div>
-                    </div>
-                 </li>
-                 <li class="search-btn">
-                   <a href="#"><i class="fas fa-search"></i></a>
-                 </li>
-              </ul>
-              <div id="search">
-                <button type="button" class="close">×</button>
-                <form class="search-overlay-form">
-                  <input type="search" value="" placeholder="type keyword(s) here" />
-                  <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
-                </form>
-              </div>
-           </div>
+              
           </div>
         </div>
       </div>

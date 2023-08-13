@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Club;
 use Illuminate\Http\Request;
 use  App\Models\MyMatch;
 class MatchController extends Controller
@@ -110,6 +111,19 @@ class MatchController extends Controller
 
         return response()->json([
             'myMatch' => $myMatch
+        ]);
+    }
+
+    public function show($id)
+    {
+        $match = MyMatch::findOrFail($id);
+        $clubA = Club::findOrFail($match->clubA);
+        $clubB = Club::findOrFail($match->clubB);
+        
+        return view('client-pages.squad.index', [
+            'match' => $match,
+            'clubA' => $clubA,
+            'clubB' => $clubB,
         ]);
     }
 
