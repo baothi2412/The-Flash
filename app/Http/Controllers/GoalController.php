@@ -9,12 +9,12 @@ class GoalController extends Controller
 {
     // GET: /admin/goals
     public function index() {
-        $club = \DB::connection()->getSchemaBuilder()->getColumnListing((new Goal)->getTable());
+        $goals = \DB::connection()->getSchemaBuilder()->getColumnListing((new Goal)->getTable());
         $data = Goal::all();
-        return view('test', [
-            'club' => $club,
+        return view('admin-pages.goal.index', [
+            'goals' => $goals,
+            'records' => $data,
             'title' => 'TEST',
-            'records' => $data
         ]);
     }
     public function detail($id) {
@@ -24,8 +24,7 @@ class GoalController extends Controller
             'goal' => $goal
         ]);
     }
-    public function store(Request$request){
-        $id = $request->input('id');
+    public function store(Request $request){
         $matchID = $request->input('MatchID');
         $scoringPlayerID = $request->input('ScoringPlayerID');
         $assistingPlayerID = $request->input('AssistingPlayerID');
@@ -34,12 +33,10 @@ class GoalController extends Controller
 
         $goal = new Goal();
         
-       
-        $goal->id = $$id;
-        $goal->MatchID = $matchID;
-        $goal->ScoringPlayerID = $scoringPlayerID;
-        $goal->AssistingPlayerID = $assistingPlayerID;
-        $goal->Minute = $minute;
+        $goal->matchID = $matchID;
+        $goal->scoringPlayerID = $scoringPlayerID;
+        $goal->assistingPlayerID = $assistingPlayerID;
+        $goal->minute = $minute;
 
         $goal->save();
 

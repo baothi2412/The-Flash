@@ -13,27 +13,20 @@ class PositionMatchController extends Controller
             'title' => 'Position',
             'records'=>$data,
             'position'=>$position,
-
         ]);
- 
-
 
     }
 
-    public function store(Request$request){
-        $id = $request->input('id');
-        $matchID = $request->file('MatchID');
+    public function store(Request $request){
+        $matchID = $request->input('MatchID');
         $playerID = $request->input('PlayerID');
         $positionInMatch = $request->input('PositionInMatch');
    
-
         $position = new Position();
         
-       
-        $position->id = $$id;
-        $position->MatchID = $matchID;
-        $position->PlayerID = $playerID;
-        $position->birthdate = $positionInMatch;
+        $position->matchID = $matchID;
+        $position->playerID = $playerID;
+        $position->positionInMatch = $positionInMatch;
  
 
         $position->save();
@@ -80,5 +73,18 @@ class PositionMatchController extends Controller
         return response()->json([
             'position' => $position
         ]);
+    }
+
+    public function delete($id){
+        $position = Position::find($id);
+        $position->delete();
+
+        return response()->json(
+            [
+                'isSuccess' => true,
+                'message' => 'Successfully delete position',
+                'data' => $position
+            ]
+        );
     }
 }

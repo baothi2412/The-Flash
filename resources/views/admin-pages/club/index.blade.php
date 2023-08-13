@@ -38,7 +38,7 @@
                 const inputName = input.name;
                 editDataSubmit[inputName] = input.value;
             });
-            apiService.put('/api/club/update/' + document.querySelector('input.edit-form-input[name=id]'), editDataSubmit);
+            apiService.put('/api/club/update', editDataSubmit);
             document.querySelector('.edit-form-modal').click();
         }
     </script>
@@ -69,7 +69,7 @@
                 .then(data => {
                     const editFormInputs = document.querySelectorAll('input.edit-form-input');
                     editFormInputs.forEach(input => {
-                        input.value = data.user[input.name]
+                        input.value = data.club[input.name]
                     })
                 })
                 .catch(error => {
