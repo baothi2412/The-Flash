@@ -38,7 +38,7 @@
                                 data-start="700">
                                 <div class="slide-content-box">
                                     <h1><span>2023 FIFA</span><br>
-                                        awaken passion</h1>
+                                        AWAKEN PASSION</h1>
                                 </div>
                             </div>
                             <div class="tp-caption  tp-resizeme" data-x="left" data-hoffset="400" data-y="top"
@@ -626,28 +626,16 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8">
-                        <!--News Box Start-->
 
-
-
-
-                        <!--News Box Start-->
-
-                        <!--News Box End-->
-
-
-                        <!--News Box End-->
                     </div>
                     <!--Side 2 News Start-->
                     <div class="col-lg-4">
-                        <!--Box Start-->
 
-
-
-                        <!--Box End-->
                     </div>
 
                     <!--Team Squad Start-->
+
+
                     <section class="team-squad wf100 p80-50">
                         <div class="container">
                             <div class="row">
@@ -658,97 +646,46 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <!--Team Box Start-->
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="team-squad-box">
-                                        <div class="num">03</div>
-                                        <span class="star-tag"><i class="fas fa-star"></i></span> <a href="#"
-                                            class="follow">Follow</a>
-                                        <div class="ts-cap">
-                                            <h4>Ramsy Geordion</h4>
-                                            <p>League Captain</p>
-                                            <ul>
-                                                <li>29 <span>Age</span></li>
-                                                <li>87 <span>matches</span></li>
-                                                <li>113 <span>Goals</span></li>
-                                                <li>87 <span>matches</span></li>
-                                            </ul>
+                            <div class="player-squad">
+                                <div class="container">
+                                    <div class="row">
+                                        @foreach ($players as $player)
+                                        <!--Player Box Start-->
+                                        <div class="col-md-6">
+                                            <div class="player-box">
+                                                <div class="player-thumb">
+                                                    <a href="/player-details/{{ $player->id }}">
+                                                        <img src="images/{{ $player->Avatar }}" alt="" width="240px" height="280px">
+                                                    </a>
+                                                </div>
+                                                <div class="player-txt">
+                                                    <span class="star-tag"><i class="fas fa-star"></i></span>
+                                                    <h3>{{ $player->Name }}</h3>
+                                                    <strong class="player-desi">{{ $player->Position }}</strong>
+                                                    <p> Hi, I am {{ $player->Name }} the team captain of the soccer club.</p>
+                                                    <ul>
+                                                        <li>{{ \Carbon\Carbon::parse($player->Birthdate)->age }} <span>Age</span></li>
+                                                        <li>87 <span>matches</span></li>
+                                                        <li>113 <span>Goals</span></li>
+                                                        <li>87 <span>matches</span></li>
+                                                    </ul>
+                                                    <a class="playerbio" href="#"> <i class="far fa-arrow-alt-circle-right"></i></a>
+                                                    <a href="#" class="follow">Follow</a>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <img src="images/tplayer5.jpg" alt="">
+                                        @endforeach
                                     </div>
                                 </div>
-                                <!--Team Box Start-->
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="team-squad-box">
-                                        <div class="num">03</div>
-                                        <span class="star-tag"><i class="fas fa-star"></i></span> <a href="#"
-                                            class="follow">Follow</a>
-                                        <div class="ts-cap">
-                                            <h4>Ramsy Geordion</h4>
-                                            <p>League Captain</p>
-                                            <ul>
-                                                <li>29 <span>Age</span></li>
-                                                <li>87 <span>matches</span></li>
-                                                <li>113 <span>Goals</span></li>
-                                                <li>87 <span>matches</span></li>
-                                            </ul>
-                                        </div>
-                                        <img src="images/tplayer6.jpg" alt="">
-                                    </div>
-                                </div>
-                                <!--Team Box Start-->
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="team-squad-box">
-                                        <div class="num">03</div>
-                                        <span class="star-tag"><i class="fas fa-star"></i></span> <a href="#"
-                                            class="follow">Follow</a>
-                                        <div class="ts-cap">
-                                            <h4>Ramsy Geordion</h4>
-                                            <p>League Captain</p>
-                                            <ul>
-                                                <li>29 <span>Age</span></li>
-                                                <li>87 <span>matches</span></li>
-                                                <li>113 <span>Goals</span></li>
-                                                <li>87 <span>matches</span></li>
-                                            </ul>
-                                        </div>
-                                        <img src="images/tplayer6.jpg" alt="">
-                                    </div>
-                                </div>
-                                <!--Team Box Start-->
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="team-squad-box">
-                                        <div class="num">03</div>
-                                        <span class="star-tag"><i class="fas fa-star"></i></span> <a href="#"
-                                            class="follow">Follow</a>
-                                        <div class="ts-cap">
-                                            <h4>Ramsy Geordion</h4>
-                                            <p>League Captain</p>
-                                            <ul>
-                                                <li>29 <span>Age</span></li>
-                                                <li>87 <span>matches</span></li>
-                                                <li>113 <span>Goals</span></li>
-                                                <li>87 <span>matches</span></li>
-                                            </ul>
-                                        </div>
-                                        <img src="images/tplayer6.jpg" alt="">
-                                    </div>
-                                </div>
-                                <!--Team Box End-->
                             </div>
                         </div>
+                    </section>
                 </div>
-                <div class="team-grid">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                {{-- <h2 class="team-main-title">Defenders</h2> --}}
-                            </div>
+            </div>
 
-                        </div>
-                    </div>
-        </section>
+                                            <!--Player Box End-->
+
+
         <!--Team Squad End-->
 
 
