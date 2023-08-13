@@ -116,14 +116,10 @@ class MatchController extends Controller
 
     public function show($id)
     {
-        $match = MyMatch::findOrFail($id);
-        $clubA = Club::findOrFail($match->clubA);
-        $clubB = Club::findOrFail($match->clubB);
+        $myMatch = MyMatch::find($id);
         
         return view('client-pages.squad.index', [
-            'match' => $match,
-            'clubA' => $clubA,
-            'clubB' => $clubB,
+            'match' => $myMatch
         ]);
     }
 

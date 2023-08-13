@@ -70,6 +70,7 @@ Route::get('player', fn() => view('client-pages.player.index', $sharedData));
 Route::get('player-details', fn() => view('client-pages.player-details.index', $sharedData));
 Route::get('match-results', [MatchController::class, 'matches']);
 Route::get('match-results-details', fn() => view('client-pages.match-results-details.index', $sharedData));
+Route::get('squad/{id}', [MatchController::class, 'show']);
 
 
 Route::get('fixtures', [FixturesController::class,'fixture']);

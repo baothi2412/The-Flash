@@ -1,7 +1,7 @@
 @extends('layouts.client.client-layout')
 
 
-@section('content')
+@section('content')     
     <!--Main Slider Start-->
     <div class="inner-banner-header wf100">
         <h1 data-generated="Players Squad">Players Squad</h1>
