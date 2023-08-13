@@ -76,7 +76,7 @@
         <div class="col-lg-6 col-md-6">
           <p class="copyr"> All Rights Reserved of Sports © 2023, Design & Developed By: <a href="#">The Flash</a> </p>
         </div>
-        <div class="col-lg-6 col-md-6">
+        <div class="col-lg-6 col-md-6" style="width:480px;">
           <ul class="quick-links">
             <li><a href="/match-results"> Matches</a></li>
             <li><a href="/player">Players</a></li>

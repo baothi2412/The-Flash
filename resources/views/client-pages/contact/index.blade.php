@@ -24,7 +24,7 @@
                 <div class="contact-box">
                    <img src="images/loc-icon.png" alt="">
                    <h5>Address:</h5>
-                   <p> 1 Đ. Lý Tự Trọng, An Phú, Ninh Kiều, Cần Thơ
+                   <p> 1 D. Ly Tu Trong, An Phu, Ninh Kieu, Can Tho
                    </p>
                 </div>
              </div>
