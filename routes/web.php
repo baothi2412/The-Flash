@@ -17,6 +17,19 @@ use App\Http\Controllers\MatchController;
 use App\Http\Controllers\GoalController;
 use App\Http\Controllers\FixturesController;
 
+Route::get('/test/squad/{id}', function($id) {
+    // return response()->json(['OKE']);
+    // $match = App\Models\MyMatch::findOrFail($id);
+    // $clubA = Club::findOrFail($match->teamAID);
+    // $clubB = Club::findOrFail($match->teamBID);
+    
+    return view('client-pages.squad.index', [
+        // 'match' => $match,
+        // 'clubA' => $clubA,
+        // 'clubB' => $clubB,
+    ]);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,22 +66,18 @@ Route::get('/app/test', function () {
 $sharedData = ['title' => 'Soccer'];
 
 Route::get('/', fn() => view('client', $sharedData));
-<<<<<<< HEAD
-Route::get('player', [ClientPlayerController::class,'player']);
-Route::get('player-details/{id}', [ClientPlayerController::class,'player_details']);
-=======
 Route::get('player', fn() => view('client-pages.player.index', $sharedData));
 Route::get('player-details', fn() => view('client-pages.player-details.index', $sharedData));
->>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
 Route::get('match-results', [MatchController::class, 'matches']);
 Route::get('match-results-details', fn() => view('client-pages.match-results-details.index', $sharedData));
+
 
 Route::get('fixtures', [FixturesController::class,'fixture']);
 
 Route::get('point-table', fn() => view('client-pages.point-table.index', $sharedData));
 Route::get('contact', fn() => view('client-pages.contact.index', $sharedData));
 Route::get('feedback', fn() => view('client-pages.feedback.index', $sharedData));
-Route::get('squad', fn() => view('client-pages.squad.index', $sharedData));
+Route::get('/squad', fn() => view('client-pages.squad.index', $sharedData));
 Route::get('aboutus', fn() => view('client-pages.aboutus.index', $sharedData));
 
 Route::prefix('/feedback')->group(function() {
