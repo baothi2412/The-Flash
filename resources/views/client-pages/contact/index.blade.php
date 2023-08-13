@@ -24,14 +24,14 @@
                 <div class="contact-box">
                    <img src="images/loc-icon.png" alt="">
                    <h5>Address:</h5>
-                   <p> 1 Đ. Lý Tự Trọng, An Phú, Ninh Kiều, Cần Thơ
+                   <p> 1 D. Ly Tu Trong, An Phu, Ninh Kieu, Can Tho
                    </p>
                 </div>
              </div>
              <!--End-->
              <!--Start-->
              <div class="col-md-4">
-                <div class="contact-box">
+                <div class="contact-box" style="padding-bottom: 75px">
                    <img src="images/phone-icon.png" alt="">
                    <h5>Contact:</h5>
                    <p><strong>Phone:</strong>  0292 3731 072</p>

@@ -38,7 +38,7 @@
                                 data-start="700">
                                 <div class="slide-content-box">
                                     <h1><span>2023 FIFA</span><br>
-                                        awaken passion</h1>
+                                        AWAKEN PASSION</h1>
                                 </div>
                             </div>
                             <div class="tp-caption  tp-resizeme" data-x="left" data-hoffset="400" data-y="top"
@@ -134,6 +134,7 @@
     <div class="main-content wf100">
         <!--Slide tabs start-->
         <!--Slide tabs start-->
+        <div class="dropdown">
         <div class="slider-tabs wf100">
             <div class="container">
                 <div class="row">
@@ -155,6 +156,7 @@
                                 <h6><a href="#">The will to prepare to win
                                         that makes the difference</a> </h6>
                                 <strong>Carolina Baltimore</strong>
+                            </div>
                             </div>
                         </li>
                     </ul>
@@ -218,14 +220,15 @@
                             <h5 class="title">Sonraki Maç</h5>
                             <div class="nmw-wrap">
                                 <ul class="match-teams-vs">
-                                    <li class="team-logo"><img src="images/uploads/kayserisporlogo.png" width="60"
-                                            height="60" alt="">
-                                        <div class="score-left"> <span></span> <strong></strong>
+                                    <li class="team-logo">
+                                        <img src="images/uploads/kayserisporlogo.png" width="60" height="60"
+                                             {{ isset($match['TeamAID']) ? 'alt="'. \App\Models\Club::find($match['TeamAID'])['Logo'] .'"' : '' }}>
                                     </li>
+
                                     <li class="mvs"> <strong class="vs">VS</strong> </li>
                                     <li class="team-logo"><img src="images/uploads/galatasaray.png" width="60"
-                                            height="60" alt="">
-                                        <div class="score-right"> <span></span> <strong></strong>
+                                            height="60"  {{ isset($match['TeamBID']) ? 'alt="'. \App\Models\Club::find($match['TeamID'])['Logo'] .'"' : '' }}>>
+                                        <div class="score-right">
                                     </li>
                                 </ul>
                                 <ul class="nmw-txt">
@@ -236,7 +239,7 @@
                                 </ul>
                                 <div id="countdown_timer"></div>
                                 <div style="clear:both"></div>
-                                <div class="buy-ticket"><a href="/match">Match Detail</a>
+                                <div class="buy-ticket">
                                 </div>
                             </div>
                         </div>
@@ -626,28 +629,16 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8">
-                        <!--News Box Start-->
 
-
-
-
-                        <!--News Box Start-->
-
-                        <!--News Box End-->
-
-
-                        <!--News Box End-->
                     </div>
                     <!--Side 2 News Start-->
                     <div class="col-lg-4">
-                        <!--Box Start-->
 
-
-
-                        <!--Box End-->
                     </div>
 
                     <!--Team Squad Start-->
+
+
                     <section class="team-squad wf100 p80-50">
                         <div class="container">
                             <div class="row">
@@ -658,97 +649,46 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <!--Team Box Start-->
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="team-squad-box">
-                                        <div class="num">03</div>
-                                        <span class="star-tag"><i class="fas fa-star"></i></span> <a href="#"
-                                            class="follow">Follow</a>
-                                        <div class="ts-cap">
-                                            <h4>Ramsy Geordion</h4>
-                                            <p>League Captain</p>
-                                            <ul>
-                                                <li>29 <span>Age</span></li>
-                                                <li>87 <span>matches</span></li>
-                                                <li>113 <span>Goals</span></li>
-                                                <li>87 <span>matches</span></li>
-                                            </ul>
+                            <div class="player-squad">
+                                <div class="container">
+                                    <div class="row">
+                                        @foreach ($players as $player)
+                                        <!--Player Box Start-->
+                                        <div class="col-md-6">
+                                            <div class="player-box">
+                                                <div class="player-thumb">
+                                                    <a href="/player-details/{{ $player->id }}">
+                                                        <img src="images/{{ $player->Avatar }}" alt="" width="240px" height="280px">
+                                                    </a>
+                                                </div>
+                                                <div class="player-txt">
+                                                    <span class="star-tag"><i class="fas fa-star"></i></span>
+                                                    <h3>{{ $player->Name }}</h3>
+                                                    <strong class="player-desi">{{ $player->Position }}</strong>
+                                                    <p> Hi, I am {{ $player->Name }} the team captain of the soccer club.</p>
+                                                    <ul>
+                                                        <li>{{ \Carbon\Carbon::parse($player->Birthdate)->age }} <span>Age</span></li>
+                                                        <li>87 <span>matches</span></li>
+                                                        <li>113 <span>Goals</span></li>
+                                                        <li>87 <span>matches</span></li>
+                                                    </ul>
+                                                    <a class="playerbio" href="#"> <i class="far fa-arrow-alt-circle-right"></i></a>
+                                                    <a href="#" class="follow">Follow</a>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <img src="images/tplayer5.jpg" alt="">
+                                        @endforeach
                                     </div>
                                 </div>
-                                <!--Team Box Start-->
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="team-squad-box">
-                                        <div class="num">03</div>
-                                        <span class="star-tag"><i class="fas fa-star"></i></span> <a href="#"
-                                            class="follow">Follow</a>
-                                        <div class="ts-cap">
-                                            <h4>Ramsy Geordion</h4>
-                                            <p>League Captain</p>
-                                            <ul>
-                                                <li>29 <span>Age</span></li>
-                                                <li>87 <span>matches</span></li>
-                                                <li>113 <span>Goals</span></li>
-                                                <li>87 <span>matches</span></li>
-                                            </ul>
-                                        </div>
-                                        <img src="images/tplayer6.jpg" alt="">
-                                    </div>
-                                </div>
-                                <!--Team Box Start-->
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="team-squad-box">
-                                        <div class="num">03</div>
-                                        <span class="star-tag"><i class="fas fa-star"></i></span> <a href="#"
-                                            class="follow">Follow</a>
-                                        <div class="ts-cap">
-                                            <h4>Ramsy Geordion</h4>
-                                            <p>League Captain</p>
-                                            <ul>
-                                                <li>29 <span>Age</span></li>
-                                                <li>87 <span>matches</span></li>
-                                                <li>113 <span>Goals</span></li>
-                                                <li>87 <span>matches</span></li>
-                                            </ul>
-                                        </div>
-                                        <img src="images/tplayer6.jpg" alt="">
-                                    </div>
-                                </div>
-                                <!--Team Box Start-->
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="team-squad-box">
-                                        <div class="num">03</div>
-                                        <span class="star-tag"><i class="fas fa-star"></i></span> <a href="#"
-                                            class="follow">Follow</a>
-                                        <div class="ts-cap">
-                                            <h4>Ramsy Geordion</h4>
-                                            <p>League Captain</p>
-                                            <ul>
-                                                <li>29 <span>Age</span></li>
-                                                <li>87 <span>matches</span></li>
-                                                <li>113 <span>Goals</span></li>
-                                                <li>87 <span>matches</span></li>
-                                            </ul>
-                                        </div>
-                                        <img src="images/tplayer6.jpg" alt="">
-                                    </div>
-                                </div>
-                                <!--Team Box End-->
                             </div>
                         </div>
+                    </section>
                 </div>
-                <div class="team-grid">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                {{-- <h2 class="team-main-title">Defenders</h2> --}}
-                            </div>
+            </div>
 
-                        </div>
-                    </div>
-        </section>
+                                            <!--Player Box End-->
+
+
         <!--Team Squad End-->
 
 
