@@ -28,6 +28,10 @@ class ClubController extends Controller
     }
     public function detail($id) {
         $club = Club::find($id);
+
+        return response()->json([
+            'club' => $club
+        ]);
     }
 
     public function store(Request $request) : JsonResponse {

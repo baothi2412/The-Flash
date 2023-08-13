@@ -142,8 +142,17 @@
 
         <script>
             const data = {
+<<<<<<< HEAD
+                email: 'n@gmail.com',
+                password: 'baothi2004',
+=======
                 email: 'admin@gmail.com',
+<<<<<<< HEAD
+                password: '12345678',
+=======
                 password: 'hongson2003',
+>>>>>>> f518b30b7e8b3b567395cc068264f71eea3ced7b
+>>>>>>> 0d5d3a93f3d660095a948b360f52e7743afc9e8b
             }
             var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
             fetch('/api/account/sign-in', {
